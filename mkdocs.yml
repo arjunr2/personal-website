@@ -1,12 +1,12 @@
 site_name: Arjun Ramesh
 nav:
   - Home: index.md
-  - Professional Experience: projects.md
+  - Professional Experience: experience.md
   - Projects: projects.md
 
-  - Hobbies: todo.md
-  - Miscellaneous: todo.md
-  - Resources: todo.md
+  - Hobbies: hobbies.md
+  - Miscellaneous: misc.md
+  - Resources: resources.md
 
 theme:
   name: material
