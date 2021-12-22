@@ -14,7 +14,7 @@
     margin: 0;
   } 
   .md-typeset h3 {
-    font-size: 1.5em;
+    font-size: 1.4em;
     margin: 0;
   }
 }
@@ -26,7 +26,7 @@
   } 
 
   .md-typeset h3 {
-    font-size: 1.4em;
+    font-size: 1.3em;
     margin: 0;
   }
 }
@@ -49,3 +49,13 @@
 .md-typeset code {
   font-size: 1.0em;
 }
+
+
+.md-social__link {
+  width: 2.4rem;
+}
+.md-social__link svg {
+  max-height: 1.1rem;
+  max-width: 1.1rem;
+}
+

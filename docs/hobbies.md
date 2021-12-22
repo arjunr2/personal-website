@@ -3,7 +3,7 @@
 
 ![cube](assets/hobbies/Cubing_DP.jpg){ align=left width=15% style=margin:1em;margin-left:0;margin-top:0.3em }
 
-* I started serious speedcubing at the age of 14 and competed in a variety of 
+* I started serious speedcubing in high-school and competed in a variety of 
 local/national competitions 
 * Developed a variety of my own unique algorithms for to ease memorization and speedsolving.
 Solved 3x3 (blind/OH), 4x4, 5x5, megaminx... 
@@ -21,30 +21,45 @@ solved 19 cubes (in one go) blindfolded at Indian Nationals!
 <br/>
 ## Music
 
-I listen to music for hours on end. A lot of jazz, blues, and progressive rock 
+I listen to music for hours on end. A lot of jazz, classic and progressive rock 
 (no, I am not 65 years old). 
 
 There's too much incredible music to list, but here are some of noteworthy artists/albums:
 
 ![guitar](assets/hobbies/Guitar_DP.jpg){ align=left width=15% style=margin:1em;margin-left:0;margin-top:0.3em }
-![guitar](assets/hobbies/Guitar_DP.jpg){ align=left width=15% style=margin:1em;margin-left:0;margin-top:0.3em }
 
 * Genesis: *Nursery Cryme (1971), Foxtrot (1972), Selling England (1973), Lamb (1974)*
-* Mike Oldfield: *Amarok, Ommadawn, Incantations*
-* Jethro Tull: *Thick as a Brick, A Passion Play*
-* Steely Dan: *Aja*
-* Gentle Giant: *Free Hand, Octopus*
+* Mike Oldfield: *Amarok (1990), Ommadawn (1975), Incantations (1978)*
+* Jethro Tull: *Thick as a Brick (1972), A Passion Play (1973)*
+* Steely Dan: *Aja (1977)*
+* Gentle Giant: *Free Hand (1975), Octopus (1972)*
 
 
 ![guitar](assets/hobbies/Guitar_DP.jpg){ align=left width=15% style=margin:1em;margin-left:0;margin-top:0.3em }
-I also play *three* instruments: the guitar, piano, and flute. I enjoy jamming with friends, 
+I also play the *guitar*, *piano*, and *flute*. I enjoy jamming with friends, 
 and hope to improve my improvisational skills. Please reach out to me if you need a guitarist :)
 
-My music content can be found on my [**YouTube**](https://www.youtube.com/channel/UCQLPzl1LHeF25W3SiKSAqGQ?view_as=subscriber) page
+My music content can be found on my [**YouTube**](https://www.youtube.com/channel/UCQLPzl1LHeF25W3SiKSAqGQ?view_as=subscriber) 
+page
 
+***Fun Fact***: I am primarily a right-hander, but a lefty guitarist! I was 
+self-taught and mimiced by brother, who was a lefty
 <br/>
+<br/>
+## Sports
 
-* It's a me, mario
+### Running
+* Casual
+
+### Trekking
+* Casual
+
+### Badminton
+* Casual
+
+### Surfing
+* Casual
+
 <br/>
 <br/>
 <br/>
