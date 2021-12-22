@@ -34,33 +34,41 @@ There's too much incredible music to list, but here are some of noteworthy artis
 * Steely Dan: *Aja (1977)*
 * Gentle Giant: *Free Hand (1975), Octopus (1972)*
 
+<br/>
+<iframe width="23%" src="https://www.youtube.com/embed/bwVirkXOSz4" 
+ style=margin-left:0;margin-top:0.3em;float:left ></iframe>
+<iframe width="23%" src="https://www.youtube.com/embed/shiSCyZfQlU" 
+  style=margin:1em;margin-left:0;margin-top:0.3em;float:left > </iframe>
 
-![guitar](assets/hobbies/Guitar_DP.jpg){ align=left width=15% style=margin:1em;margin-left:0;margin-top:0.3em }
-I also play the *guitar*, *piano*, and *flute*. I enjoy jamming with friends, 
-and hope to improve my improvisational skills. Please reach out to me if you need a guitarist :)
+I play the *guitar*, *piano*, and *flute*. Jamming with friends is always a pleasure.
+Please reach out to me if you need a guitarist :)
 
 My music content can be found on my [**YouTube**](https://www.youtube.com/channel/UCQLPzl1LHeF25W3SiKSAqGQ?view_as=subscriber) 
 page
 
-***Fun Fact***: I am primarily a right-hander, but a lefty guitarist! I was 
-self-taught and mimiced by brother, who was a lefty
+***Fun Fact***: I am right-handed, but am a lefty guitarist! I was 
+self-taught and mimiced my brother, who was a lefty
 <br/>
 <br/>
 ## Sports
 
+![trek](assets/hobbies/Trek_Finish.jpg){ align=left width=25% style=margin:1em;margin-left:0;margin-top:0.3em }
+![badminton](assets/hobbies/Badminton_DP.jpg){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em }
 ### Running
-* Casual
+I competed in a range of atheletics events, particualarly long distance running (10K).
+I have been running sub-50 min 10Ks since the age of 15.
 
 ### Trekking
-* Casual
+High-altitude trekking always provides a good mix of exercise and amazing views! My most notable
+hike has been the Annapurna Circuit (120 km, 11 days), peaking at a height of 5400m at the 
+age of 14.
 
 ### Badminton
-* Casual
+Badminton has been my primary sport of interest, and I have competed frequently in university,
+and state championships back in India.
 
 ### Surfing
-* Casual
-
-<br/>
+A more recent endaevor since 2020, I have enjoyed surfing in Chennai (India)  and California (US).
 <br/>
 <br/>
 <br/>
