@@ -8,23 +8,44 @@
   display: none;
 }
 
-/*.md-typeset img {
-  margin: 30px 30px 30px 30px;
-}*/
-
 @media screen and (min-width: 601px) {
   .md-typeset h2 {
-    font-size: 34px;
+    font-size: 2em;
+    margin: 0;
+  } 
+  .md-typeset h3 {
+    font-size: 1.5em;
     margin: 0;
   }
 }
 
 @media screen and (max-width: 600px) {
   .md-typeset h2 {
-    font-size: 32px;
+    font-size: 2em;
+    margin: 0;
+  } 
+
+  .md-typeset h3 {
+    font-size: 1.4em;
     margin: 0;
   }
 }
-/*.md-grid {
-  max-width: 1100px;
-}*/
+
+
+.md-sidebar {
+  width: 10.0rem;
+}
+
+
+.md-grid {
+  max-width: 1200px;
+}
+
+.md-typeset p, ul {
+  font-size: 1.0em;
+}
+
+
+.md-typeset code {
+  font-size: 1.0em;
+}

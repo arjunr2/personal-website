@@ -1,9 +1,10 @@
 
 ## Biography
 
-![title](assets/Headshot_Portrait.jpg){ align=left width=42% style=margin:1em;margin-left:0;margin-top:0.3em }
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+![title](assets/Headshot_Portrait.jpg){ align=left width=35% style=margin:1em;margin-left:0;margin-top:0.3em }
 
+For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 <br/>
 <br/>
 ## Commands
