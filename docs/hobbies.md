@@ -34,7 +34,6 @@ There's too much incredible music to list, but here are some of noteworthy artis
 * Steely Dan: *Aja (1977)*
 * Gentle Giant: *Free Hand (1975), Octopus (1972)*
 
-<br/>
 <iframe width="23%" src="https://www.youtube.com/embed/bwVirkXOSz4" 
  style=margin-left:0;margin-top:0.3em;float:left ></iframe>
 <iframe width="23%" src="https://www.youtube.com/embed/shiSCyZfQlU" 

@@ -1,34 +1,46 @@
 
 ## Biography
 ![title](assets/Headshot_Portrait.jpg){ align=left width=35% style=margin:1em;margin-left:0;margin-top:0.3em }
-An essay is, generally, a piece of writing that gives the author's own argument, but the definition is vague, overlapping with those of a letter, a paper, an article, a pamphlet, and a short story. Essays have traditionally been sub-classified as formal and informal. Formal essays are characterized by "serious purpose, dignity, logical organization, length," whereas the informal essay is characterized by "the personal element (self-revelation, individual tastes and experiences, confidential manner), humor, graceful style, rambling structure, unconventionality or novelty of theme," etc.[1]
 
-Essays are commonly used as literary criticism, political manifestos, learned arguments, observations of daily life, recollections, and reflections of the author. Almost all modern essays are written in prose, but works in verse have been dubbed essays (e.g., Alexander Pope's An Essay on Criticism and An Essay on Man). While brevity usually defines an essay, voluminous works like John Locke's An Essay Concerning Human Understanding and Thomas Malthus's An Essay on the Principle of Population are counterexamples.
+**Howdy! Arjun Ramesh here :wave:**
+
+I am a PhD student at *Carnegie Mellon University (CMU)* under Prof. [Anthony Rowe](https://users.ece.cmu.edu/~agr/).
+My research interests include distributed embedded systems, computer architecture, 
+and operating systems. I completed my B.S in ECE at *UT Austin*, with a focus in Computer 
+Architeture and Embedded Systems. 
+
+I often engross myself in personal projects, Hackathons, and
+product development. A notable mention is my senior capstone research project at UT, where we
+designed an in-house out-of-order RISC-V core with custom perfomance
+enhancing extensions to system. A more detailed list of my personal projects can be found [here](projects)
+
+Culturally, I am an Indian-American who has had nearly equal exposure to both cultures. I cannot
+begin to choose between which one I value more, so I hope to absorb and embrace the best 
+parts of both. 
+
+Career goals aside, I enjoy playing sports including surfing, badminton, and trekking. Listening
+to and playing music is also a big part of life. You can learn more about my hobbies [here](hobbies)
+
 
 <br/>
 ## News
-* Completed my first semester of grad school at CMU
+* *Aug 2020*: Started my PhD at Carnegie Mellon University!
+* *May 2020*: Graduated with a Bachelors degree from UT Austin :metal: 
 
 <br/>
 ## Resources & Contact
 
 *Office Address*:
+> Robert Mehrabian CIC (1st floor)
 <br/>
-Robert Mehrabian CIC (1st floor)
+> 4720 Forbes Avenue, Pittsburgh, PA 15213
+
+*Email*: [arjunr2@andrew.cmu.edu](mailto:arjunr2@andrew.cmu.edu) (preferred mode of contact)
+
+*CV*: Refer page header
+
+*Social Links*: Refer page footer
+
 <br/>
-4720 Forbes Avenue, Pittsburgh, PA 15213
-
-*Email*: [arjunr2@andrew.cmu.edu](mailto:arjunr2@andrew.cmu.edu)
-
-My CV can be found at the page header
-<br/>Other social links can be found at the page footer.
-
 <br/>
-<br/>
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
 

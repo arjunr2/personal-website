@@ -4,6 +4,7 @@
   --md-primary-fg-color--dark:  #6e834c;
 }
 
+/* Headers */
 .md-typeset h1 {
   display: none;
 }
@@ -32,30 +33,23 @@
 }
 
 
-.md-sidebar {
-  width: 10.0rem;
-}
 
+/* Layout */
+.md-sidebar { width: 10.0rem; }
+.md-grid { max-width: 1200px; }
 
-.md-grid {
-  max-width: 1200px;
-}
+/* Generic text and code */
+.md-typeset a { color: #0a3b97; }
+.md-typeset p, ul { font-size: 1.0em; }
+.md-typeset code { font-size: 1.0em; }
 
-.md-typeset p, ul {
-  font-size: 1.0em;
-}
-
-
-.md-typeset code {
-  font-size: 1.0em;
-}
-
-
-.md-social__link {
-  width: 2.4rem;
-}
+/* Social link */
+.md-social__link { width: 2.4rem; }
 .md-social__link svg {
   max-height: 1.1rem;
   max-width: 1.1rem;
 }
 
+/*.md-nav__item {
+  padding: 0 0 0.15rem 0.6rem;
+}*/
