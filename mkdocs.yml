@@ -5,7 +5,7 @@ nav:
   - Projects: projects.md
 
   - Hobbies: hobbies.md
-  - Miscellaneous: misc.md
+  #- Miscellaneous: misc.md
   - CV: cv.md
 
 theme:

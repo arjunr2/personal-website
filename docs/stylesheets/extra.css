@@ -11,23 +11,23 @@
 
 @media screen and (min-width: 601px) {
   .md-typeset h2 {
-    font-size: 2em;
+    font-size: 1.6em;
     margin: 0;
   } 
   .md-typeset h3 {
-    font-size: 1.4em;
+    font-size: 1.3em;
     margin: 0;
   }
 }
 
 @media screen and (max-width: 600px) {
   .md-typeset h2 {
-    font-size: 2em;
+    font-size: 1.5em;
     margin: 0;
   } 
 
   .md-typeset h3 {
-    font-size: 1.3em;
+    font-size: 1.2em;
     margin: 0;
   }
 }
@@ -46,10 +46,10 @@
 /* Social link */
 .md-social__link { width: 2.4rem; }
 .md-social__link svg {
-  max-height: 1.1rem;
-  max-width: 1.1rem;
+  max-height: 1.0rem;
+  max-width: 1.0rem;
 }
 
-/*.md-nav__item {
+.md-nav__item {
   padding: 0 0 0.15rem 0.6rem;
-}*/
+}
