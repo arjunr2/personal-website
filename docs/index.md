@@ -14,13 +14,13 @@ product development. A notable mention is my senior capstone research project at
 designed an in-house out-of-order RISC-V core with custom perfomance
 enhancing extensions to system. A more detailed list of my personal projects can be found [here](projects)
 
-Culturally, I am an Indian-American who has had nearly equal exposure to both cultures. I cannot
-begin to choose between which one I value more, so I hope to absorb and embrace the best 
-parts of both. 
-
 Career goals aside, I enjoy playing sports including surfing, badminton, and trekking. Listening
 to and playing music is a great way for me to escape the stress of work and express my artistic
 side. You can learn more about my hobbies [here](hobbies)
+
+Culturally, I am an Indian-American who has had nearly equal exposure to both cultures. I cannot
+begin to choose between which one I value more, so I hope to absorb and embrace the best 
+parts of both. 
 
 
 <br/>

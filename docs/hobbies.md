@@ -34,9 +34,9 @@ There's too much incredible music to list, but here are some of noteworthy artis
 * Steely Dan: *Aja (1977)*
 * Gentle Giant: *Free Hand (1975), Octopus (1972)*
 
-<iframe width="23%" src="https://www.youtube.com/embed/bwVirkXOSz4" 
+<iframe width="23%" src="https://www.youtube.com/embed/kCN0RsQ0cQo" 
  style=margin-left:0;margin-top:0.3em;float:left ></iframe>
-<iframe width="23%" src="https://www.youtube.com/embed/shiSCyZfQlU" 
+<iframe width="23%" src="https://www.youtube.com/embed/dKsA8HzZnQc" 
   style=margin:1em;margin-left:0;margin-top:0.3em;float:left > </iframe>
 
 I play the *guitar*, *piano*, and *flute*. Jamming with friends is always a pleasure.

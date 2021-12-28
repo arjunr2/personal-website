@@ -15,8 +15,6 @@
  assignments/exams
 * Provide guidance to students in determining their fields of interest 
 
-
-<br/>
 <br/>
 ## Industry
 
