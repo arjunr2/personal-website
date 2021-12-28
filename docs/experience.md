@@ -1,8 +1,10 @@
 # Professional Experience
 
-## Teaching
+## Academic
 
 ### Undergraduate Teaching Assistant
+
+![ta](assets/experience/Teaching.png){ align=left width=20% style=margin:1em;margin-left:0;margin-top:1.8em }
 
 * Past Positions:
     * Computer Architecture (*Dr. Yale Patt, UT Austin, Fall 2020*)
@@ -76,7 +78,7 @@
 <br/>
 ### Lucid Imaging Pvt. Ltd.
 
-![lucid](assets/experience/Lucid.jpeg){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em }
+![lucid](assets/experience/Lucid.jpeg){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.8em }
 
 &nbsp; :material-account-tie-hat: &nbsp;***Machine Learning Intern***
 &emsp;|&emsp; :octicons-location-16: *Bangalore, India*
