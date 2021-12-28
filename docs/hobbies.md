@@ -68,8 +68,6 @@ and state championships back in India.
 
 ### Surfing
 A more recent endaevor since 2020, I have enjoyed surfing in Chennai (India)  and California (US).
-<br/>
-<br/>
-<br/>
+
 <br/>
 <br/>

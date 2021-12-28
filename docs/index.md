@@ -1,6 +1,6 @@
 
 ## Biography
-![title](assets/Headshot_Portrait.jpg){ align=left width=35% style=margin:1em;margin-left:0;margin-top:0.3em }
+![title](assets/home/Headshot_Portrait.jpg){ align=left width=35% style=margin:1em;margin-left:0;margin-top:0.3em }
 
 **Howdy! Arjun Ramesh here :wave:**
 
@@ -19,7 +19,8 @@ begin to choose between which one I value more, so I hope to absorb and embrace 
 parts of both. 
 
 Career goals aside, I enjoy playing sports including surfing, badminton, and trekking. Listening
-to and playing music is also a big part of life. You can learn more about my hobbies [here](hobbies)
+to and playing music is a great way for me to escape the stress of work and express my artistic
+side. You can learn more about my hobbies [here](hobbies)
 
 
 <br/>
@@ -43,4 +44,3 @@ to and playing music is also a big part of life. You can learn more about my hob
 
 <br/>
 <br/>
-

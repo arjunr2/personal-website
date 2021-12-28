@@ -12,8 +12,8 @@ theme:
   name: material
   custom_dir: overrides
 
-  logo: assets/favicon.ico
-  favicon: assets/hacker.ico
+  logo: assets/home/favicon.ico
+  favicon: assets/home/hacker.ico
   palette:
     scheme: default # custom_scheme # default
     primary: blue-grey
