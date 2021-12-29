@@ -31,7 +31,7 @@
 * Bringup of UVM testbenches for memory hierarchy
 
 &nbsp; :material-file-code-outline: &nbsp;*SystemVerilog*, &nbsp;*Python*
-&emsp;|&emsp; :material-tools: &nbsp;*UVM*
+&emsp;&emsp; :material-tools: &nbsp;*UVM*
 
 
 
