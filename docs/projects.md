@@ -13,10 +13,11 @@
 &emsp;|&emsp; :material-file-document-outline: [**Design**](https://docs.google.com/document/d/1Ygt9UbJ5kYmJLXBvFtrCkNEAzlkYbvzGRgO9i6_9oP4/edit?usp=sharing)
 &emsp;|&emsp; :material-github: [**Code**](https://github.com/Patt-Senior-Design/core-design)
 &emsp;|&emsp; Team of 2
-
-
-
 <br/>
+<br/>
+
+---
+
 ## Processing-In-Memory: Sorting Algorithms
 
 ![pim](assets/projects/PIM.jpg){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em }
@@ -29,10 +30,11 @@
 &ensp; :material-file-document-outline: &nbsp;[**Presentation**](https://docs.google.com/presentation/d/1zqjP24BIFGV1ArI6x-K1hgJrn6dM-mcpVgXRz3by6Ms/edit#slide=id.p)
 &emsp;|&emsp; :material-github: [**Code**](https://github.com/yashparakh111/upmem-dpu)
 &emsp;|&emsp; Team of 5
-
-
-
 <br/>
+<br/>
+
+---
+
 ## XC2064 FPGA Design
 
 ![fpga](assets/projects/FPGA.jpg){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em }
@@ -45,10 +47,11 @@
 &ensp; :material-file-document-outline: &nbsp;[**Reference Article**](https://www.righto.com/2020/09/reverse-engineering-first-fpga-chip.html)
 &emsp;|&emsp; :material-github: [**Code**](https://github.com/VLSI-Project/project)
 &emsp;|&emsp; Team of 3
-
-
-
 <br/>
+<br/>
+
+---
+
 ## 1D Cellular Automata Theory
 
 ![cell](assets/projects/multi_choice.png){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em }
@@ -57,10 +60,11 @@
 
 &ensp; :material-file-document-outline: &nbsp;[**Paper**](https://drive.google.com/file/d/1pp3Ui8jZkbUepoJQDvJm0HQ-iSu-Dniv/view)
 &emsp;|&emsp; Solo
-
-
-
 <br/>
+<br/>
+
+---
+
 ## RTOS Design
 
 ![cell](assets/projects/RTOS2.png){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em }
@@ -73,9 +77,11 @@
 
 &ensp; :octicons-video-16: &nbsp;[**Demo**](https://www.youtube.com/watch?v=N1q2bLxdYYM)
 &emsp;|&emsp; Team of 2
-
-
 <br/>
+<br/>
+
+---
+
 ## JASP Cellular Phone
 
 ![jasp](assets/projects/JASP2.jpg){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em }
@@ -87,10 +93,11 @@
 
 &ensp; :material-github: [**Code**](https://github.com/JASP-EE445L-Fall19/Phone_4C123)
 &emsp;|&emsp; Team of 4
-
-
-
 <br/>
+<br/>
+
+---
+
 ## Enrich: PennApps 2019
 
 ![enrich](assets/projects/Enrich.png){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em }
@@ -102,10 +109,11 @@
 &ensp; :fontawesome-brands-dev: &nbsp;[**Devpost**](https://devpost.com/software/enrich-an-education-platform-to-increase-collaboration)
 &emsp;|&emsp; :material-github: [**Code**](https://github.com/arjunramesh99/Enrich)
 &emsp;|&emsp; Team of 4
-
-
-
 <br/>
+<br/>
+
+---
+
 ## RecycleMe: CreateAThon 2019
 
 ![recycle](assets/projects/TeamTrash.png){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em }
@@ -119,10 +127,11 @@
 &emsp;|&emsp; :material-github: [**System Code**](https://github.com/yashparakh111/createathon2019)
 &emsp;|&emsp; :material-github: [**Mobile App**](https://github.com/yashparakh111/RecycleMe)
 &emsp;|&emsp; Team of 5
-
-
-
 <br/>
+<br/>
+
+---
+
 ## Home-Unity: HackDFW 2019
 
 ![hu](assets/projects/HomeUnity.png){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em;margin-bottom:3em }
@@ -136,10 +145,11 @@
 &ensp; :fontawesome-brands-dev: &nbsp;[**Devpost**](https://devpost.com/software/home-unity-fctb5s)
 &emsp;|&emsp; :material-github: [**Code**](https://github.com/yashparakh111/Home-Unity)
 &emsp;|&emsp; Team of 5
-
-
-
 <br/>
+<br/>
+
+---
+
 ## ChairIoT: CreateAThon 2018
 
 ![iot](assets/projects/Chair1_crop.jpg){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em }

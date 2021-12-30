@@ -15,7 +15,8 @@
  assignments/exams
 * Provide guidance to students in determining their fields of interest 
 
-<br/>
+---
+
 ## Industry
 
 ### Apple Inc.
@@ -91,8 +92,8 @@
 &emsp;&emsp; :material-tools: &nbsp;*Keras*
 
 
-<br/>
-<br/>
+---
+
 ## Certificates
 
 * **Machine Learning**: *Andrew Ng* (Coursera)
