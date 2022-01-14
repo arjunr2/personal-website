@@ -53,6 +53,8 @@ extra:
       link: mailto:arjunr2@andrew.cmu.edu
       name: Email me!
 
+  #generator: false
+
 
 markdown_extensions:
   - attr_list
@@ -61,4 +63,7 @@ markdown_extensions:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
 
-copyright: Copyright &copy; 2021 Arjun Ramesh
+copyright_notice:
+  author: Arjun Ramesh
+  update_time: true
+
