@@ -26,7 +26,7 @@
       &copy; {{ config.copyright_notice.author }}
   {% endif %}
   {% if config.copyright_notice.update_time == true %}
-      | Updated: {{ build_date_utc.strftime('%d %b, %Y') }}
+      | Updated: {{ build_date_utc.strftime('%d %b, %Y (%-I:%M %p)') }}
   {% endif %}
     </i>
   </div>
