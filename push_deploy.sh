@@ -13,7 +13,7 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-sleep 1
+sleep 3
 
 # Update CMU website (rebase needed for forced gh-page push)
 set -x
