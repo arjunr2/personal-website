@@ -53,3 +53,7 @@
 .md-nav__item {
   padding: 0 0 0.15rem 0.6rem;
 }
+
+.md-nav__item--active {
+  font-size: 1.0em;
+}

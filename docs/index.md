@@ -9,7 +9,7 @@ My research interests include distributed embedded systems, computer architectur
 and operating systems. I completed my B.S in ECE at *UT Austin*, with a focus in Computer 
 Architeture and Embedded Systems. 
 
-I often engross myself in personal projects, Hackathons, and
+I often engross myself in personal projects, hackathons, and
 product development. A notable mention is my senior capstone research project at UT, where we
 designed an in-house out-of-order RISC-V core with custom perfomance
 enhancing extensions to system. A more detailed list of my personal projects can be found [here](projects)
@@ -29,18 +29,15 @@ parts of both.
 * *May 2020*: Graduated with a Bachelors degree from UT Austin :metal: 
 
 <br/>
-## Resources & Contact
+## Contact
 
-*Office Address*:
+*:material-office-building-marker: Work Address*
 > Robert Mehrabian CIC (1st floor)
 <br/>
 > 4720 Forbes Avenue, Pittsburgh, PA 15213
 
-*Email*: [arjunr2@andrew.cmu.edu](mailto:arjunr2@andrew.cmu.edu) (preferred mode of contact)
+:material-gmail:&nbsp; [arjunr2@andrew.cmu.edu](mailto:arjunr2@andrew.cmu.edu)
 
-*CV*: Refer page header
+*Refer to page footer for other social links*
 
-*Social Links*: Refer page footer
-
-<br/>
 <br/>

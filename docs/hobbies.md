@@ -19,6 +19,7 @@ then world record for 3x3 Blind with a 22.36s average! I also judged a competito
 solved 19 cubes (in one go) blindfolded at Indian Nationals!
 <br/>
 <br/>
+<br/>
 ## Music
 
 I listen to music for hours on end. A lot of jazz, classic and progressive rock 
@@ -39,7 +40,7 @@ There's too much incredible music to list, but here are some of noteworthy artis
 <iframe width="23%" src="https://www.youtube.com/embed/dKsA8HzZnQc" 
   style=margin:1em;margin-left:0;margin-top:0.3em;float:left > </iframe>
 
-I play the *guitar*, *piano*, and *flute*. Jamming with friends is always a pleasure.
+I play the *guitar*, *piano*, and *flute*. Jamming is always a pleasure.
 Please reach out to me if you need a guitarist :)
 
 My music content can be found on my [**YouTube**](https://www.youtube.com/channel/UCQLPzl1LHeF25W3SiKSAqGQ?view_as=subscriber) 
@@ -49,12 +50,12 @@ page
 self-taught and mimiced my brother, who was a lefty
 <br/>
 <br/>
+<br/>
 ## Sports
 
-![trek](assets/hobbies/Trek_Finish.jpg){ align=left width=25% style=margin:1em;margin-left:0;margin-top:0.3em }
-![badminton](assets/hobbies/Badminton_DP.jpg){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em }
+![trek](assets/hobbies/Trek_Finish.jpg){ align=left width=33% style=margin:1em;margin-left:0;margin-top:0.3em }
 ### Running
-I competed in a range of atheletics events, particualarly long distance running (10K).
+I competed in a range of atheletics events, particualarly long distance running (5Ks and 10Ks).
 I have been running sub-50 min 10Ks since the age of 15.
 
 ### Trekking
@@ -62,6 +63,7 @@ High-altitude trekking always provides a good mix of exercise and amazing views!
 hike has been the Annapurna Circuit (120 km, 11 days), peaking at a height of 5400m at the 
 age of 14.
 
+![badminton](assets/hobbies/Surf_DP.jpg){ align=left width=33% style=margin:1em;margin-left:0;margin-top:0.3em }
 ### Badminton
 Badminton has been my primary sport of interest, and I have competed frequently in university,
 and state championships back in India.
