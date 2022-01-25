@@ -14,13 +14,17 @@
   border-color: rgba(84, 109, 120, 0.6);
 }
 
+.md-ellipsis {
+  font-weight: 600;
+}
+
 
 /* Headers */
 .md-typeset h1 {
   /* display: none;*/
   text-align: center;
   color: #546d78;
-  font-weight: 900;
+  font-weight: 500;
 }
 
 
