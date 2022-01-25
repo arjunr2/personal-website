@@ -4,10 +4,25 @@
   --md-primary-fg-color--dark:  #6e834c;
 }
 
+/* Admoniton for resources */
+.md-typeset :is(.abstract,.summary,.tldr)>:is(.admonition-title,summary) {
+  border-color: rgba(84, 109, 120, 1.0); /*#00b0ff;*/
+  background-color: rgba(84, 109, 120, 0.2);/*rgba(#546d78, 0.9);*/
+}
+
+.md-typeset :is(.admonition,details):is(.abstract,.summary,.tldr) {
+  border-color: rgba(84, 109, 120, 0.6);
+}
+
+
 /* Headers */
 .md-typeset h1 {
-  display: none;
+  /* display: none;*/
+  text-align: center;
+  color: #546d78;
+  font-weight: 500;
 }
+
 
 @media screen and (min-width: 601px) {
   .md-typeset h2 {
