@@ -2,7 +2,7 @@
 
 ## Extending the RISC-V ISA
 
-![riscv](assets/projects/RISCV_Logo.png){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em }
+![riscv](assets/projects/RISCV_Logo.png){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em;margin-bottom:0.3em }
 
 * Custom synthesizable Verilog implementation of RV32-IM core and memory hierarchy
 * Added ISA + Microarchitectural extensions to accelerate:
@@ -20,7 +20,7 @@
 
 ## Processing-In-Memory: Sorting Algorithms
 
-![pim](assets/projects/PIM.jpg){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em }
+![pim](assets/projects/PIM.jpg){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em;margin-bottom:0.3em }
 
 * Surveyed the ability of PIM to accelerate sorting techniques
     * Two base algorithms -- *insertion/radix sort* + *merge* -- showed similar results
@@ -37,7 +37,7 @@
 
 ## XC2064 FPGA Design
 
-![fpga](assets/projects/FPGA.jpg){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em }
+![fpga](assets/projects/FPGA.jpg){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em;margin-bottom:0.3em }
 
 * Fully-synthesizable Verilog design of the XC2064 from 1985
 * Created tooling for demonstration
@@ -54,7 +54,7 @@
 
 ## 1D Cellular Automata Theory
 
-![cell](assets/projects/multi_choice.png){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em }
+![cell](assets/projects/multi_choice.png){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em;margin-bottom:0.3em }
 
 * Brief survey of local pattern formation in 1D Cellular Automata Theory  
 
@@ -67,7 +67,7 @@
 
 ## RTOS Design
 
-![cell](assets/projects/RTOS2.png){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em }
+![rtos](assets/projects/RTOS2.png){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em;margin-bottom:0.3em }
 
 * Built a bare-metal RTOS on TM4C123 microcontroller with basic features:
     * Real-time priority scheduler with thread/process management 
@@ -84,7 +84,7 @@
 
 ## JASP Cellular Phone
 
-![jasp](assets/projects/JASP2.jpg){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em }
+![jasp](assets/projects/JASP2.jpg){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em;margin-bottom:0.3em }
 
 * Supports call+text functionality with total cost under $50
 * Integrates a LCD, real-time clock, and numpad on a TM4C123 microcontroller
@@ -100,7 +100,7 @@
 
 ## Enrich: PennApps 2019
 
-![enrich](assets/projects/Enrich.png){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em }
+![enrich](assets/projects/Enrich.png){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em;margin-bottom:0.3em }
 
 * Prototype for an interactive course organization and lecturing platform
 * Allows for messaging service, speech-to-text translation, and a "learning ratio" statistic 
@@ -116,7 +116,7 @@
 
 ## RecycleMe: CreateAThon 2019
 
-![recycle](assets/projects/TeamTrash.png){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em }
+![recycle](assets/projects/TeamTrash.png){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em;margin-bottom:0.3em }
 
 * Smart autonomous trash-sorter to sort Recyclable, Landfill, and Compostable materials 
     * Raspberry Pi controls movable compartment with camera to detect new objects
@@ -134,7 +134,7 @@
 
 ## Home-Unity: HackDFW 2019
 
-![hu](assets/projects/HomeUnity.png){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em;margin-bottom:3em }
+![hu](assets/projects/HomeUnity.png){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em;margin-bottom:0.3em;margin-bottom:3em }
 
 * Mobile app for homeless users to receive notifications about provisions from the City of 
  Dallas
@@ -152,7 +152,7 @@
 
 ## ChairIoT: CreateAThon 2018
 
-![iot](assets/projects/Chair1_crop.jpg){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em }
+![iot](assets/projects/Chair1_crop.jpg){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em;margin-bottom:0.3em }
 
 * Prototype for a self-organizing chair platform
     * Raspberry Pi used for processing pipeline and motor control

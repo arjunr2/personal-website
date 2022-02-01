@@ -1,6 +1,6 @@
 
 ## Biography
-![title](assets/home/Headshot_Portrait.jpg){ align=left width=35% style=margin:1em;margin-left:0;margin-top:0.3em }
+![title](assets/home/Headshot_Portrait.jpg){ align=left width=35% style=margin:1em;margin-left:0;margin-top:0.3em;margin-bottom:0.3em }
 
 **Howdy! Arjun Ramesh here :wave:**
 

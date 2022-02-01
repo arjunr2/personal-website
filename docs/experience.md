@@ -39,7 +39,7 @@
 <br/>
 ### Centaur Technology Inc.
 
-![centaur](assets/experience/Centaur.jpeg){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em }
+![centaur](assets/experience/Centaur.jpeg){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em;margin-bottom:0.3em }
 
 &nbsp; :material-account-tie-hat: &nbsp;***CPU Design Verification Intern***
 &emsp;|&emsp; :octicons-location-16: *Austin, TX*

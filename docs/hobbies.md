@@ -1,7 +1,7 @@
 
 ## Speedcubing
 
-![cube](assets/hobbies/Cubing_DP.jpg){ align=left width=15% style=margin:1em;margin-left:0;margin-top:0.3em }
+![cube](assets/hobbies/Cubing_DP.jpg){ align=left width=15% style=margin:1em;margin-left:0;margin-top:0.3em;margin-bottom:0.3em }
 
 * I started serious speedcubing in high-school and competed in a variety of 
 local/national competitions 
@@ -27,7 +27,7 @@ I listen to music for hours on end. A lot of jazz, classic and progressive rock
 
 There's too much incredible music to list, but here are some of noteworthy artists/albums:
 
-![guitar](assets/hobbies/Guitar_DP.jpg){ align=left width=15% style=margin:1em;margin-left:0;margin-top:0.3em }
+![guitar](assets/hobbies/Guitar_DP.jpg){ align=left width=15% style=margin:1em;margin-left:0;margin-top:0.3em;margin-bottom:0.3em }
 
 * Genesis: *Nursery Cryme (1971), Foxtrot (1972), Selling England (1973), Lamb (1974)*
 * Mike Oldfield: *Amarok (1990), Ommadawn (1975), Incantations (1978)*
@@ -38,7 +38,7 @@ There's too much incredible music to list, but here are some of noteworthy artis
 <iframe width="23%" src="https://www.youtube.com/embed/kCN0RsQ0cQo" 
  style=margin-left:0;margin-top:0.3em;float:left ></iframe>
 <iframe width="23%" src="https://www.youtube.com/embed/dKsA8HzZnQc" 
-  style=margin:1em;margin-left:0;margin-top:0.3em;float:left > </iframe>
+  style=margin:1em;margin-left:0;margin-top:0.3em;margin-bottom:0.3em;float:left > </iframe>
 
 I play the *guitar*, *piano*, and *flute*. Jamming is always a pleasure.
 Please reach out to me if you need a guitarist :)
@@ -53,7 +53,7 @@ self-taught and mimiced my brother, who was a lefty
 <br/>
 ## Sports
 
-![trek](assets/hobbies/Trek_Finish.jpg){ align=left width=33% style=margin:1em;margin-left:0;margin-top:0.3em }
+![trek](assets/hobbies/Trek_Finish.jpg){ align=left width=33% style=margin:1em;margin-left:0;margin-top:0.3em;margin-bottom:0.3em }
 ### Running
 I competed in a range of atheletics events, particualarly long distance running (5Ks and 10Ks).
 I have been running sub-50 min 10Ks since the age of 15.
@@ -63,7 +63,7 @@ High-altitude trekking always provides a good mix of exercise and amazing views!
 hike has been the Annapurna Circuit (120 km, 11 days), peaking at a height of 5400m at the 
 age of 14.
 
-![badminton](assets/hobbies/Surf_DP.jpg){ align=left width=33% style=margin:1em;margin-left:0;margin-top:0.3em }
+![badminton](assets/hobbies/Surf_DP.jpg){ align=left width=33% style=margin:1em;margin-left:0;margin-top:0.3em;margin-bottom:0.3em }
 ### Badminton
 Badminton has been my primary sport of interest, and I have competed frequently in university,
 and state championships back in India.

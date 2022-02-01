@@ -55,7 +55,12 @@
 
 /* Layout */
 .md-sidebar { width: 10.0rem; }
-.md-grid { max-width: 1200px; }
+@media screen and (max-width: 2000px) {
+  .md-grid { max-width: 1200px; }
+}
+@media screen and (min-width: 2001px) {
+  .md-grid { max-width: 1400px; }
+}
 
 /* Generic text and code */
 .md-typeset a { color: #0a3b97; }
