@@ -25,8 +25,9 @@ parts of both.
 
 <br/>
 ## News
-* *Aug 2020*: Started my PhD at Carnegie Mellon University!
-* *May 2020*: Graduated with a Bachelors degree from UT Austin :metal: 
+* *Oct 2022*: Invited talk: *Giving the Cloud an Edge with WebAssembly* at WASM Research Day (with Tianshu Huang)
+* *Aug 2021*: Started my PhD at Carnegie Mellon University!
+* *May 2021*: Graduated with a Bachelors degree from UT Austin :metal: 
 
 <br/>
 ## Contact
