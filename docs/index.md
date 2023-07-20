@@ -25,6 +25,7 @@ parts of both.
 
 <br/>
 ## News
+* *Apr 2023*: Officially a PhD Candidate after passing my qualifiers
 * *Oct 2022*: Invited talk: *Giving the Cloud an Edge with WebAssembly* at WASM Research Day (with Tianshu Huang)
 * *Aug 2021*: Started my PhD at Carnegie Mellon University!
 * *May 2021*: Graduated with a Bachelors degree from UT Austin :metal: 
