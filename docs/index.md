@@ -6,8 +6,9 @@
 
 I am a PhD student at *Carnegie Mellon University (CMU)* under Prof. [Anthony Rowe](https://users.ece.cmu.edu/~agr/).
 My research interests include distributed embedded systems, computer architecture, 
-and operating systems. I completed my B.S in ECE at *UT Austin*, with a focus in Computer 
-Architeture and Embedded Systems. 
+and operating systems. In particular, I am focused on expanding emerging low-level virtualization solutions,
+like WebAssembly into distributed, cyber-physical systems.
+I completed my B.S in ECE at *UT Austin*, with a focus in Computer Architeture and Embedded Systems. 
 
 I often engross myself in personal projects, hackathons, and
 product development. A notable mention is my senior capstone research project at UT, where we
@@ -25,8 +26,9 @@ parts of both.
 
 <br/>
 ## News
+* *Oct 2023*: Invited talk: *Leveraging Wasm Instrumentation* at Wasm Research Day (with Tianshu Huang)
 * *Apr 2023*: Officially a PhD Candidate after passing my qualifiers
-* *Oct 2022*: Invited talk: *Giving the Cloud an Edge with WebAssembly* at WASM Research Day (with Tianshu Huang)
+* *Oct 2022*: Invited talk: *Giving the Cloud an Edge with WebAssembly* at Wasm Research Day (with Tianshu Huang)
 * *Aug 2021*: Started my PhD at Carnegie Mellon University!
 * *May 2021*: Graduated with a Bachelors degree from UT Austin :metal: 
 
