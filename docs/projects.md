@@ -58,7 +58,7 @@
 
 * Brief survey of local pattern formation in 1D Cellular Automata Theory  
 
-&ensp; :material-file-document-outline: &nbsp;[**Paper**](https://drive.google.com/file/d/1pp3Ui8jZkbUepoJQDvJm0HQ-iSu-Dniv/view)
+&ensp; :material-file-document-outline: &nbsp;[**Paper**](https://drive.google.com/file/d/1P2Sxl4vDeoLRzdk5EeYzpcMRMJDdGRK9/view?usp=sharing)
 &emsp;|&emsp; Solo
 <br/>
 <br/>
