@@ -1,12 +1,13 @@
 site_name: Arjun Ramesh
 nav:
   - Home: index.md
+  - Publications: pubs.md
   - Professional Experience: experience.md
   - Projects: projects.md
 
   - Hobbies: hobbies.md
   #- Miscellaneous: misc.md
-  - Resources: resources.md
+  - CV: resources.md
 
 theme:
   name: material

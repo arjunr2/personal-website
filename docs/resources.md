@@ -12,7 +12,7 @@
 ??? abstract "Curriculum Vitae"
 
     <p align="center">
-    <iframe src="../assets/CV_Work.pdf#zoom=100" width="100%" height=830> </iframe>
+    <iframe src="../assets/resources/CV_Work.pdf#zoom=100" width="100%" height=830> </iframe>
     </p>
 
 <br/>

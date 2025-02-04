@@ -81,3 +81,13 @@
 .md-nav__item--active {
   font-size: 1.0em;
 }
+
+
+/* Buttons */
+.custom-button {
+    border-radius: 0.5rem;
+    box-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.4);
+    padding: 0.4rem 1.5rem;
+    margin-right: 0.2rem;
+    font-weight: bold;
+}

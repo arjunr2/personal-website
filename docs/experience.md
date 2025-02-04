@@ -19,6 +19,22 @@
 
 ## Industry
 
+### Bosch Research
+
+![bosch](assets/experience/Bosch.jpg){ align=left width=20% style=margin:1em;margin-left:0;margin-top:1.8em }
+
+&nbsp; :material-account-tie-hat: &nbsp;***IoT Edge Integration Intern***
+&emsp;|&emsp; :octicons-location-16: *Pittsburgh, PA*
+
+* Development towards Silverline, a framework for management and orchestration of real-time distributed workloads
+* Deployed a WebAssembly-virtualized cloud-edge distributed inverted pendulum application with 2ms control-loop on CtrlX
+
+&nbsp; :material-file-code-outline: &nbsp;*C/C++*, &nbsp;*Python*
+&emsp;&emsp; :material-arrow-top-right-thick: &nbsp;*Linux, Virtualization, Embedded Systems*
+<br/>
+<br/>
+<br/>
+
 ### Apple Inc.
 
 ![apple](assets/experience/Apple.png){ align=left width=20% style=margin:1em;margin-left:0;margin-top:1.8em }

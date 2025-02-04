@@ -9,10 +9,10 @@
     * Searching in Linear-Probed Hashsets (up to 10x speedup on high load-factors)
     * Breadth-First Search (average 2x speedup) 
 
-&ensp; :octicons-video-16: &nbsp;[**Presentation**](https://vimeopro.com/utece/capstone2021spring/video/543700201)
-&emsp;|&emsp; :material-file-document-outline: [**Design**](https://docs.google.com/document/d/1Ygt9UbJ5kYmJLXBvFtrCkNEAzlkYbvzGRgO9i6_9oP4/edit?usp=sharing)
-&emsp;|&emsp; :material-github: [**Code**](https://github.com/Patt-Senior-Design/core-design)
-&emsp;|&emsp; Team of 2
+[:octicons-video-16: Presentation](https://vimeopro.com/utece/capstone2021spring/video/543700201){ .custom-button }
+[:material-file-document-outline: Design](https://docs.google.com/document/d/1Ygt9UbJ5kYmJLXBvFtrCkNEAzlkYbvzGRgO9i6_9oP4/edit?usp=sharing){ .custom-button }
+[:material-github: Code](https://github.com/Patt-Senior-Design/core-design){ .custom-button }
+&emsp; **Team of 2**
 <br/>
 <br/>
 
@@ -27,9 +27,9 @@
     * PIM performed slower than C/C++ quicksort
     * Effect of PIM parameters (DPU-CPU tradeoffs, cache size) are analyzed
 
-&ensp; :material-file-document-outline: &nbsp;[**Presentation**](https://docs.google.com/presentation/d/1zqjP24BIFGV1ArI6x-K1hgJrn6dM-mcpVgXRz3by6Ms/edit#slide=id.p)
-&emsp;|&emsp; :material-github: [**Code**](https://github.com/yashparakh111/upmem-dpu)
-&emsp;|&emsp; Team of 5
+[:octicons-video-16: Presentation](https://docs.google.com/presentation/d/1zqjP24BIFGV1ArI6x-K1hgJrn6dM-mcpVgXRz3by6Ms/edit#slide=id.p){ .custom-button }
+[:material-github: Code](https://github.com/yashparakh111/upmem-dpu){ .custom-button }
+&emsp; **Team of 5**
 <br/>
 <br/>
 
@@ -44,9 +44,8 @@
     * Unit tests for LUT and CLB
     * Web GUI for interconnect bitstream generation
 
-&ensp; :material-file-document-outline: &nbsp;[**Reference Article**](https://www.righto.com/2020/09/reverse-engineering-first-fpga-chip.html)
-&emsp;|&emsp; :material-github: [**Code**](https://github.com/VLSI-Project/project)
-&emsp;|&emsp; Team of 3
+[:material-file-document-outline: Reference Article](https://www.righto.com/2020/09/reverse-engineering-first-fpga-chip.html){ .custom-button }
+&emsp; **Team of 3**
 <br/>
 <br/>
 
@@ -58,8 +57,8 @@
 
 * Brief survey of local pattern formation in 1D Cellular Automata Theory  
 
-&ensp; :material-file-document-outline: &nbsp;[**Paper**](https://drive.google.com/file/d/1P2Sxl4vDeoLRzdk5EeYzpcMRMJDdGRK9/view?usp=sharing)
-&emsp;|&emsp; Solo
+[:material-file-document-outline: Paper](https://drive.google.com/file/d/1P2Sxl4vDeoLRzdk5EeYzpcMRMJDdGRK9/view?usp=sharing){ .custom-button }
+&emsp; **Solo**
 <br/>
 <br/>
 
@@ -75,8 +74,8 @@
     * Wireless remote-procedure calls and user interpreter 
 * Demonstrated OS robustness with two-player remote battleship application
 
-&ensp; :octicons-video-16: &nbsp;[**Demo**](https://www.youtube.com/watch?v=N1q2bLxdYYM)
-&emsp;|&emsp; Team of 2
+[:octicons-video-16: Demo](https://www.youtube.com/watch?v=N1q2bLxdYYM){ .custom-button }
+&emsp; **Team of 2**
 <br/>
 <br/>
 
@@ -91,8 +90,8 @@
 * Uses LittlevGL library for graphical rendering
 * Voted best project during class (EE 445L) project showcase
 
-&ensp; :material-github: [**Code**](https://github.com/JASP-EE445L-Fall19/Phone_4C123)
-&emsp;|&emsp; Team of 4
+[:material-github: Code](https://github.com/JASP-EE445L-Fall19/Phone_4C123){ .custom-button }
+&emsp; **Team of 4**
 <br/>
 <br/>
 
@@ -106,9 +105,9 @@
 * Allows for messaging service, speech-to-text translation, and a "learning ratio" statistic 
  to get anonymous real-time feedback about the lecture 
 
-&ensp; :fontawesome-brands-dev: &nbsp;[**Devpost**](https://devpost.com/software/enrich-an-education-platform-to-increase-collaboration)
-&emsp;|&emsp; :material-github: [**Code**](https://github.com/arjunramesh99/Enrich)
-&emsp;|&emsp; Team of 4
+[:fontawesome-brands-dev: Devpost](https://devpost.com/software/enrich-an-education-platform-to-increase-collaboration){ .custom-button }
+[:material-github: Code](https://github.com/arjunramesh99/Enrich){ .custom-button }
+&emsp;|&emsp; **Team of 4**
 <br/>
 <br/>
 
@@ -123,10 +122,10 @@
     * A trained CNN runs on offsite server to process data in real-time
 * Built a mobile app to crowd-source the gathering and labelling of real-world dataset
 
-&ensp; :material-file-document-outline: &nbsp;[**Presentation**](https://docs.google.com/presentation/d/1hpvU2TW-b8DZ-9Plj63A9ec2fWhC68u3J7fawatYcz0/edit#slide=id.g6349289ee8_0_57)
-&emsp;|&emsp; :material-github: [**System Code**](https://github.com/yashparakh111/createathon2019)
-&emsp;|&emsp; :material-github: [**Mobile App**](https://github.com/yashparakh111/RecycleMe)
-&emsp;|&emsp; Team of 5
+[:material-file-document-outline: Presentation](https://docs.google.com/presentation/d/1hpvU2TW-b8DZ-9Plj63A9ec2fWhC68u3J7fawatYcz0/edit#slide=id.g6349289ee8_0_57){ .custom-button }
+[:material-github: System Code](https://github.com/yashparakh111/createathon2019){ .custom-button }
+[:material-github: Mobile App](https://github.com/yashparakh111/RecycleMe){ .custom-button }
+&emsp; **Team of 5**
 <br/>
 <br/>
 
@@ -142,9 +141,9 @@
  urban geography of homelessness
 * Awarded first place from City of Dallas and OmniSci under social good category
 
-&ensp; :fontawesome-brands-dev: &nbsp;[**Devpost**](https://devpost.com/software/home-unity-fctb5s)
-&emsp;|&emsp; :material-github: [**Code**](https://github.com/yashparakh111/Home-Unity)
-&emsp;|&emsp; Team of 5
+[:fontawesome-brands-dev: Devpost](https://devpost.com/software/home-unity-fctb5s){ .custom-button }
+[:material-github: Code](https://github.com/yashparakh111/Home-Unity){ .custom-button }
+&emsp; **Team of 5**
 <br/>
 <br/>
 
@@ -160,9 +159,9 @@
     * Implemented Kalman filter to compute net displacement
     * Power management components mounted below the platform
 
-&ensp; :material-file-document-outline: &nbsp;[**Proposal**](https://drive.google.com/file/d/1ro5dI3SfT6lGEWr6IyF8sTGZJdI4XTpq/view?usp=sharing)
-&emsp;|&emsp; :material-github: [**Code**](https://github.com/yashparakh111/Self-Organizing-Chair)
-&emsp;|&emsp; Team of 5
+[:material-file-document-outline: Proposal](https://drive.google.com/file/d/1ro5dI3SfT6lGEWr6IyF8sTGZJdI4XTpq/view?usp=sharing){ .custom-button }
+[:material-github: Code](https://github.com/yashparakh111/Self-Organizing-Chair){ .custom-button }
+&emsp; **Team of 5**
 
 
 <br/>
