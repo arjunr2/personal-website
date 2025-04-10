@@ -23,6 +23,7 @@ the ISA. A more detailed list of my personal projects can be found [here](projec
 * *Mar 2025*: :material-briefcase-plus-outline: Starting an internship at *F5 Networks Inc.* for the Summer '25.
 * *Feb 2025*: :material-file-document-check: Paper Accepted -- *Interference-Aware Edge Runtime Prediction with Conformal Matrix Completion* at *MLSys '25*! 
 * *Feb 2025*: :material-file-document-check: Paper Accepted -- *Unveiling Heisenbugs with Diversified Execution* at *OOPSLA '25*! :fontawesome-solid-bug:
+* *Feb 2025*: :material-microphone-variant: Invited talk -- *Towards Holistic Observability of Edge CPS* at Wasm Research Day
 * *Jan 2025*: :material-file-document-check: Paper Accepted -- *Empowering WebAssembly with Thin-Kernel Interfaces* at *EuroSys '25*! :simple-webassembly: :simple-linux:
 * *Jan 2025*: :material-file-document-check: Paper Accepted -- *Silverline* (collaboration with Bosch Research) at *RTAS '25*! :simple-webassembly:
 * *Oct 2024*: :material-microphone-variant: Invited talk -- *Unveiling CPS Heisenbugs at Scale* at Bosch RDS Tech Colloquium
