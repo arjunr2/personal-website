@@ -3,8 +3,8 @@
 ![title](assets/home/Headshot_Portrait.jpg){ align=left width=30% style=margin:1em;margin-left:0;margin-top:0.3em;margin-bottom:0.3em }
 
 I am a PhD student at *Carnegie Mellon University* advised by Prof. [Anthony Rowe](https://users.ece.cmu.edu/~agr/) and Prof. [Ben Titzer](https://s3d.cmu.edu/people/core-faculty/titzer-ben.html).
-I am interested in cross-cutting systems research for edge computing, spanning areas of virtualization, operating systems, compilers, and software debugging.
-My current research involves harnessing bytecode virtualization, particularly *WebAssembly*, to develop robust software deployment infrastructure for cyber-physical edge systems.
+I am interested in cross-cutting computer systems research, spanning areas of virtualization, operating systems, compilers, and software debugging.
+My current research direction encompasses harnessing bytecode virtualization, particularly *WebAssembly*, to develop robust software deployment and debugging infrastructure for cyber-physical edge systems.
 
 I enjoy low-level systems design, and have built  [custom out-of-order RISC-V CPU](projects.md/#extending-the-risc-v-isa), 
 an [FPGA](projects.md/#xc2064-fpga-design), and participated in numerous hackathons.
