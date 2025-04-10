@@ -101,9 +101,8 @@
 
 ![enrich](assets/projects/Enrich.png){ align=left width=20% style=margin:1em;margin-left:0;margin-top:0.3em;margin-bottom:0.3em }
 
-* Prototype for an interactive course organization and lecturing platform
-* Allows for messaging service, speech-to-text translation, and a "learning ratio" statistic 
- to get anonymous real-time feedback about the lecture 
+* Prototype for an interactive course organization and lecturing platform. Includes a 
+messaging service, speech-to-text translation, and anonymous real-time feedback.
 
 [:fontawesome-brands-dev: Devpost](https://devpost.com/software/enrich-an-education-platform-to-increase-collaboration){ .custom-button }
 [:material-github: Code](https://github.com/arjunramesh99/Enrich){ .custom-button }

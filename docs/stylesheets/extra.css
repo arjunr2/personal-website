@@ -84,10 +84,30 @@
 
 
 /* Buttons */
+/* Small */
+@media screen and (max-width: 30em) {
 .custom-button {
     border-radius: 0.5rem;
     box-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.4);
     padding: 0.4rem 1.5rem;
     margin-right: 0.2rem;
     font-weight: bold;
+    display: inline-block;
 }
+}
+/* Large */
+@media screen and (min-width: 30em) {
+.custom-button {
+    border-radius: 0.5rem;
+    box-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.4);
+    padding: 0.4rem 1.5rem;
+    margin-right: 0.2rem;
+    font-weight: bold;
+    display: inline-block;
+}
+}
+
+.custom-line-height {
+  line-height: 1.2rem;
+}
+

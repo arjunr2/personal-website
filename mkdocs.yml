@@ -7,7 +7,7 @@ nav:
 
   - Hobbies: hobbies.md
   #- Miscellaneous: misc.md
-  - CV: resources.md
+  - Resources: resources.md
 
 theme:
   name: material
@@ -64,6 +64,7 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.extra
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg

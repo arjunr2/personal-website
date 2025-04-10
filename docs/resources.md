@@ -12,7 +12,12 @@
 ??? abstract "Curriculum Vitae"
 
     <p align="center">
-    <iframe src="../assets/resources/CV_Work.pdf#zoom=100" width="100%" height=830> </iframe>
+    <iframe src="../assets/resources/CV_Internship_2025.pdf#zoom=80" width="100%" height=830> </iframe>
     </p>
 
-<br/>
+## Resume (Single-Page)
+??? abstract "Resume (Single-Page)"
+
+    <p align="center">
+    <iframe src="../assets/resources/CV_SinglePager_Internship_2025.pdf#zoom=80" width="100%" height=830> </iframe>
+    </p>

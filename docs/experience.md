@@ -1,22 +1,5 @@
 # Professional Experience
 
-## Academic
-
-### Undergraduate Teaching Assistant
-
-![ta](assets/experience/Teaching.png){ align=left width=20% style=margin:1em;margin-left:0;margin-top:1.8em }
-
-* Past Positions:
-    * Computer Architecture (*Dr. Yale Patt, UT Austin, Fall 2020*)
-    * Introduction to Computing (*Dr. Yale Patt, UT Austin, Fall 2019*)
-    * Introduction to Embedded Systems (*Dr. Jon Valvano, UT Austin, Spring 2019*)
-    * Introduction to Computing (*Dr. Ramesh Yerraballi, UT Austin, Fall 2018*)
-* Responsible for holding review sessions, office hours, grading, and constructing
- assignments/exams
-* Provide guidance to students in determining their fields of interest 
-
----
-
 ## Industry
 
 ### Bosch Research
@@ -106,6 +89,23 @@
 
 &nbsp; :material-file-code-outline: &nbsp;*Tensorflow*, &nbsp;*Python*
 &emsp;&emsp; :material-tools: &nbsp;*Keras*
+
+<br/>
+
+---
+
+## Academic
+
+### Teaching Assistant
+
+![ta](assets/experience/Teaching.png){ align=left width=20% style=margin:1em;margin-left:0;margin-top:1.8em }
+
+* Virtual Machines and Managed Runtimes (*Ben Titzer, CMU, Fall 2024*)
+* Distributed Embedded Systems (*Anthony Rowe, CMU, Fall 2022*)
+* Computer Architecture (*Yale Patt, UT Austin, Fall 2020*)
+* Introduction to Computing (*Yale Patt, UT Austin, Fall 2019*)
+* Introduction to Embedded Systems (*Jon Valvano, UT Austin, Spring 2019*)
+* Introduction to Computing (*Ramesh Yerraballi, UT Austin, Fall 2018*)
 
 
 ---
