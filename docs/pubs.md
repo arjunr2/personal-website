@@ -10,11 +10,12 @@
 </figure>
 *Webassembly (Wasm) adoption for new domains is often hindered by the lack of standard system interfaces.
 Kernel interface support in Wasm engines allow numerous languages and applications to target Wasm, including 
-existing high-level Wasm APIs (e.g. WASI), driving ISA portability and software safety down to even deeply embedded 
-OS software*
+arbitrary high-level Wasm APIs (WASI), driving ISA portability and software safety down to even deeply embedded 
+OS ecosystems*
 
 [:simple-acm: EuroSys 2025](https://doi.org/10.1145/3689031.3717470){ .custom-button }
 [:material-github: WALI](https://github.com/arjunr2/WALI){ .custom-button }
+[:simple-arxiv: Pre-Print](https://github.com/arjunr2/WALI){ .custom-button }
 <!---
 [:simple-arxiv: Arxiv](https://devpost.com/software/enrich-an-education-platform-to-increase-collaboration){ .custom-button }
 --->
@@ -32,10 +33,11 @@ OS software*
 <figure markdown="span">
   ![wali-image2](assets/pubs/Beanstalk.svg){ width="700rem" }
 </figure>
-*The manifestation of non-deterministic bugs are influenced by numerous factors including (but not limited to) hardware platforms
-and instrumentation of debuggers themselves. 
-We propose a debugging methodology that harnesses this diversity across platforms 
-and instrumentation to reproduce and characterize a wide range of bugs with interesting behaviours.*
+*The detection of quirky Heisenbugs are influenced by numerous factors including (but not limited to) hardware platforms
+and, strangely, the extent of instrumentation used by debuggers themselves. 
+We propose a debugging methodology that harnesses diversity across platforms 
+and the debugger's instrumentation to enable low-overhead debugging at scale.
+Tune into the paper for a characterization of over 100 numerous funky bug behaviors!*
 
 [:simple-acm: OOPSLA 2025](https://doi.org/10.1145/3720428){ .custom-button }
 [:material-github: Data Artifact](https://doi.org/10.5281/zenodo.14933663){ .custom-button }
@@ -55,7 +57,7 @@ Marco Giani, Paolo Pazzaglia, Charles Shelton, Nuno Pereira, Arne Hamann, Dirk Z
 <figure markdown="span">
   ![wali-image2](assets/pubs/Silverline.svg){ width="800rem" }
 </figure>
-*Real-time cyber-physical systems naturally lend themselves to distributed compute, but are programmed monolithically to curb complexity 
+*Real-time cyber-physical systems naturally lend themselves to distributed compute, but are often programmed monolithically to curb complexity 
 and safety exploits.
 Our framework, Silverline, explores programmability and orchestration of distributed applications transparently
 across wide range of hardware using WebAssembly for lightweight virtualization.* 
@@ -77,7 +79,7 @@ Tianshu Huang, <i><u>Arjun Ramesh</u></i>, Emily Ruppel, Nuno Pereira, Anthony R
 <figure markdown="span">
   ![wali-image2](assets/pubs/Pitot.svg){ width="1000rem" }
 </figure>
-*Performance prediction in heterogeneous edge computing systems is critical to effective resource allocation.
+*Performance prediction in heterogeneous edge computing systems is critical for effective resource allocation and cost optimization.
 We formulate this problem as matrix completion, which can be extended to handle complex, edge-specific concerns 
 such as interference and uncertainty quantification accurately.*
 
