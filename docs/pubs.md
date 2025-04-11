@@ -14,8 +14,9 @@ arbitrary high-level Wasm APIs (WASI), driving ISA portability and software safe
 OS ecosystems*
 
 [:simple-acm: EuroSys 2025](https://doi.org/10.1145/3689031.3717470){ .custom-button }
-[:material-github: WALI](https://github.com/arjunr2/WALI){ .custom-button }
 [:simple-arxiv: Pre-Print](https://github.com/arjunr2/WALI){ .custom-button }
+[:material-github: WALI](https://github.com/arjunr2/WALI){ .custom-button }
+[:material-language-rust: Rust Target](https://doc.rust-lang.org/nightly/rustc/platform-support/wasm32-wali-linux.html){ .custom-button }
 <!---
 [:simple-arxiv: Arxiv](https://devpost.com/software/enrich-an-education-platform-to-increase-collaboration){ .custom-button }
 --->
