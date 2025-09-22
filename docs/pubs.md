@@ -38,7 +38,7 @@ OS ecosystems*
 and, strangely, the extent of instrumentation used by debuggers themselves. 
 We propose a debugging methodology that harnesses diversity across platforms 
 and the debugger's instrumentation to enable low-overhead debugging at scale.
-Tune into the paper for a characterization of over 100 numerous funky bug behaviors!*
+Skim our paper for a characterization of over 100 numerous funky bug behaviors!*
 
 [:simple-acm: OOPSLA 2025](https://doi.org/10.1145/3720428){ .custom-button }
 [:material-github: Data Artifact](https://doi.org/10.5281/zenodo.14933663){ .custom-button }
