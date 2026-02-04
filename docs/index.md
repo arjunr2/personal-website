@@ -1,4 +1,5 @@
 
+> :material-briefcase: On the lookout for full-time systems roles in compilers, OS, and/or embedded/edge computing! (Summer 2026 grad)
 ## Biography
 ![title](assets/home/Headshot_Portrait.jpg){ align=left width=30% style=margin:1em;margin-left:0;margin-top:0.3em;margin-bottom:0.3em }
 
@@ -20,7 +21,9 @@ the ISA. A more detailed list of my personal projects can be found [here](projec
 
 <br/>
 ## News
-* *Sep 2025*: :octicons-milestone-24: Completed my Thesis Prospectus and am on the lookout for full-time positions
+
+* *Feb 2025*: :material-newspaper: LLVM-22 release introduces a target for WALI! (*wasm32-linux-muslwali*) 
+* *Sep 2025*: :octicons-milestone-24: Completed my Thesis Prospectus on *Unlocking Safe and Debuggable Programmability of Edge Systems with Low-Level Bytecode Virtualization*
 * *Aug 2025*: :material-podcast: Tune in to this [**WebAssembly Unleashed episode**](https://www.youtube.com/watch?v=OhybI5aUy5M) where I discuss excitement around debugging with Wasm.
 * *Mar 2025*: :material-briefcase-plus-outline: Starting an internship at *F5 Networks Inc.* for the Summer '25.
 * *Feb 2025*: :material-file-document-check: Paper Accepted -- *Interference-Aware Edge Runtime Prediction with Conformal Matrix Completion* at *MLSys '25*! 
