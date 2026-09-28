@@ -1,16 +1,20 @@
 
-> :material-briefcase: On the lookout for full-time systems roles in compilers, OS, and/or embedded/edge computing! (Summer 2026 grad)
 ## Biography
 ![title](assets/home/Headshot_Portrait.jpg){ align=left width=30% style=margin:1em;margin-left:0;margin-top:0.3em;margin-bottom:0.3em }
 
-I am a PhD student at *Carnegie Mellon University* advised by Prof. [Anthony Rowe](https://users.ece.cmu.edu/~agr/) and Prof. [Ben Titzer](https://s3d.cmu.edu/people/core-faculty/titzer-ben.html).
-I am interested in cross-cutting computer systems research, spanning areas of virtualization, operating systems, and compilers with an embedded systems flavor.
-My current research direction investigates harnessing bytecode virtualization, particularly *WebAssembly*, to unlock safe deployment and debuggability in resource-constrained cyber-physical edge systems.
+A hacker who likes low-level systems works, with cross-cutting interests across virtualization,
+  operating systems, compilers, and architecture.
 
-I enjoy low-level systems design, and have built  [custom out-of-order RISC-V CPU](projects.md/#extending-the-risc-v-isa), 
+I currently work at [*Vectorware*](https://www.vectorware.com/), a startup trying to break the shackles
+of the GPU programmability stack.
+I graduated with a PhD from *CMU*, advised by [Anthony Rowe](https://users.ece.cmu.edu/~agr/) and [Ben Titzer](https://s3d.cmu.edu/people/core-faculty/titzer-ben.html),
+where I investigated harnessing *Wasm* to unlock safety and observability
+in resource-constrained edge systems.
+I have also designed a [custom out-of-order RISC-V CPU](projects.md/#extending-the-risc-v-isa), 
 an [FPGA](projects.md/#xc2064-fpga-design), and participated in numerous hackathons-style events.
-Career goals aside, I am an avid rock climber, biker, surfer, and hiker. 
-Playing the guitar and piano is a fairly great escape from the day to day.
+
+A common theme in my life seems to be climbing things. Whether it's on two wheels or two feets,
+  cycling or bouldering endeavours are limitless: I'm always looking for the next big hill!
 With a passion for travelling, I live spontaneously and enjoy embracing elements from many cultures, including my Indian and American roots.
 
 <!---
@@ -22,8 +26,10 @@ the ISA. A more detailed list of my personal projects can be found [here](projec
 <br/>
 ## News
 
-* *Feb 2025*: :material-newspaper: LLVM-22 release introduces a target for WALI! (*wasm32-linux-muslwali*) 
-* *Sep 2025*: :octicons-milestone-24: Completed my Thesis Prospectus on *Unlocking Safe and Debuggable Programmability of Edge Systems with Low-Level Bytecode Virtualization*
+* *Sep 2026*: :material-briefcase-plus-outline: Started a full-time role as a Software Engineer at [*Vectorware*](https://www.vectorware.com/).
+* *Jul 2026*: :fontawesome-solid-user-graduate: Defending my PhD Dissertation on *Unlocking Safety and Observability for Edge Cyber-Physical Systems with Low-Level Bytecode Virtualization*!
+* *Feb 2026*: :material-newspaper: LLVM-22 release introduces a target for WALI! (*wasm32-linux-muslwali*) 
+* *Sep 2025*: :octicons-milestone-24: Completed my Thesis Prospectus!
 * *Aug 2025*: :material-podcast: Tune in to this [**WebAssembly Unleashed episode**](https://www.youtube.com/watch?v=OhybI5aUy5M) where I discuss excitement around debugging with Wasm.
 * *Mar 2025*: :material-briefcase-plus-outline: Starting an internship at *F5 Networks Inc.* for the Summer '25.
 * *Feb 2025*: :material-file-document-check: Paper Accepted -- *Interference-Aware Edge Runtime Prediction with Conformal Matrix Completion* at *MLSys '25*! 
