@@ -3,7 +3,7 @@
 {% block main %}
 {% set items = page.entries %}
 <div class="page">
-  {{ m.hero(page, entries(items, "title")) }}
+  {{ m.hero(page) }}
   {% for s in items %}
   <section class="group" id="{{ s.id }}">
     {{ m.label(s.title, s.icon or "star") }}

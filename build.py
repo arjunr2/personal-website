@@ -61,21 +61,6 @@ def md_inline(text):
     return Markup(re.sub(r"^<p>(.*)</p>$", r"\1", str(md(text)), flags=re.S))
 
 
-def md_toc(text):
-    """[(id, title)] of the level-2 headings in a Markdown text."""
-    md(text)
-    out = []
-
-    def walk(tokens):
-        for t in tokens:
-            if t["level"] == 2:
-                out.append((t["id"], Markup(t["name"])))
-            walk(t["children"])
-
-    walk(_md.toc_tokens)
-    return out
-
-
 def md_blocks(text):
     """One HTML fragment per paragraph-level block (blank-line separated)."""
     return [md(b) for b in re.split(r"\n\s*\n", text.strip()) if b.strip()]
@@ -199,7 +184,6 @@ def load_pages():
             "url": url,
             "body": body,
             "html": md(body),
-            "toc": md_toc(body),
             "entries": load_items(path.parent) if path.name == "index.md" and slug else [],
         }
     return pages

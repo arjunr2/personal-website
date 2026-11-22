@@ -13,23 +13,14 @@
 <h2 class="label">{% if icon_name %}{{ icon(icon_name) }}{% endif %}<span>{{ text }}</span>{% if count %}<span class="count">{{ count }}</span>{% endif %}</h2>
 {% endmacro %}
 
-{# The coloured title tile, plus a tile listing the page's sections: entries = [(anchor id, label)]. #}
-{% macro hero(page, entries) %}
-<div class="board hero-row{% if entries | length < 4 %} hero-row-short{% endif %}">
-  <header class="tile hero{% if not entries %} hero-solo{% endif %}">
+{# The coloured title tile at the top of every page except home. #}
+{% macro hero(page) %}
+<div class="board hero-row">
+  <header class="tile hero hero-solo">
     <span class="hero-ico" aria-hidden="true">{{ icon(page.icon | default("file")) }}</span>
     <span class="hero-ghost" aria-hidden="true">{{ icon(page.icon | default("file")) }}</span>
     <h1>{{ page.title }}</h1>
   </header>
-  {% if entries %}
-  <nav class="tile index{% if entries | length > 5 %} index-2{% endif %}" aria-label="{{ page.title }}">
-    <ol style="--rows:{{ (entries | length + 1) // 2 }}">
-    {% for id, text in entries %}
-      <li><a href="#{{ id }}"><span class="num">{{ "%02d" | format(loop.index) }}</span><span class="index-label">{{ text }}</span>{{ icon("arrow-down") }}</a></li>
-    {% endfor %}
-    </ol>
-  </nav>
-  {% endif %}
 </div>
 {% endmacro %}
 

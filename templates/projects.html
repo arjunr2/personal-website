@@ -3,7 +3,7 @@
 {% block main %}
 {% set items = page.entries %}
 <div class="page">
-  {{ m.hero(page, entries(items, "title")) }}
+  {{ m.hero(page) }}
   <div class="board">
   {% for x in items %}
     {% set size = x.size or [4, 3] %}

@@ -5,7 +5,7 @@ authors: [Arjun Ramesh, Tianshu Huang, Emily Ruppel, Dakshina Dasari, Behnaz Pou
   Marco Giani, Paolo Pazzaglia, Charles Shelton, Nuno Pereira, Arne Hamann, Dirk Ziegenbein, Anthony Rowe]
 figure: { src: /assets/pubs/Silverline.svg, alt: "Silverline architecture: application, host and platform manifests feed an orchestrator that deploys WebAssembly modules to edge platforms over a pub/sub bus" }
 links:
-  - { label: RTAS 2025, icon: ieee }
+  - { label: RTAS 2025, icon: ieee, url: "https://users.ece.cmu.edu/~agr/resources/publications/Silverline_RTAS_25.pdf" }
   - { label: Silverline Org, icon: github, url: "https://github.com/SilverLineFramework" }
 ---
 

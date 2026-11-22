@@ -2,7 +2,7 @@
 {% import "macros.html" as m %}
 {% block main %}
 <div class="page">
-  {{ m.hero(page, entries(page.files, "title")) }}
+  {{ m.hero(page) }}
   <div class="board">
   {% for f in page.files %}
     <article class="tile res" id="{{ f.id }}">

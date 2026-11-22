@@ -3,7 +3,7 @@
 {% block main %}
 {% set items = page.entries %}
 <div class="page">
-  {{ m.hero(page, entries(items, "title")) }}
+  {{ m.hero(page) }}
   <div class="board">
   {% for x in items %}
     <article class="tile pub {{ 'pub-wide' if x.figure | ratio > 2 else 'pub-split' }}" id="{{ x.id }}">

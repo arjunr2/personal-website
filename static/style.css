@@ -424,7 +424,7 @@ html.js .t-news.collapsed .tl-text { line-height: 1.55; }
 .docs .doc b { bottom: 22px; }
 
 
-/* ───────────────────────── Page hero + index ───────────────────────── */
+/* ───────────────────────── Page hero ───────────────────────── */
 .hero {
   --d: 7;
   display: flex; flex-direction: column; justify-content: space-between; gap: 40px;
@@ -432,28 +432,13 @@ html.js .t-news.collapsed .tl-text { line-height: 1.55; }
   background: var(--accent); color: var(--on-accent); border-color: transparent;
   view-transition-name: hero;
 }
-.hero-row .hero-solo { --d: 12; }
+.hero-row .hero-solo { --d: 12; min-height: 208px; gap: 28px; }
 .hero h1 { position: relative; font-size: var(--fs-hero); font-weight: 750; line-height: 0.94; letter-spacing: -0.055em; text-wrap: balance; }
 .hero-ico {
   display: grid; place-items: center; width: 52px; height: 52px; border-radius: 18px;
   background: color-mix(in srgb, var(--on-accent) 16%, transparent); font-size: 24px;
 }
 .hero-ghost { position: absolute; right: -36px; top: -44px; font-size: 300px; line-height: 0; opacity: 0.12; transform: rotate(-14deg); pointer-events: none; }
-
-.index { --d: 5; display: flex; padding: 14px; }
-.hero-row-short .hero { --d: 8; }
-.hero-row-short .index { --d: 4; }
-.index ol { display: grid; align-content: center; width: 100%; gap: 2px 8px; }
-.index-2 ol { grid-auto-flow: column; grid-template-rows: repeat(var(--rows), auto); grid-auto-columns: minmax(0, 1fr); }
-.index a {
-  display: flex; align-items: center; gap: 14px; min-height: 46px; padding: 9px 14px; border-radius: 16px;
-  font-size: var(--fs-15); font-weight: 650; line-height: 1.25; letter-spacing: -0.01em;
-  transition: background-color 0.2s;
-}
-.index a:hover { background: var(--accent-soft); }
-.index a .icon { margin-left: auto; color: var(--accent-ink); opacity: 0; transform: translateY(-4px); transition: opacity 0.2s, transform 0.3s var(--ease); }
-.index a:hover .icon, .index a:focus-visible .icon { opacity: 1; transform: none; }
-.index-label { text-wrap: balance; }
 
 /* ───────────────────────── Publications ───────────────────────── */
 .pub { display: grid; gap: 28px 48px; padding: 34px 36px 36px; }
@@ -733,10 +718,6 @@ html.js .t-news.collapsed .tl-text { line-height: 1.55; }
 
   .hero { min-height: 200px; padding: 22px 22px 26px; gap: 28px; }
   .hero-ghost { font-size: 220px; right: -30px; top: -30px; }
-  .index { padding: 12px; }
-  .index ol, .index-2 ol { display: flex; flex-wrap: wrap; gap: 6px; }
-  .index a { gap: 10px; min-height: 42px; padding: 7px 14px; border-radius: 16px; background: var(--tile-2); font-size: var(--fs-14); }
-  .index a .icon { display: none; }
   .label { margin-top: 14px; }
 
   .pub { padding: 24px 20px 20px; gap: 20px; }

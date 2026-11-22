@@ -131,7 +131,7 @@ Optional `size: [7, 6]` as for projects. Teaching and certificates are lists in 
 
 2. Add it to the nav in `site.yml`: `- { label: Talks, url: /talks/ }`
 
-It gets a title tile, a tile listing its `##` headings, and the body in a prose tile.
+It gets a title tile and the body in a prose tile.
 A paragraph that is only a YouTube link becomes a click-to-play video.
 To give a page one of the special layouts instead, set `template:` to a file name in `templates/`.
 

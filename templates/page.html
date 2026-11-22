@@ -3,7 +3,7 @@
 {# Any content/<name>.md without a `template:`: a title tile, then the Markdown in a prose tile. #}
 {% block main %}
 <div class="page">
-  {{ m.hero(page, page.toc) }}
+  {{ m.hero(page) }}
   <div class="board">
     {% if page.body.strip() %}<article class="tile prose doc-prose">{{ page.html }}</article>{% endif %}
     {% for x in page.entries %}

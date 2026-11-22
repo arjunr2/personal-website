@@ -3,7 +3,7 @@
 {% block main %}
 {% set roles = page.entries %}
 <div class="page">
-  {{ m.hero(page, entries(roles, "org") + entries(page.teaching, "title") + [("certificates", page.certificates_heading)]) }}
+  {{ m.hero(page) }}
 
   {{ m.label(page.industry_heading, "briefcase", roles | length) }}
   <div class="board">
