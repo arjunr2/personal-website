@@ -362,6 +362,25 @@ article.tile, .group { scroll-margin-top: 92px; }
 .tl-extra { white-space: nowrap; color: var(--ink-3); }
 .tl-extra .icon { margin-left: 2px; }
 
+/* news, collapsed (JS only; without JS the full timeline shows): the latest items as a horizontal row */
+.news-toggle { justify-self: start; border: 0; cursor: pointer; }
+.news-toggle:hover { background: var(--line-2); }
+html.js .t-news.collapsed { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+html.js .t-news.collapsed .news-head { position: static; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+html.js .t-news.collapsed .filters,
+html.js .t-news.collapsed .tl-year,
+html.js .t-news.collapsed .tl-item:not(.peek) { display: none; }
+html.js .t-news.collapsed .timeline { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 28px; }
+html.js .t-news.collapsed .timeline::before { display: none; }
+html.js .t-news.collapsed .tl-item { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding: 0; }
+html.js .t-news.collapsed .tl-item::before {
+  content: ""; position: absolute; left: 0; right: -28px; top: 5px; height: 2px; border-radius: 1px; background: var(--line-2);
+}
+html.js .t-news.collapsed .tl-item.peek-last::before { right: 0; }
+html.js .t-news.collapsed .tl-node { position: relative; order: -1; margin: 0 0 6px; }
+html.js .t-news.collapsed .tl-date { line-height: 1.2; }
+html.js .t-news.collapsed .tl-text { line-height: 1.55; }
+
 /* previews: one calm row of links to the other pages */
 .previews { grid-template-columns: repeat(5, minmax(0, 1fr)); }
 .previews .tile { grid-column: auto; }
@@ -673,6 +692,12 @@ address span + span::before { content: ""; display: inline-block; width: 4px; he
 /* ───────────────────────── Tablet: 6 columns ───────────────────────── */
 @media (max-width: 1179px) {
   html { scroll-padding-top: 76px; }
+  html.js .t-news.collapsed .timeline {
+    grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 40%; gap: 0 28px;
+    margin: 0 -36px; padding: 0 36px 4px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 36px; scrollbar-width: none;
+  }
+  html.js .t-news.collapsed .timeline::-webkit-scrollbar { display: none; }
+  html.js .t-news.collapsed .tl-item { scroll-snap-align: start; }
   .top { display: contents; view-transition-name: none; }
   .head { max-width: var(--shell); margin: 0 auto; padding: 14px 2px 0 0; }
   .nav {
@@ -751,6 +776,15 @@ address span + span::before { content: ""; display: inline-block; width: 4px; he
   .kind { grid-column: 3; grid-row: 1; }
   .tl-text { grid-column: 2 / -1; grid-row: 2; font-size: var(--fs-15); line-height: 1.55; }
   .tl-year { padding-top: 20px; }
+
+  html.js .t-news.collapsed .timeline {
+    grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 78%; gap: 0 20px;
+    margin: 0 -20px; padding: 0 20px 4px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 20px; scrollbar-width: none;
+  }
+  html.js .t-news.collapsed .timeline::-webkit-scrollbar { display: none; }
+  html.js .t-news.collapsed .tl-item { scroll-snap-align: start; }
+  html.js .t-news.collapsed .tl-item::before { right: -20px; }
+  .news-toggle { height: 42px; }
 
   .previews { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .previews .tile, .previews .pv-hobbies, .previews .pv-resources { grid-column: span 1; }

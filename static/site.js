@@ -100,6 +100,19 @@
     document.querySelectorAll(".tl-year").forEach((li) => (li.hidden = !years.has(li.dataset.year)));
   });
 
+  /* ── News: collapsed to the latest few as a horizontal row; "See all" expands the timeline ── */
+  const toggle = $(".news-toggle");
+  if (toggle) toggle.addEventListener("click", () => {
+    const news = toggle.closest(".t-news");
+    const open = news.classList.toggle("collapsed") === false;
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.textContent = open ? toggle.dataset.less : toggle.dataset.more;
+    if (!open) {
+      filters?.querySelector('.filter[data-filter=""]')?.click();
+      if (news.getBoundingClientRect().top < 0) news.scrollIntoView({ block: "start" });
+    }
+  });
+
   /* ── Clicks: figure lightbox, copy email, videos, PDF previews ── */
   const lightbox = $("#lightbox");
   document.addEventListener("click", (ev) => {

@@ -15,7 +15,7 @@
   kind: release
   text: LLVM-22 release introduces a target for WALI! (*wasm32-linux-muslwali*)
 - date: Sep 2025
-  kind: milestone
+  kind: education
   text: Completed my Thesis Prospectus!
 - date: Aug 2025
   kind: media

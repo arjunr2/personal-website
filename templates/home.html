@@ -30,7 +30,7 @@
   </section>
 
   {% set kinds = news | map(attribute="kind") | select | unique | list %}
-  <section class="tile t-news" aria-labelledby="news-h">
+  <section class="tile t-news collapsed" aria-labelledby="news-h">
     <header class="news-head">
       <h2 class="news-title" id="news-h">{{ page.news_heading }}<span class="count">{{ news | length }}</span></h2>
       <div class="filters" role="group" aria-labelledby="news-h" data-js>
@@ -39,11 +39,12 @@
         <button type="button" class="filter" data-filter="{{ k }}" data-kind="{{ k }}" aria-pressed="false"><i class="dot" aria-hidden="true"></i>{{ k }}<span class="n">{{ news | selectattr("kind", "equalto", k) | list | length }}</span></button>
         {% endfor %}
       </div>
+      <button type="button" class="chip news-toggle" aria-expanded="false" aria-controls="news-list" data-js data-more="See all {{ news | length }}" data-less="Show less">See all {{ news | length }}</button>
     </header>
-    <ol class="timeline">
+    <ol class="timeline" id="news-list">
     {% for n in news %}
       {% if loop.changed(n.year) %}<li class="tl-year" data-year="{{ n.year }}" aria-hidden="true"><span class="tl-date">{{ n.year }}</span><span class="tl-node"></span></li>{% endif %}
-      <li class="tl-item" data-kind="{{ n.kind }}" data-year="{{ n.year }}">
+      <li class="tl-item{% if loop.index <= 4 %} peek{% endif %}{% if loop.index == 4 or (loop.last and loop.index < 4) %} peek-last{% endif %}" data-kind="{{ n.kind }}" data-year="{{ n.year }}">
         <time class="tl-date" datetime="{{ n.iso }}">{{ n.date }}</time>
         <span class="tl-node" aria-hidden="true"></span>
         {% if n.kind or n.icon %}<span class="kind">{{ icon(n.icon or kind_icons.get(n.kind, "news")) }}<span>{{ n.kind }}</span></span>{% endif %}

@@ -103,6 +103,9 @@ def interactions(base, fails):
         b.pump(2.0)
         expect(b, "location.pathname === '/' && document.querySelectorAll('[style*=\"view-transition-name\"]').length === 0", "back on home, no tile keeps a transition name")
 
+        expect(b, "document.querySelectorAll('.tl-item').length > 4 && [...document.querySelectorAll('.tl-item')].filter((li) => li.checkVisibility()).length === 4", "news starts collapsed to the latest 4 items")
+        b.eval("document.querySelector('.news-toggle').click()")
+        expect(b, "[...document.querySelectorAll('.tl-item')].every((li) => li.checkVisibility()) && document.querySelector('.news-toggle').getAttribute('aria-expanded') === 'true'", "See all expands every news item")
         b.eval("document.querySelector('.filter[data-filter=\"talk\"]').click()")
         expect(b, "[...document.querySelectorAll('.tl-item')].every((li) => li.hidden === (li.dataset.kind !== 'talk')) && document.querySelector('.tl-year[data-year=\"2026\"]').hidden", "a news filter shows only its kind (and the years that have it)")
         b.eval("document.querySelector('.filter[data-filter=\"\"]').click()")
