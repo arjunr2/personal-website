@@ -8,7 +8,7 @@
     <article class="tile res" id="{{ f.id }}">
       <div class="res-top">
         <span class="doc" aria-hidden="true"><i></i><i></i><i></i><b>PDF</b></span>
-        <div><p class="num">{{ "%02d" | format(loop.index) }}</p><h2>{{ f.title }}</h2></div>
+        <div><h2>{{ f.title }}</h2></div>
       </div>
       <p class="res-actions">
         <a class="btn btn-solid" href="{{ f.file }}" target="_blank" rel="noopener">{{ icon("external") }}<span>Open PDF</span></a>

@@ -10,7 +10,7 @@
     {% set links %}{% if x.links | length > 1 %}<p class="links">{% for l in x.links[1:] %}{{ m.link(l, "chip") }}{% endfor %}</p>{% endif %}{% endset %}
     <article class="tile pub {{ 'pub-wide' if wide else 'pub-split' }}" id="{{ x.id }}">
       <div class="pub-text">
-        <p class="pub-meta"><span class="num">{{ "%02d" | format(loop.index) }}</span>{% if x.links %}{{ m.link(x.links[0], "chip chip-accent") }}{% endif %}</p>
+        <p class="pub-meta">{% if x.links %}{{ m.link(x.links[0], "chip chip-accent") }}{% endif %}</p>
         <h2>{{ x.title }}</h2>
         <p class="authors">{% for a in x.authors %}{% if a == site.name %}<b class="me">{{ a }}</b>{% else %}<span>{{ a }}</span>{% endif %}{{ ", " if not loop.last }}{% endfor %}</p>
         {% if wide %}{{ links }}{% endif %}
