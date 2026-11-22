@@ -33,17 +33,3 @@
 </div>
 {% endmacro %}
 
-{# Previous / Next tiles, following the nav order in site.yml. #}
-{% macro pager(pager) %}
-{% if pager %}
-<nav class="board pager" aria-label="Previous and next page">
-{% for n, dir in [(pager[0], "prev"), (pager[1], "next")] %}
-  <a class="tile link-tile pager-{{ dir }}" href="{{ n.url }}" data-accent="{{ n.accent }}">
-    <span class="pager-dir">{{ "Previous" if dir == "prev" else "Next" }}</span>
-    <span class="pager-label">{{ n.label }}</span>
-    {{ go("arrow-left" if dir == "prev" else "arrow-right") }}
-  </a>
-{% endfor %}
-</nav>
-{% endif %}
-{% endmacro %}

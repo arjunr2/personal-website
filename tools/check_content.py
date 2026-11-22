@@ -20,6 +20,8 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 PUBLIC = ROOT / "public"
 PAGES = {"index": "/", "pubs": "/publications/", "experience": "/experience/", "projects": "/projects/", "hobbies": "/hobbies/", "resources": "/resources/"}
 RENAMED = {"Headshot_Portrait.jpg": "headshot.jpg"}  # the web-optimised copy
+# Old text removed on purpose (Arjun asked for the contact block to go, 2026-11-23).
+DROPPED = {"Contact", "Work Address", "CIC 2313E (2nd floor)", "CIC", "2313E", "(2nd floor)", "4720 Forbes Avenue, Pittsburgh, PA 15213", "arjunr2@andrew.cmu.edu"}
 SEP = "\x00"
 
 
@@ -112,6 +114,8 @@ def main():
         runs, links, images = strip_markdown(source)
         text = built[url][0]
         for r in runs:
+            if r in DROPPED:
+                continue
             counts[0] += 1
             if norm(r) not in text:
                 problems.append("%s: text missing from %s: %s" % (name, url, r))

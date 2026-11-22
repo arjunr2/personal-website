@@ -15,7 +15,7 @@ python3 build.py                    # just build into public/
 
 | What | Where |
 |---|---|
-| Name, nav bar order, social links, contact details (footer) | `site.yml` |
+| Name, nav bar order, social links (under the biography), news tags | `site.yml` |
 | Home: biography (the body) and photo | `content/index.md` |
 | News | `content/news.yml` |
 | Publications | `content/publications/<paper>.md` |
@@ -131,8 +131,8 @@ Optional `size: [7, 6]` as for projects. Teaching and certificates are lists in 
 
 2. Add it to the nav in `site.yml`: `- { label: Talks, url: /talks/ }`
 
-It gets a title tile, a tile listing its `##` headings, the body in a prose tile, and
-Previous/Next tiles. A paragraph that is only a YouTube link becomes a click-to-play video.
+It gets a title tile, a tile listing its `##` headings, and the body in a prose tile.
+A paragraph that is only a YouTube link becomes a click-to-play video.
 To give a page one of the special layouts instead, set `template:` to a file name in `templates/`.
 
 ## Deploy

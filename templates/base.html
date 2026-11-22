@@ -52,29 +52,8 @@
 <main id="main" tabindex="-1">
 {% block main %}{% endblock %}
 </main>
-{% set c = site.contact %}
 <footer class="foot">
-  <section class="foot-contact" aria-labelledby="contact-h">
-    <h2 class="foot-h" id="contact-h">{{ c.heading }}</h2>
-    <div class="foot-addr">
-      <p class="contact-label">{{ icon("office") }}<span>{{ c.address_label }}</span></p>
-      <address>{% for line in c.address %}<span>{{ line | inline }}</span>{% endfor %}</address>
-    </div>
-    <p class="mail">
-      <a href="mailto:{{ c.email }}">{{ icon("email") }}<span>{{ c.email }}</span></a>
-      <button type="button" class="icon-btn copy" data-js data-copy="{{ c.email }}" aria-label="Copy email address" title="Copy email address">{{ icon("copy", "i-copy") }}{{ icon("check", "i-check") }}</button>
-    </p>
-  </section>
-  <div class="foot-meta">
-    <p class="foot-note"><span>{{ site.copyright }}</span><span class="foot-sep" aria-hidden="true"></span><span>Updated: {{ updated }}</span></p>
-    {% if page.url != "/" %}
-    <ul class="foot-social">
-    {% for s in site.social %}
-      <li><a href="{{ s.url }}">{% if s.icon %}{{ icon(s.icon) }}{% endif %}<span>{{ s.label }}</span></a></li>
-    {% endfor %}
-    </ul>
-    {% endif %}
-  </div>
+  <p class="foot-note"><span>{{ site.copyright }}</span><span class="foot-sep" aria-hidden="true"></span><span>Updated: {{ updated }}</span></p>
 </footer>
 {% block after %}{% endblock %}
 <script src="/site.js" defer></script>

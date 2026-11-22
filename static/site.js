@@ -113,7 +113,7 @@
     }
   });
 
-  /* ── Clicks: figure lightbox, copy email, videos, PDF previews ── */
+  /* ── Clicks: figure lightbox, videos, PDF previews ── */
   const lightbox = $("#lightbox");
   document.addEventListener("click", (ev) => {
     const t = ev.target;
@@ -128,14 +128,6 @@
     }
     if (lightbox && (t === lightbox || t.closest("#lightbox-close"))) lightbox.close();
 
-    const copy = t.closest("[data-copy]");
-    if (copy && navigator.clipboard) {
-      navigator.clipboard.writeText(copy.dataset.copy).then(() => {
-        copy.classList.add("done");
-        copy.setAttribute("aria-label", "Copied");
-        setTimeout(() => { copy.classList.remove("done"); copy.setAttribute("aria-label", "Copy email address"); }, 1600);
-      }, () => {});
-    }
 
     const yt = t.closest("a[data-yt]");
     if (yt) {

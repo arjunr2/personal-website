@@ -262,9 +262,8 @@ def build():
     for url, page in pages.items():
         name = page.get("template") or ("home" if url == "/" else "page")
         nav_i = next((i for i, n in enumerate(site["nav"]) if n["url"] == url), None)
-        pager = None if nav_i is None or url == "/" else (site["nav"][nav_i - 1], site["nav"][(nav_i + 1) % len(site["nav"])])
         try:
-            html = env.get_template(name + ".html").render(page=page, pager=pager)
+            html = env.get_template(name + ".html").render(page=page)
         except jinja2.TemplateError as err:
             raise BuildError(f"{url} (template {name}.html): {err}")
         dest = OUT / url.strip("/") / "index.html"

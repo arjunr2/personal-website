@@ -35,15 +35,6 @@ news_kinds:
   paper:     { icon: paper,     color: publications }
   talk:      { icon: talk,      color: talk }
 
-# The contact row in the footer of every page. Address lines accept inline Markdown.
-contact:
-  heading: Contact
-  address_label: Work Address
-  address:
-    - CIC **2313E** (2nd floor)
-    - 4720 Forbes Avenue, Pittsburgh, PA 15213
-  email: arjunr2@andrew.cmu.edu
-
 # Old addresses that keep working by forwarding to the new ones.
 redirects:
   /pubs/: /publications/
