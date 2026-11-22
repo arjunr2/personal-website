@@ -15,14 +15,14 @@ nav:
   - { label: Hobbies, url: /hobbies/ }
   - { label: Resources, url: /resources/ }
 
-# Footer links, and the small tiles on the home page. `icon` is optional.
+# Links under the biography on the home page, and in the footer of the other pages. `icon` is optional.
 social:
   - { label: GitHub, icon: github, url: "https://github.com/arjunr2" }
   - { label: LinkedIn, icon: linkedin, url: "https://www.linkedin.com/in/ajramesh" }
   - { label: Youtube, icon: youtube, url: "https://www.youtube.com/channel/UCQLPzl1LHeF25W3SiKSAqGQ?view_as=subscriber" }
   - { label: Email me!, icon: email, url: "mailto:arjunr2@andrew.cmu.edu" }
 
-# The Contact tile on the home page. Address lines accept inline Markdown.
+# The contact row in the footer of every page. Address lines accept inline Markdown.
 contact:
   heading: Contact
   address_label: Work Address

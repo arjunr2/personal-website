@@ -15,7 +15,7 @@ python3 build.py                    # just build into public/
 
 | What | Where |
 |---|---|
-| Name, nav bar order, social links, contact tile | `site.yml` |
+| Name, nav bar order, social links, contact details (footer) | `site.yml` |
 | Home: biography (the body) and photo | `content/index.md` |
 | News | `content/news.yml` |
 | Publications | `content/publications/<paper>.md` |
@@ -45,7 +45,7 @@ Add an entry at the top of `content/news.yml`:
 
 ```yaml
 - date: Dec 2026          # "Mon YYYY"
-  kind: talk              # career, education, release, milestone, media, paper or talk (sets the icon)
+  kind: talk              # career, education, release, milestone, media, paper or talk (sets the icon, colour and filter)
   text: Invited talk – *My Talk Title* at [Some Venue](https://example.com)
 ```
 

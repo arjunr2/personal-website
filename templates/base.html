@@ -37,7 +37,7 @@
   <header class="head">
     <a class="brand" href="/">
       <span class="brand-mark" aria-hidden="true">{% for w in site.name.split() %}{{ w[0] }}{% endfor %}</span>
-      {% if page.url == "/" %}<h1 class="brand-name">{{ site.name }}</h1>{% else %}<span class="brand-name">{{ site.name }}</span>{% endif %}
+      <span class="brand-name">{{ site.name }}</span>
     </a>
     <button type="button" class="icon-btn theme" id="theme" aria-label="Switch theme" data-js>{{ icon("sun", "i-sun") }}{{ icon("moon", "i-moon") }}</button>
   </header>
@@ -52,15 +52,29 @@
 <main id="main" tabindex="-1">
 {% block main %}{% endblock %}
 </main>
-<footer class="foot{% if page.url == '/' %} foot-home{% endif %}">
-  <p class="foot-note"><span>{{ site.copyright }}</span><span class="foot-sep" aria-hidden="true"></span><span>Updated: {{ updated }}</span></p>
-  {% if page.url != "/" %}
-  <ul class="foot-social">
-  {% for s in site.social %}
-    <li><a href="{{ s.url }}">{% if s.icon %}{{ icon(s.icon) }}{% endif %}<span>{{ s.label }}</span></a></li>
-  {% endfor %}
-  </ul>
-  {% endif %}
+{% set c = site.contact %}
+<footer class="foot">
+  <section class="foot-contact" aria-labelledby="contact-h">
+    <h2 class="foot-h" id="contact-h">{{ c.heading }}</h2>
+    <div class="foot-addr">
+      <p class="contact-label">{{ icon("office") }}<span>{{ c.address_label }}</span></p>
+      <address>{% for line in c.address %}<span>{{ line | inline }}</span>{% endfor %}</address>
+    </div>
+    <p class="mail">
+      <a href="mailto:{{ c.email }}">{{ icon("email") }}<span>{{ c.email }}</span></a>
+      <button type="button" class="icon-btn copy" data-js data-copy="{{ c.email }}" aria-label="Copy email address" title="Copy email address">{{ icon("copy", "i-copy") }}{{ icon("check", "i-check") }}</button>
+    </p>
+  </section>
+  <div class="foot-meta">
+    <p class="foot-note"><span>{{ site.copyright }}</span><span class="foot-sep" aria-hidden="true"></span><span>Updated: {{ updated }}</span></p>
+    {% if page.url != "/" %}
+    <ul class="foot-social">
+    {% for s in site.social %}
+      <li><a href="{{ s.url }}">{% if s.icon %}{{ icon(s.icon) }}{% endif %}<span>{{ s.label }}</span></a></li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
 </footer>
 {% block after %}{% endblock %}
 <script src="/site.js" defer></script>

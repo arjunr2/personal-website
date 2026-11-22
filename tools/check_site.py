@@ -6,7 +6,7 @@
 Every page in public/, on desktop (1440x900) and phone (390x844), in light and dark:
 FAIL on JavaScript errors, failed requests, broken images, sideways scrolling on the phone,
 internal links or #anchors that go nowhere, and pages without exactly one <h1>.
-Then a few interactions (theme switch, lightbox, PDF preview, video, deep link) and a no-JavaScript load.
+Then a few interactions (theme switch, news filter, lightbox, PDF preview, video, deep link) and a no-JavaScript load.
 WARN: things to look at by hand. Exit status is 0 when nothing failed.
 """
 import sys
@@ -102,6 +102,11 @@ def interactions(base, fails):
         b.eval("history.back()")
         b.pump(2.0)
         expect(b, "location.pathname === '/' && document.querySelectorAll('[style*=\"view-transition-name\"]').length === 0", "back on home, no tile keeps a transition name")
+
+        b.eval("document.querySelector('.filter[data-filter=\"talk\"]').click()")
+        expect(b, "[...document.querySelectorAll('.tl-item')].every((li) => li.hidden === (li.dataset.kind !== 'talk')) && document.querySelector('.tl-year[data-year=\"2026\"]').hidden", "a news filter shows only its kind (and the years that have it)")
+        b.eval("document.querySelector('.filter[data-filter=\"\"]').click()")
+        expect(b, "[...document.querySelectorAll('.tl-item, .tl-year')].every((li) => !li.hidden)", "All shows every news item again")
 
         b.goto(base + "/publications/", settle=1.0)
         b.eval("document.querySelector('.zoom').click()")

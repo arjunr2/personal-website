@@ -85,25 +85,20 @@
     addEventListener("load", settle);
   }
 
-  /* ── News: a scrolling list inside its tile on wide screens ── */
-  const newsScroll = $(".news-scroll");
-  if (newsScroll) {
-    const newsTile = newsScroll.closest(".tile");
-    const syncNews = () => {
-      const scrolls = newsScroll.scrollHeight > newsScroll.clientHeight + 2;
-      // Only a scrolling list needs to be a named, focusable stop.
-      for (const [k, v] of [["tabindex", "0"], ["role", "group"], ["aria-labelledby", "news-h"]]) {
-        if (scrolls) newsScroll.setAttribute(k, v);
-        else newsScroll.removeAttribute(k);
-      }
-      newsTile.classList.toggle("can-scroll", scrolls);
-      newsTile.classList.toggle("at-end", !scrolls || newsScroll.scrollTop + newsScroll.clientHeight >= newsScroll.scrollHeight - 8);
-    };
-    newsScroll.addEventListener("scroll", syncNews, { passive: true });
-    addEventListener("resize", syncNews);
-    addEventListener("load", syncNews);
-    syncNews();
-  }
+  /* ── News: filter the timeline by kind (every row is in the HTML) ── */
+  const filters = $(".filters");
+  if (filters) filters.addEventListener("click", (ev) => {
+    const b = ev.target.closest(".filter");
+    if (!b || b.getAttribute("aria-pressed") === "true") return;
+    const k = b.dataset.filter;
+    filters.querySelectorAll(".filter").forEach((f) => f.setAttribute("aria-pressed", String(f === b)));
+    const years = new Set();
+    document.querySelectorAll(".tl-item").forEach((li) => {
+      li.hidden = !!k && li.dataset.kind !== k;
+      if (!li.hidden) years.add(li.dataset.year);
+    });
+    document.querySelectorAll(".tl-year").forEach((li) => (li.hidden = !years.has(li.dataset.year)));
+  });
 
   /* ── Clicks: figure lightbox, copy email, videos, PDF previews ── */
   const lightbox = $("#lightbox");
