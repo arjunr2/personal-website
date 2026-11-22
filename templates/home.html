@@ -61,9 +61,9 @@
   {% call preview("publications", pubs | length) %}<span class="pv-body plate pv-figure">{{ img(ns.fig, decorative=true) }}</span>{% endcall %}
   {% endif %}
 
-  {% if "/experience/" in pages %}
-  {% set roles = pages["/experience/"].entries %}
-  {% call preview("experience", roles | length) %}<span class="pv-body logos">{% for j in roles[:5] %}<span class="plate">{{ img(j.logo, decorative=true) }}</span>{% endfor %}</span>{% endcall %}
+  {% if "/career/" in pages %}
+  {% set roles = pages["/career/"].entries %}
+  {% call preview("career", roles | length) %}<span class="pv-body logos">{% for j in roles[:5] %}<span class="plate">{{ img(j.logo, decorative=true) }}</span>{% endfor %}</span>{% endcall %}
   {% endif %}
 
   {% if "/projects/" in pages %}

@@ -19,7 +19,7 @@ python3 build.py                    # just build into public/
 | Home: biography (the body) and photo | `content/index.md` |
 | News | `content/news.yml` |
 | Publications | `content/publications/<paper>.md` |
-| Industry roles | `content/experience/<company>.md`; teaching and certificates: `content/experience/index.md` |
+| Industry roles | `content/career/<company>.md`; teaching and certificates: `content/career/index.md` |
 | Projects | `content/projects/<project>.md` |
 | Hobbies | `content/hobbies/<section>.md` |
 | PDFs on the Resources page | `content/resources.md` |
@@ -94,7 +94,7 @@ default `[4, 3]`), `image_beside: true` (image left of the text), `zoom: 1.1` (c
 
 ## Add a role
 
-Create `content/experience/<company>.md`; the body is the bullet list.
+Create `content/career/<company>.md`; the body is the bullet list.
 
 ```markdown
 ---
@@ -111,7 +111,7 @@ stack:
 * What I worked on
 ```
 
-Optional `size: [7, 6]` as for projects. Teaching and certificates are lists in `content/experience/index.md`.
+Optional `size: [7, 6]` as for projects. Teaching and certificates are lists in `content/career/index.md`.
 
 ## Add a page
 

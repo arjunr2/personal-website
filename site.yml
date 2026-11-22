@@ -10,7 +10,7 @@ favicon: /favicon.png
 nav:
   - { label: Home, url: / }
   - { label: Publications, url: /publications/ }
-  - { label: Career, url: /experience/ }
+  - { label: Career, url: /career/ }
   - { label: Projects, url: /projects/ }
   - { label: Hobbies, url: /hobbies/ }
   - { label: Resources, url: /resources/ }
@@ -38,3 +38,4 @@ news_kinds:
 # Old addresses that keep working by forwarding to the new ones.
 redirects:
   /pubs/: /publications/
+  /experience/: /career/

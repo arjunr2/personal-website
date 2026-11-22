@@ -18,7 +18,7 @@ import urllib.parse
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 PUBLIC = ROOT / "public"
-PAGES = {"index": "/", "pubs": "/publications/", "experience": "/experience/", "projects": "/projects/", "hobbies": "/hobbies/", "resources": "/resources/"}
+PAGES = {"index": "/", "pubs": "/publications/", "experience": "/career/", "projects": "/projects/", "hobbies": "/hobbies/", "resources": "/resources/"}
 RENAMED = {"Headshot_Portrait.jpg": "headshot.jpg"}  # the web-optimised copy
 # Old links Arjun replaced with newer ones (2026-11-23).
 RELINKED = {
