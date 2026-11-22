@@ -14,10 +14,8 @@
 
 {% block main %}
 <div class="page home">
-  <section class="tile intro" aria-labelledby="bio-h">
+  <section class="tile intro" aria-label="{{ page.heading }}">
     <div class="intro-text">
-      <h1 class="intro-name">{{ site.name }}</h1>
-      <h2 class="eyebrow" id="bio-h">{{ page.heading }}</h2>
       <div class="bio-text prose">{{ page.html }}</div>
       <ul class="intro-links">
       {% for s in site.social %}

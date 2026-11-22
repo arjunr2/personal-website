@@ -37,7 +37,7 @@
   <header class="head">
     <a class="brand" href="/">
       <span class="brand-mark" aria-hidden="true">{% for w in site.name.split() %}{{ w[0] }}{% endfor %}</span>
-      <span class="brand-name">{{ site.name }}</span>
+      {% if page.url == "/" %}<h1 class="brand-name">{{ site.name }}</h1>{% else %}<span class="brand-name">{{ site.name }}</span>{% endif %}
     </a>
     <button type="button" class="icon-btn theme" id="theme" aria-label="Switch theme" data-js>{{ icon("sun", "i-sun") }}{{ icon("moon", "i-moon") }}</button>
   </header>

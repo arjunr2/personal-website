@@ -287,22 +287,16 @@ article.tile, .group { scroll-margin-top: 92px; }
 .home { gap: calc(var(--gap) * 2); }
 .home > *, .home > .tile { grid-column: 1 / -1; }
 
-/* intro: name, biography, links, portrait */
+/* intro: biography (led by its first line), links, portrait */
 .intro {
   display: grid; grid-template-columns: minmax(0, 1fr) clamp(260px, 27vw, 380px); align-items: center;
   gap: clamp(40px, 5vw, 88px); padding: clamp(40px, 5vw, 72px) clamp(40px, 5.5vw, 80px);
 }
-.intro-name { font-size: var(--fs-hero); font-weight: 750; line-height: 0.95; letter-spacing: -0.055em; }
-.eyebrow {
-  display: flex; align-items: center; gap: 10px; margin-top: 36px;
-  font-size: var(--fs-12); font-weight: 750; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3);
-}
-.eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 3px; background: var(--accent); }
-.bio-text { display: grid; gap: 16px; max-width: 34rem; margin-top: 18px; }
+.bio-text { display: grid; gap: 16px; max-width: 38rem; }
 .bio-text p { font-size: var(--fs-16); color: var(--ink-2); line-height: 1.7; text-wrap: pretty; }
 .bio-text > p:first-child {
-  margin-bottom: 8px;
-  font-size: clamp(1.25rem, 1rem + 0.6vw, 1.5rem); font-weight: 600; line-height: 1.4; letter-spacing: -0.025em; color: var(--ink);
+  margin-bottom: 14px;
+  font-size: clamp(1.45rem, 1rem + 1.2vw, 2.05rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.035em; color: var(--ink);
   text-wrap: balance;
 }
 .intro-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
@@ -700,8 +694,7 @@ html.js .t-news.collapsed .tl-text { line-height: 1.55; }
   .intro-photo { order: -1; aspect-ratio: 5 / 4; border-radius: var(--r-in); }
   .intro-photo img { object-position: 50% 24%; }
   .intro-text { padding: 0 8px; }
-  .eyebrow { margin-top: 24px; }
-  .bio-text { margin-top: 14px; }
+  .bio-text { margin-top: 8px; }
   .intro-links { margin-top: 26px; }
   .intro-links .chip { height: 44px; }
 

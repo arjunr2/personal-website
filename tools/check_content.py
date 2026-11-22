@@ -20,8 +20,9 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 PUBLIC = ROOT / "public"
 PAGES = {"index": "/", "pubs": "/publications/", "experience": "/experience/", "projects": "/projects/", "hobbies": "/hobbies/", "resources": "/resources/"}
 RENAMED = {"Headshot_Portrait.jpg": "headshot.jpg"}  # the web-optimised copy
-# Old text removed on purpose (Arjun asked for the contact block to go, 2026-11-23).
-DROPPED = {"Contact", "Work Address", "CIC 2313E (2nd floor)", "CIC", "2313E", "(2nd floor)", "4720 Forbes Avenue, Pittsburgh, PA 15213", "arjunr2@andrew.cmu.edu"}
+# Old text removed on purpose, at Arjun's request (2026-11-23): the contact block, and the
+# "Biography" heading on home (it is still the intro's accessible name).
+DROPPED = {"Biography", "Contact", "Work Address", "CIC 2313E (2nd floor)", "CIC", "2313E", "(2nd floor)", "4720 Forbes Avenue, Pittsburgh, PA 15213", "arjunr2@andrew.cmu.edu"}
 SEP = "\x00"
 
 
