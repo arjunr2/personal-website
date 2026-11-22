@@ -2,7 +2,7 @@
 """Build the site: content/ (Markdown + YAML) + templates/ (Jinja2) + static/  ->  public/
 
   python3 build.py                 build into public/
-  python3 build.py --serve [PORT]  build, serve on http://localhost:PORT (default 8000), rebuild on changes
+  python3 build.py --serve [PORT]  build, serve on http://localhost:PORT (default 8000), rebuild and reload on changes
 
 See README.md for the content model.
 """
@@ -278,7 +278,15 @@ def build():
     print(f"built {len(pages)} pages into {OUT.relative_to(ROOT)}/ in {time.time() - t0:.2f}s")
 
 
+# Live reload for --serve only: pages poll /__build and reload when the build number changes.
+RELOAD_JS = b"""<script>(() => { let v; setInterval(async () => { try {
+  const n = await (await fetch("/__build", { cache: "no-store" })).text();
+  if (v && n !== v) location.reload(); v = n; } catch (e) {} }, 700); })();</script>"""
+
+
 def serve(port):
+    builds = [0]
+
     class Handler(http.server.SimpleHTTPRequestHandler):
         def __init__(self, *args, **kwargs):
             super().__init__(*args, directory=str(OUT), **kwargs)
@@ -289,6 +297,25 @@ def serve(port):
         def end_headers(self):
             self.send_header("Cache-Control", "no-store")
             super().end_headers()
+
+        def send_body(self, body, ctype):
+            self.send_response(200)
+            self.send_header("Content-Type", ctype)
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
+
+        def do_GET(self):
+            path = self.path.split("?")[0].split("#")[0]
+            if path == "/__build":
+                return self.send_body(str(builds[0]).encode(), "text/plain")
+            file = Path(self.translate_path(path))
+            if file.is_dir():
+                file = file / "index.html"
+            if file.suffix == ".html" and file.is_file():
+                html = file.read_bytes().replace(b"</body>", RELOAD_JS + b"</body>", 1)
+                return self.send_body(html, "text/html; charset=utf-8")
+            super().do_GET()
 
     def snapshot():
         files = [SITE_FILE] + [p for d in (CONTENT, TEMPLATES, STATIC) for p in d.rglob("*")]
@@ -307,6 +334,7 @@ def serve(port):
                 last = now
                 try:
                     build()
+                    builds[0] += 1
                 except Exception as err:  # keep serving; show the problem
                     print(f"build failed: {err}")
     except KeyboardInterrupt:

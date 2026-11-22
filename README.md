@@ -7,7 +7,7 @@ into a static site in `public/` (Python-Markdown + Jinja2 + PyYAML, the same pie
 
 ```shell
 pip install -r requirements.txt     # once
-python3 build.py --serve            # http://localhost:8000, rebuilds when you save a file
+python3 build.py --serve            # http://localhost:8000, rebuilds and reloads the page when you save
 python3 build.py                    # just build into public/
 ```
 
