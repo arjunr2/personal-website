@@ -455,7 +455,7 @@ html.js .t-news.collapsed .tl-text { line-height: 1.55; }
 .pub-art { display: grid; place-items: center; flex: 1; padding: 28px 32px 20px; cursor: zoom-in; }
 .pub-art img { width: 100%; height: auto; max-height: 440px; object-fit: contain; }
 .pub-wide .pub-art img { max-width: 1120px; }
-.pub-fig figcaption { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 6px 8px 8px 20px; }
+.pub-fig figcaption { display: flex; align-items: center; justify-content: flex-end; gap: 12px; padding: 6px 8px 8px 20px; }
 .pub-fig .num { color: #5d6068; }
 .zoom {
   display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px; border: 0; border-radius: var(--r-pill);

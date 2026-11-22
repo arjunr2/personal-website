@@ -22,7 +22,7 @@
       {% if x.figure %}
       <figure class="plate pub-fig">
         <div class="pub-art">{{ img(x.figure) }}</div>
-        <figcaption><span class="num">Fig. {{ loop.index }}</span><button type="button" class="zoom" data-js aria-label="Enlarge figure {{ loop.index }}">{{ icon("fullscreen") }}<span>Enlarge</span></button></figcaption>
+        <figcaption><button type="button" class="zoom" data-js aria-label="Enlarge figure {{ loop.index }}">{{ icon("fullscreen") }}<span>Enlarge</span></button></figcaption>
       </figure>
       {% endif %}
     </article>
