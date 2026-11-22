@@ -5,8 +5,7 @@ role: Machine Learning Intern
 location: Bangalore, India
 logo: { src: /assets/experience/Lucid.jpeg, alt: Lucid Imaging logo }
 stack:
-  - { icon: code, tags: [Tensorflow, Python] }
-  - { icon: tools, tags: [Keras] }
+  - { icon: tools, tags: [Tensorflow, Keras] }
 ---
 
 * Designed a CNN model to detect polypropylene in fast-flowing industrial cotton

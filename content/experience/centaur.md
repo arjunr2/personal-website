@@ -5,7 +5,6 @@ role: CPU Design Verification Intern
 location: Austin, TX
 logo: { src: /assets/experience/Centaur.jpeg, alt: Centaur Technology logo }
 stack:
-  - { icon: code, tags: [Python, Ruby, SystemVerilog] }
   - { icon: tools, tags: [ELK, Jenkins, Docker, Traefik] }
 ---
 

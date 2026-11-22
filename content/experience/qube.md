@@ -5,8 +5,7 @@ role: Software Engineering Intern
 location: Chennai, India
 logo: { src: /assets/experience/Qube.png, alt: Qube Cinema logo }
 stack:
-  - { icon: code, tags: [Tensorflow, Python] }
-  - { icon: tools, tags: [Keras] }
+  - { icon: tools, tags: [Tensorflow, Keras] }
 ---
 
 * Worked on iCount - a commercial product to count seat occupancy in theaters

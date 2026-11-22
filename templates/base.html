@@ -47,6 +47,8 @@
       <li><a href="{{ n.url }}" data-accent="{{ n.accent }}"{% if n.url == page.url %} aria-current="page"{% endif %}>{{ n.label }}</a></li>
     {% endfor %}
     </ul>
+    <button type="button" class="nav-more nav-more-prev" data-js tabindex="-1" aria-label="Scroll pages left">{{ icon("chevron-left") }}</button>
+    <button type="button" class="nav-more nav-more-next" data-js tabindex="-1" aria-label="Scroll pages right">{{ icon("chevron-right") }}</button>
   </nav>
 </div>
 <main id="main" tabindex="-1">

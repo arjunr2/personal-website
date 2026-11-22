@@ -634,6 +634,17 @@ html.js .t-news.collapsed .tl-text { line-height: 1.55; }
   }
   .nav ul { padding: 5px; overflow-x: auto; scrollbar-width: none; justify-content: space-between; }
   .nav ul::-webkit-scrollbar { display: none; }
+  /* more pages off to one side: fade that edge and show a chevron */
+  .nav.more-left ul { -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 56px); mask-image: linear-gradient(90deg, transparent 0, #000 56px); }
+  .nav.more-right ul { -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 56px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 56px), transparent); }
+  .nav.more-left.more-right ul { -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 56px, #000 calc(100% - 56px), transparent); mask-image: linear-gradient(90deg, transparent 0, #000 56px, #000 calc(100% - 56px), transparent); }
+  .nav-more {
+    position: absolute; top: 50%; z-index: 2; display: none; place-items: center; width: 32px; height: 32px; margin-top: -16px; padding: 0;
+    border: 1px solid var(--line); border-radius: 50%; background: var(--tile); color: var(--ink); box-shadow: var(--shadow); font-size: 18px; cursor: pointer;
+  }
+  .nav-more-prev { left: 6px; }
+  .nav-more-next { right: 6px; }
+  .nav.more-left .nav-more-prev, .nav.more-right .nav-more-next { display: grid; }
   .nav a[aria-current="page"] { view-transition-name: none; }
   .brand { padding-left: 0; }
   .icon-btn.theme { background: var(--tile); border: 1px solid var(--line); }

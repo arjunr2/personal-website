@@ -6,8 +6,7 @@ location: Austin, TX
 logo: { src: /assets/experience/Apple.png, alt: Apple logo }
 size: [5, 3]
 stack:
-  - { icon: code, tags: [SystemVerilog, Python] }
-  - { icon: tools, tags: [UVM] }
+  - { icon: tools, tags: [SystemVerilog, UVM] }
 ---
 
 * Improved speed and coverage of address generation test set for GPU memory hierarchy

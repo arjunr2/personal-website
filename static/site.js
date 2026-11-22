@@ -57,6 +57,23 @@
   if (active && navList.scrollWidth > navList.clientWidth)
     navList.scrollLeft = active.offsetLeft - (navList.clientWidth - active.offsetWidth) / 2;
 
+  /* ── Show which way the nav can scroll: faded edge + chevron on that side ── */
+  const nav = $(".nav");
+  if (nav && navList) {
+    const edges = () => {
+      const max = navList.scrollWidth - navList.clientWidth;
+      nav.classList.toggle("more-left", navList.scrollLeft > 2);
+      nav.classList.toggle("more-right", navList.scrollLeft < max - 2);
+    };
+    navList.addEventListener("scroll", edges, { passive: true });
+    addEventListener("resize", edges);
+    edges();
+    nav.addEventListener("click", (ev) => {
+      const b = ev.target.closest(".nav-more");
+      if (b) navList.scrollBy({ left: (b.classList.contains("nav-more-next") ? 1 : -1) * navList.clientWidth * 0.6, behavior: "smooth" });
+    });
+  }
+
   /* ── Highlight the tile a #link points at ── */
   const target = () => {
     let id = location.hash.slice(1);
