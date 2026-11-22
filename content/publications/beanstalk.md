@@ -4,7 +4,7 @@ order: 20
 authors: [Arjun Ramesh, Tianshu Huang, Jaspreet Riar, Ben L. Titzer, Anthony Rowe]
 figure: { src: /assets/pubs/Beanstalk.svg, alt: "Heatmaps of bug detection probability across different devices and amounts of debugging instrumentation, for ordinary bugs versus Heisenbugs" }
 links:
-  - { label: OOPSLA 2025, icon: acm, url: "https://doi.org/10.1145/3720428" }
+  - { label: OOPSLA 2025, icon: acm, url: "https://dl.acm.org/doi/epdf/10.1145/3720428" }
   - { label: Data Artifact, icon: github, url: "https://doi.org/10.5281/zenodo.14933663" }
 ---
 

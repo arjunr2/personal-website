@@ -20,6 +20,11 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 PUBLIC = ROOT / "public"
 PAGES = {"index": "/", "pubs": "/publications/", "experience": "/experience/", "projects": "/projects/", "hobbies": "/hobbies/", "resources": "/resources/"}
 RENAMED = {"Headshot_Portrait.jpg": "headshot.jpg"}  # the web-optimised copy
+# Old links Arjun replaced with newer ones (2026-11-23).
+RELINKED = {
+    "https://doi.org/10.1145/3689031.3717470": "https://dl.acm.org/doi/epdf/10.1145/3689031.3717470",
+    "https://doi.org/10.1145/3720428": "https://dl.acm.org/doi/epdf/10.1145/3720428",
+}
 # Old text removed on purpose, at Arjun's request (2026-11-23): the contact block, and the
 # "Biography" heading on home (it is still the intro's accessible name).
 DROPPED = {"Biography", "Contact", "Work Address", "CIC 2313E (2nd floor)", "CIC", "2313E", "(2nd floor)", "4720 Forbes Avenue, Pittsburgh, PA 15213", "arjunr2@andrew.cmu.edu"}
@@ -90,6 +95,8 @@ def expected_ref(link):
     """What an old link should have become in the new site, or None to skip it."""
     if link == "#":
         return None  # placeholder: the item has no link
+    if link in RELINKED:
+        return RELINKED[link]
     m = re.match(r"https://www\.youtube\.com/embed/([\w-]+)", link)
     if m:
         return m[1]  # embedded video: its id
