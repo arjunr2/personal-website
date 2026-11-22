@@ -1,6 +1,7 @@
 ---
 title: "Home-Unity: HackDFW 2019"
-order: 90
+order: 70
+size: [4, 3]
 team: Team of 5
 image: { src: /assets/projects/HomeUnity.png, alt: Home-Unity logo }
 links:

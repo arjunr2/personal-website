@@ -1,6 +1,6 @@
 ---
 title: XC2064 FPGA Design
-order: 30
+order: 40
 team: Team of 3
 image: { src: /assets/projects/FPGA.jpg, alt: Die photograph of the XC2064 FPGA }
 size: [3, 3]

@@ -1,6 +1,7 @@
 ---
 title: "ChairIoT: CreateAThon 2018"
-order: 100
+order: 60
+size: [4, 3]
 team: Team of 5
 image: { src: /assets/projects/Chair1_crop.jpg, alt: The ChairIoT self-organizing chair platform }
 image_style: photo

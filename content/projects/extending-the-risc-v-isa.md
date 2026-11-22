@@ -5,7 +5,7 @@ team: Team of 2
 image: { src: /assets/projects/RISCV_Logo.png, alt: RISC-V logo }
 # Optional layout: size = [columns of 12 on desktop, columns of 6 on tablet];
 # image_style = plate (logo on white, default) or photo (fills its box); image_beside = image left of the text.
-size: [7, 6]
+size: [6, 6]
 image_beside: true
 links:
   - { label: Presentation, icon: video, url: "https://vimeopro.com/utece/capstone2021spring/video/543700201" }

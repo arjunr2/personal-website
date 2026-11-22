@@ -1,9 +1,9 @@
 ---
 title: JASP Cellular Phone
-order: 60
+order: 20
 team: Team of 4
 image: { src: /assets/projects/JASP2.jpg, alt: The JASP cellular phone prototype }
-size: [8, 6]
+size: [6, 6]
 image_style: photo
 image_beside: true
 links:

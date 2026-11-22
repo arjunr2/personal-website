@@ -1,6 +1,7 @@
 ---
 title: "RecycleMe: CreateAThon 2019"
-order: 80
+order: 50
+size: [3, 3]
 team: Team of 5
 image: { src: /assets/projects/TeamTrash.png, alt: The RecycleMe trash-sorter prototype }
 image_style: photo

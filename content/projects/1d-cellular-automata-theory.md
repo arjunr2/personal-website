@@ -1,9 +1,9 @@
 ---
 title: 1D Cellular Automata Theory
-order: 40
+order: 90
 team: Solo
 image: { src: /assets/projects/multi_choice.png, alt: Diagram of a cellular automaton state branching into two successor states }
-size: [4, 6]
+size: [5, 3]
 links:
   - { label: Paper, icon: document, url: "https://drive.google.com/file/d/1P2Sxl4vDeoLRzdk5EeYzpcMRMJDdGRK9/view?usp=sharing" }
 ---

@@ -1,6 +1,7 @@
 ---
 title: "Enrich: PennApps 2019"
-order: 70
+order: 80
+size: [4, 3]
 team: Team of 4
 image: { src: /assets/projects/Enrich.png, alt: Enrich logo }
 links:
