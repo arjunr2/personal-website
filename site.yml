@@ -10,7 +10,7 @@ favicon: /favicon.png
 nav:
   - { label: Home, url: / }
   - { label: Publications, url: /publications/ }
-  - { label: Professional Experience, url: /experience/ }
+  - { label: Career, url: /experience/ }
   - { label: Projects, url: /projects/ }
   - { label: Hobbies, url: /hobbies/ }
   - { label: Resources, url: /resources/ }

@@ -1,5 +1,5 @@
 ---
-title: Professional Experience
+title: Career
 template: experience
 accent: experience
 icon: briefcase
