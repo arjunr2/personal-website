@@ -1,0 +1,25 @@
+{# Building blocks shared by the page templates. #}
+
+{% macro go(name="arrow-up-right") %}<span class="go" aria-hidden="true">{{ icon(name) }}</span>{% endmacro %}
+
+{# A link chip; without a url it is a plain badge. #}
+{% macro link(l, cls) %}
+{% if l.url %}<a class="{{ cls }}" href="{{ l.url }}">{% else %}<span class="{{ cls }}" data-static>{% endif %}
+{% if l.icon %}{{ icon(l.icon) }}{% endif %}<span>{{ l.label }}</span>
+{% if l.url %}</a>{% else %}</span>{% endif %}
+{% endmacro %}
+
+{% macro label(text, icon_name=none, count=none) %}
+<h2 class="label">{% if icon_name %}{{ icon(icon_name) }}{% endif %}<span>{{ text }}</span>{% if count %}<span class="count">{{ count }}</span>{% endif %}</h2>
+{% endmacro %}
+
+{# The coloured title tile at the top of every page except home. #}
+{% macro hero(page) %}
+<div class="board hero-row">
+  <header class="tile hero hero-solo">
+    <span class="hero-ghost" aria-hidden="true">{{ icon(page.icon | default("file")) }}</span>
+    <h1>{{ page.title }}</h1>
+  </header>
+</div>
+{% endmacro %}
+

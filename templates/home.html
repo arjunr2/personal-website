@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+{# News tag icons and colours by `kind` come from `news_kinds` in site.yml (an item's own `icon:` wins). #}
+{% set kinds_cfg = site.news_kinds or {} %}
+
+{# A tile linking to a page, with a picture of what is there. #}
+{% macro preview(slug, count) %}
+{% set p = pages["/" ~ slug ~ "/"] %}
+<a class="tile link-tile pv pv-{{ slug }}" href="{{ p.url }}" data-accent="{{ p.accent | default('home') }}" data-preview>
+  <span class="tile-head"><span class="tile-title">{{ p.title }}</span>{% if count %}<span class="count">{{ count }}</span>{% endif %}{{ m.go() }}</span>
+  {{ caller() }}
+</a>
+{% endmacro %}
+
+{% block main %}
+<div class="page home">
+  <section class="tile intro" aria-label="{{ page.heading }}">
+    <div class="intro-text">
+      <div class="bio-text prose">{{ page.html }}</div>
+      <ul class="intro-links">
+      {% for s in site.social %}
+        <li><a class="chip" href="{{ s.url }}">{% if s.icon %}{{ icon(s.icon) }}{% endif %}<span>{{ s.label }}</span></a></li>
+      {% endfor %}
+      </ul>
+    </div>
+    <figure class="intro-photo">{{ img(page.photo, eager=true) }}</figure>
+  </section>
+
+  {% set kinds = news | map(attribute="kind") | select | unique | list %}
+  <style>{% for k, c in kinds_cfg.items() if c.color %}[data-kind="{{ k }}"]{--k:var(--{{ c.color }});--k-ink:var(--{{ c.color }}-ink)}{% endfor %}</style>
+  <section class="tile t-news collapsed" aria-labelledby="news-h">
+    <header class="news-head">
+      <h2 class="news-title" id="news-h">{{ page.news_heading }}<span class="count">{{ news | length }}</span></h2>
+      <div class="filters" role="group" aria-labelledby="news-h" data-js>
+        <button type="button" class="filter" data-filter="" aria-pressed="true">All<span class="n">{{ news | length }}</span></button>
+        {% for k in kinds %}
+        <button type="button" class="filter" data-filter="{{ k }}" data-kind="{{ k }}" aria-pressed="false"><i class="dot" aria-hidden="true"></i>{{ k }}<span class="n">{{ news | selectattr("kind", "equalto", k) | list | length }}</span></button>
+        {% endfor %}
+      </div>
+      <button type="button" class="chip news-toggle" aria-expanded="false" aria-controls="news-list" data-js data-more="See all {{ news | length }}" data-less="Show less">See all {{ news | length }}</button>
+    </header>
+    <ol class="timeline" id="news-list">
+    {% for n in news %}
+      {% if loop.changed(n.year) %}<li class="tl-year" data-year="{{ n.year }}" aria-hidden="true"><span class="tl-date">{{ n.year }}</span><span class="tl-node"></span></li>{% endif %}
+      <li class="tl-item{% if loop.index <= 4 %} peek{% endif %}{% if loop.index == 4 or (loop.last and loop.index < 4) %} peek-last{% endif %}" data-kind="{{ n.kind }}" data-year="{{ n.year }}">
+        <time class="tl-date" datetime="{{ n.iso }}">{{ n.date }}</time>
+        <span class="tl-node" aria-hidden="true"></span>
+        {% if n.kind or n.icon %}<span class="kind">{{ icon(n.icon or (kinds_cfg.get(n.kind) or {}).get("icon", "news")) }}<span>{{ n.kind }}</span></span>{% endif %}
+        <p class="tl-text">{{ n.text | inline }}{% if n.extra %} <span class="tl-extra">{% for x in n.extra %}{{ icon_or_text(x) }}{% endfor %}</span>{% endif %}</p>
+      </li>
+    {% endfor %}
+    </ol>
+  </section>
+
+  <div class="board previews">
+  {% if "/publications/" in pages %}
+  {% set pubs = pages["/publications/"].entries %}
+  {# The first wide figure reads best in this tile. #}
+  {% set ns = namespace(fig=pubs[0].figure) %}
+  {% for x in pubs | reverse if x.figure | ratio > 3 %}{% set ns.fig = x.figure %}{% endfor %}
+  {% call preview("publications", pubs | length) %}<span class="pv-body plate pv-figure">{{ img(ns.fig, decorative=true) }}</span>{% endcall %}
+  {% endif %}
+
+  {% if "/career/" in pages %}
+  {% set roles = pages["/career/"].entries %}
+  {% call preview("career", roles | length) %}<span class="pv-body logos">{% for j in roles[:5] %}<span class="plate">{{ img(j.logo, decorative=true) }}</span>{% endfor %}</span>{% endcall %}
+  {% endif %}
+
+  {% if "/projects/" in pages %}
+  {% set projects = pages["/projects/"].entries %}
+  {% call preview("projects", projects | length) %}<span class="pv-body mosaic">
+    {% for id in page.mosaic %}{% for x in projects if x.id == id %}<span{% if x.zoom %} style="--zoom:{{ x.zoom }}"{% endif %}>{{ img(x.image, decorative=true) }}</span>{% endfor %}{% endfor %}
+  </span>{% endcall %}
+  {% endif %}
+
+  {% if "/hobbies/" in pages %}
+  {% set hobbies = pages["/hobbies/"].entries %}
+  {% call preview("hobbies", hobbies | length) %}<span class="pv-body cube">{% for s in hobbies if s.image %}{% if loop.first %}<span class="plate">{{ img(s.image, decorative=true) }}</span>{% endif %}{% endfor %}</span>{% endcall %}
+  {% endif %}
+
+  {% if "/resources/" in pages %}
+  {% set files = pages["/resources/"].files %}
+  {% call preview("resources", files | length) %}<span class="pv-body docs">{% for f in files %}<span class="doc"><i></i><i></i><i></i><b>PDF</b></span>{% endfor %}</span>{% endcall %}
+  {% endif %}
+  </div>
+</div>
+{% endblock %}

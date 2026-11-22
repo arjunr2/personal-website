@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.url == "/" %}{{ site.name }}{% else %}{{ page.title }} - {{ site.name }}{% endif %}</title>
+<link rel="icon" href="{{ site.favicon }}">
+<script>
+  // Before first paint: the stored theme, else the system one (no flash of the wrong theme).
+  (function () {
+    var d = document.documentElement, t = null;
+    d.classList.add("js");
+    try { t = localStorage.getItem("theme"); } catch (e) {}
+    if (t !== "light" && t !== "dark") t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    d.dataset.theme = t;
+    // Arriving from a page whose home tile this page has: morph that tile (see site.js).
+    addEventListener("pagereveal", function (e) {
+      var from = e.viewTransition && window.navigation && navigation.activation && navigation.activation.from;
+      if (!from || !from.url) return;
+      var path = new URL(from.url).pathname;
+      document.querySelectorAll("[data-preview]").forEach(function (a) {
+        if (new URL(a.href).pathname !== path) return;
+        a.style.viewTransitionName = "hero";
+        e.viewTransition.finished.finally(function () { a.style.viewTransitionName = ""; });
+      });
+    });
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body data-accent="{{ page.accent | default('home') }}">
+<a class="skip" href="#main">Skip to content</a>
+<div class="top">
+  <header class="head">
+    <a class="brand" href="/">
+      <span class="brand-mark" aria-hidden="true">{% for w in site.name.split() %}{{ w[0] }}{% endfor %}</span>
+      {% if page.url == "/" %}<h1 class="brand-name">{{ site.name }}</h1>{% else %}<span class="brand-name">{{ site.name }}</span>{% endif %}
+    </a>
+    <button type="button" class="icon-btn theme" id="theme" aria-label="Switch theme" data-js>{{ icon("sun", "i-sun") }}{{ icon("moon", "i-moon") }}</button>
+  </header>
+  <nav class="nav" aria-label="Pages">
+    <ul>
+    {% for n in site.nav %}
+      <li><a href="{{ n.url }}" data-accent="{{ n.accent }}"{% if n.url == page.url %} aria-current="page"{% endif %}>{{ n.label }}</a></li>
+    {% endfor %}
+    </ul>
+    <button type="button" class="nav-more nav-more-prev" data-js tabindex="-1" aria-label="Scroll pages left">{{ icon("chevron-left") }}</button>
+    <button type="button" class="nav-more nav-more-next" data-js tabindex="-1" aria-label="Scroll pages right">{{ icon("chevron-right") }}</button>
+  </nav>
+</div>
+<main id="main" tabindex="-1">
+{% block main %}{% endblock %}
+</main>
+<footer class="foot">
+  <p class="foot-note"><span>{{ site.copyright }}</span><span class="foot-sep" aria-hidden="true"></span><span>Updated: {{ updated }}</span></p>
+</footer>
+{% block after %}{% endblock %}
+<script src="/site.js" defer></script>
+</body>
+</html>

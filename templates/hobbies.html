@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+{% block main %}
+{% set items = page.entries %}
+<div class="page">
+  {{ m.hero(page) }}
+  {% for s in items %}
+  <section class="group" id="{{ s.id }}">
+    {{ m.label(s.title, s.icon or "star") }}
+    {% if s.layout == "cards" %}
+    <div class="board sports">
+    {% for c in s.body | cards %}
+      <article class="tile sport{% if c.image %} sport-photo{% endif %}">
+        <div class="sport-text"><span class="sport-ico" aria-hidden="true">{{ icon((s.icons or {}).get(c.title, "star")) }}</span><h3>{{ c.title }}</h3>{{ c.html }}</div>
+        {% if c.image %}<div class="sport-media">{{ img(c.image) }}</div>{% endif %}
+      </article>
+    {% endfor %}
+    </div>
+    {% elif s.layout == "feature" %}
+    <div class="board">
+      {% if s.image %}<figure class="tile tile-cube"><span class="plate">{{ img(s.image) }}</span></figure>{% endif %}
+      <div class="tile tile-text prose">{{ s.html }}</div>
+    </div>
+    {% else %}
+    <div class="board says">
+    {% for b in s.body | blocks %}
+      {% if b.startswith('<a class="yt"') %}<div class="tile tile-video">{{ b }}</div>
+      {% else %}<div class="tile tile-say prose{% if '<strong><em>' in b %} tile-fill{% endif %}" data-n="{{ loop.index0 }}">{{ b }}</div>
+      {% endif %}
+    {% endfor %}
+    </div>
+    {% endif %}
+  </section>
+  {% endfor %}
+</div>
+{% endblock %}

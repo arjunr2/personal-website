@@ -1,0 +1,41 @@
+# Site-wide settings. Paths and URLs starting with "/" are site-root paths; the build turns
+# them into relative links so the site works both on www.arjunramesh.me and under a sub-folder.
+
+name: Arjun Ramesh
+copyright: "© Arjun Ramesh"
+favicon: /favicon.png
+
+# Top navigation, in order. Each url must match a page in content/ (see README).
+# The Previous/Next tiles at the bottom of each page follow this order too.
+nav:
+  - { label: Home, url: / }
+  - { label: Publications, url: /publications/ }
+  - { label: Career, url: /career/ }
+  - { label: Build Hub, url: /projects/ }
+  - { label: Hobbies, url: /hobbies/ }
+  - { label: Resources, url: /resources/ }
+
+# Links under the biography on the home page, and in the footer of the other pages. `icon` is optional.
+social:
+  - { label: GitHub, icon: github, url: "https://github.com/arjunr2" }
+  - { label: LinkedIn, icon: linkedin, url: "https://www.linkedin.com/in/ajramesh" }
+  - { label: Youtube, icon: youtube, url: "https://www.youtube.com/channel/UCQLPzl1LHeF25W3SiKSAqGQ?view_as=subscriber" }
+  - { label: Email me!, icon: email, url: "mailto:arjunr2@andrew.cmu.edu" }
+
+# Tags on home-page news items (the `kind:` of each item in content/news.yml).
+#   icon:  any icon name in templates/icons.json
+#   color: a page accent (home, publications, experience, projects, hobbies, resources) or talk
+# A kind that is not listed here still works, with a generic icon and grey colour.
+news_kinds:
+  career:    { icon: career,    color: experience }
+  education: { icon: education, color: home }
+  software:  { icon: software,  color: projects }
+  milestone: { icon: milestone, color: hobbies }
+  media:     { icon: podcast,   color: resources }
+  paper:     { icon: paper,     color: publications }
+  talk:      { icon: talk,      color: talk }
+
+# Old addresses that keep working by forwarding to the new ones.
+redirects:
+  /pubs/: /publications/
+  /experience/: /career/

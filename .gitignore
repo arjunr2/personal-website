@@ -1,1 +1,6 @@
-site
+public/
+public.tmp/
+public.old/
+tools/shots/
+__pycache__/
+*.swp
