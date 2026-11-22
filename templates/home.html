@@ -1,8 +1,7 @@
 {% extends "base.html" %}
 {% import "macros.html" as m %}
-{# News icons by `kind` (an item's own `icon:` wins). #}
-{% set kind_icons = {"career": "career", "education": "education", "release": "release", "milestone": "milestone",
-                     "media": "podcast", "paper": "paper", "talk": "talk"} %}
+{# News tag icons and colours by `kind` come from `news_kinds` in site.yml (an item's own `icon:` wins). #}
+{% set kinds_cfg = site.news_kinds or {} %}
 
 {# A tile linking to a page, with a picture of what is there. #}
 {% macro preview(slug, count) %}
@@ -30,6 +29,7 @@
   </section>
 
   {% set kinds = news | map(attribute="kind") | select | unique | list %}
+  <style>{% for k, c in kinds_cfg.items() if c.color %}[data-kind="{{ k }}"]{--k:var(--{{ c.color }});--k-ink:var(--{{ c.color }}-ink)}{% endfor %}</style>
   <section class="tile t-news collapsed" aria-labelledby="news-h">
     <header class="news-head">
       <h2 class="news-title" id="news-h">{{ page.news_heading }}<span class="count">{{ news | length }}</span></h2>
@@ -47,7 +47,7 @@
       <li class="tl-item{% if loop.index <= 4 %} peek{% endif %}{% if loop.index == 4 or (loop.last and loop.index < 4) %} peek-last{% endif %}" data-kind="{{ n.kind }}" data-year="{{ n.year }}">
         <time class="tl-date" datetime="{{ n.iso }}">{{ n.date }}</time>
         <span class="tl-node" aria-hidden="true"></span>
-        {% if n.kind or n.icon %}<span class="kind">{{ icon(n.icon or kind_icons.get(n.kind, "news")) }}<span>{{ n.kind }}</span></span>{% endif %}
+        {% if n.kind or n.icon %}<span class="kind">{{ icon(n.icon or (kinds_cfg.get(n.kind) or {}).get("icon", "news")) }}<span>{{ n.kind }}</span></span>{% endif %}
         <p class="tl-text">{{ n.text | inline }}{% if n.extra %} <span class="tl-extra">{% for x in n.extra %}{{ icon_or_text(x) }}{% endfor %}</span>{% endif %}</p>
       </li>
     {% endfor %}

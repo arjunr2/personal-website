@@ -1,7 +1,7 @@
 # News on the home page, newest first.
 #   date:  "Mon YYYY" (e.g. "Sep 2026")
-#   kind:  picks the icon: career, education, release, milestone, media, paper, talk
-#          (or set `icon:` to any icon name instead)
+#   kind:  the tag: career, education, software, media, paper, talk, ... Its icon and colour are
+#          set under `news_kinds` in site.yml (or give one item its own `icon:`)
 #   text:  inline Markdown (*emphasis*, **bold**, [links](https://...))
 #   extra: optional small icons after the text: icon names, or an emoji
 
@@ -12,8 +12,8 @@
   kind: education
   text: Defending my PhD Dissertation on *Unlocking Safety and Observability for Edge Cyber-Physical Systems with Low-Level Bytecode Virtualization*!
 - date: Feb 2026
-  kind: release
-  text: LLVM-22 release introduces a target for WALI! (*wasm32-linux-muslwali*)
+  kind: software
+  text: LLVM-22 release introduces a target for WALI (*wasm32-linux-muslwali*)
 - date: Sep 2025
   kind: education
   text: Completed my Thesis Prospectus!

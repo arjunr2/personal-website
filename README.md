@@ -45,7 +45,7 @@ Add an entry at the top of `content/news.yml`:
 
 ```yaml
 - date: Dec 2026          # "Mon YYYY"
-  kind: talk              # career, education, release, milestone, media, paper or talk (sets the icon, colour and filter)
+  kind: talk              # the tag and filter; its icon and colour are set under `news_kinds` in site.yml
   text: Invited talk – *My Talk Title* at [Some Venue](https://example.com)
 ```
 

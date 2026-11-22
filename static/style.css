@@ -312,14 +312,7 @@ article.tile, .group { scroll-margin-top: 92px; }
 .intro-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 54% 22%; transition: transform 1.2s var(--ease); }
 .intro-photo:hover img { transform: scale(1.035); }
 
-/* news: a timeline with a coloured chip per kind */
-[data-kind="career"] { --k: var(--experience); --k-ink: var(--experience-ink); }
-[data-kind="education"] { --k: var(--home); --k-ink: var(--home-ink); }
-[data-kind="release"] { --k: var(--projects); --k-ink: var(--projects-ink); }
-[data-kind="milestone"] { --k: var(--hobbies); --k-ink: var(--hobbies-ink); }
-[data-kind="media"] { --k: var(--resources); --k-ink: var(--resources-ink); }
-[data-kind="paper"] { --k: var(--publications); --k-ink: var(--publications-ink); }
-[data-kind="talk"] { --k: var(--talk); --k-ink: var(--talk-ink); }
+/* news: a timeline with a coloured chip per kind (kind colours are set from site.yml in home.html) */
 
 .t-news {
   display: grid; grid-template-columns: 260px minmax(0, 1fr); align-items: start;

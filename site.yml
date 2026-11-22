@@ -22,6 +22,19 @@ social:
   - { label: Youtube, icon: youtube, url: "https://www.youtube.com/channel/UCQLPzl1LHeF25W3SiKSAqGQ?view_as=subscriber" }
   - { label: Email me!, icon: email, url: "mailto:arjunr2@andrew.cmu.edu" }
 
+# Tags on home-page news items (the `kind:` of each item in content/news.yml).
+#   icon:  any icon name in templates/icons.json
+#   color: a page accent (home, publications, experience, projects, hobbies, resources) or talk
+# A kind that is not listed here still works, with a generic icon and grey colour.
+news_kinds:
+  career:    { icon: career,    color: experience }
+  education: { icon: education, color: home }
+  software:  { icon: software,  color: projects }
+  milestone: { icon: milestone, color: hobbies }
+  media:     { icon: podcast,   color: resources }
+  paper:     { icon: paper,     color: publications }
+  talk:      { icon: talk,      color: talk }
+
 # The contact row in the footer of every page. Address lines accept inline Markdown.
 contact:
   heading: Contact
