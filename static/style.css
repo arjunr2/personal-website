@@ -496,7 +496,7 @@ html.js .t-news.collapsed .tl-text { line-height: 1.55; }
 .teach { display: flex; flex-direction: column; gap: 14px; }
 .courses li {
   display: grid; grid-template-columns: minmax(0, 1fr) 11.5rem 5.5rem 6rem; gap: 4px 16px; align-items: baseline;
-  padding: 13px 0; border-top: 1px solid var(--line);
+  padding: 6px 0; border-top: 1px solid var(--line);
   font-size: var(--fs-15); color: var(--ink-2);
 }
 .courses li:first-child { border-top: 0; }
@@ -734,7 +734,7 @@ html.js .t-news.collapsed .tl-text { line-height: 1.55; }
   .role-head { align-items: flex-start; }
   .logo-plate { height: 60px; min-width: 60px; }
   .logo-plate img { height: 38px; max-width: 92px; }
-  .courses li { grid-template-columns: auto auto minmax(0, 1fr); gap: 4px 14px; }
+  .courses li { grid-template-columns: auto auto minmax(0, 1fr); gap: 2px 14px; padding: 8px 0; }
   .course { grid-column: 1 / -1; }
   .term { text-align: left; }
   .certs ul { grid-template-columns: 1fr; }
