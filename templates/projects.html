@@ -10,7 +10,7 @@
     <article class="tile proj proj-{{ x.image_style or 'plate' }}{% if x.image_beside %} proj-side{% endif %}{% if size[1] < 6 %} proj-half{% endif %}" id="{{ x.id }}" style="--d:{{ size[0] }};--t:{{ size[1] }}{% if x.zoom %};--zoom:{{ x.zoom }}{% endif %}">
       {% if x.image %}<div class="proj-media">{{ img(x.image) }}</div>{% endif %}
       <div class="proj-text">
-        <p class="proj-meta"><span class="num">{{ "%02d" | format(loop.index) }}</span>{% if x.team %}<span class="tag">{{ icon("team" if x.team | select("in", "0123456789") | list else "person") }}<span>{{ x.team }}</span></span>{% endif %}</p>
+        <p class="proj-meta">{% if x.team %}<span class="tag">{{ icon("team" if x.team | select("in", "0123456789") | list else "person") }}<span>{{ x.team }}</span></span>{% endif %}</p>
         <h2>{{ x.title }}</h2>
         <div class="bullets">{{ x.html }}</div>
         {% if x.links %}<p class="links">{% for l in x.links %}{{ m.link(l, "chip") }}{% endfor %}</p>{% endif %}
