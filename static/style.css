@@ -447,6 +447,7 @@ html.js .t-news.collapsed .tl-text { line-height: 1.55; }
 .pub-text { grid-area: text; }
 .pub-body { grid-area: body; display: grid; gap: 20px; align-content: start; }
 .pub-wide .pub-body { padding-top: 52px; }
+.pub-text .links { margin-top: 22px; }
 .pub-fig { grid-area: fig; }
 .pub-meta { display: flex; align-items: center; gap: 14px; }
 .pub h2 { margin: 16px 0 14px; font-size: var(--fs-title); font-weight: 750; line-height: 1.08; letter-spacing: -0.04em; text-wrap: balance; }
