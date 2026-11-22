@@ -240,9 +240,9 @@ def build():
         updated=now.strftime("%d %b, %Y"),
     )
 
-    if OUT.exists():
-        shutil.rmtree(OUT)
-    shutil.copytree(STATIC, OUT)
+    tmp = OUT.with_name(OUT.name + ".tmp")
+    shutil.rmtree(tmp, ignore_errors=True)
+    shutil.copytree(STATIC, tmp)
     for url, page in pages.items():
         name = page.get("template") or ("home" if url == "/" else "page")
         nav_i = next((i for i, n in enumerate(site["nav"]) if n["url"] == url), None)
@@ -250,14 +250,20 @@ def build():
             html = env.get_template(name + ".html").render(page=page)
         except jinja2.TemplateError as err:
             raise BuildError(f"{url} (template {name}.html): {err}")
-        dest = OUT / url.strip("/") / "index.html"
+        dest = tmp / url.strip("/") / "index.html"
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(relativize(html, url), encoding="utf-8")
     for old, new in (site.get("redirects") or {}).items():
-        dest = OUT / old.strip("/") / "index.html"
+        dest = tmp / old.strip("/") / "index.html"
         dest.parent.mkdir(parents=True, exist_ok=True)
         to = rel_url(new, old)
         dest.write_text(f'<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url={to}"><a href="{to}">{new}</a>\n', encoding="utf-8")
+    old = OUT.with_name(OUT.name + ".old")
+    shutil.rmtree(old, ignore_errors=True)
+    if OUT.exists():
+        OUT.rename(old)
+    tmp.rename(OUT)
+    shutil.rmtree(old, ignore_errors=True)
     print(f"built {len(pages)} pages into {OUT.relative_to(ROOT)}/ in {time.time() - t0:.2f}s")
 
 
@@ -268,7 +274,7 @@ RELOAD_JS = b"""<script>(() => { let v; setInterval(async () => { try {
 
 
 def serve(port):
-    builds = [0]
+    builds, error = [0], [None]
 
     class Handler(http.server.SimpleHTTPRequestHandler):
         def __init__(self, *args, **kwargs):
@@ -296,7 +302,14 @@ def serve(port):
             if file.is_dir():
                 file = file / "index.html"
             if file.suffix == ".html" and file.is_file():
-                html = file.read_bytes().replace(b"</body>", RELOAD_JS + b"</body>", 1)
+                extra = RELOAD_JS
+                if error[0]:  # the last rebuild failed: say so on every page until it is fixed
+                    msg = escape(error[0]).replace("\n", Markup("<br>"))
+                    extra += str(Markup(
+                        '<div role="alert" style="position:fixed;inset:12px 12px auto;z-index:99999;padding:14px 18px;border-radius:12px;'
+                        'background:#b42318;color:#fff;font:14px/1.5 ui-monospace,Menlo,monospace;box-shadow:0 8px 30px rgba(0,0,0,.35)">'
+                        "<b>Build failed</b> (still showing the last good build)<br>{}</div>").format(msg)).encode()
+                html = file.read_bytes().replace(b"</body>", extra + b"</body>", 1)
                 return self.send_body(html, "text/html; charset=utf-8")
             super().do_GET()
 
@@ -317,9 +330,11 @@ def serve(port):
                 last = now
                 try:
                     build()
-                    builds[0] += 1
-                except Exception as err:  # keep serving; show the problem
+                    error[0] = None
+                except Exception as err:  # keep serving the last good build; show the problem on the page
+                    error[0] = str(err)
                     print(f"build failed: {err}")
+                builds[0] += 1
     except KeyboardInterrupt:
         server.shutdown()
 

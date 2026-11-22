@@ -1,5 +1,5 @@
 ---
-title: Bare-Metal Embedded Cellular Phone
+title: "JASP: Bare-Metal Embedded Cellular Phone"
 order: 20
 team: Team of 4
 image: { src: /assets/projects/JASP2.jpg, alt: The JASP cellular phone prototype }
