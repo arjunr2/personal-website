@@ -1,10 +1,11 @@
 ---
 title: "RecycleMe: CreateAThon 2019"
 order: 50
-size: [3, 3]
+size: [6, 6]
 team: Team of 5
 image: { src: /assets/projects/TeamTrash.png, alt: The RecycleMe trash-sorter prototype }
 image_style: photo
+image_beside: true
 zoom: 1.14   # optional: crop into a photo
 links:
   - { label: Presentation, icon: document, url: "https://docs.google.com/presentation/d/1hpvU2TW-b8DZ-9Plj63A9ec2fWhC68u3J7fawatYcz0/edit#slide=id.g6349289ee8_0_57" }

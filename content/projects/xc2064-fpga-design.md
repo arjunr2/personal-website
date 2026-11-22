@@ -3,8 +3,9 @@ title: XC2064 FPGA Design
 order: 40
 team: Team of 3
 image: { src: /assets/projects/FPGA.jpg, alt: Die photograph of the XC2064 FPGA }
-size: [3, 3]
+size: [5, 6]
 image_style: photo
+image_beside: true
 links:
   - { label: Reference Article, icon: document, url: "https://www.righto.com/2020/09/reverse-engineering-first-fpga-chip.html" }
 ---

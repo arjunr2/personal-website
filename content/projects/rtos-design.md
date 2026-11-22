@@ -3,7 +3,7 @@ title: RTOS Design
 order: 30
 team: Team of 2
 image: { src: /assets/projects/RTOS2.png, alt: TM4C123 microcontroller board with an LCD showing a battleship grid }
-size: [6, 6]
+size: [7, 6]
 image_style: photo
 image_beside: true
 links:
