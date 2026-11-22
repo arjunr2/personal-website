@@ -186,6 +186,7 @@ strong { font-weight: 750; color: var(--ink); }
 }
 .nav a:hover { background: var(--tile-2); color: var(--ink); }
 .nav a[aria-current="page"] { background: var(--accent); color: var(--on-accent); view-transition-name: nav-active; }
+.nav-more { display: none; }  /* scroll chevrons: only when the nav overflows (narrow widths) */
 
 main { max-width: var(--shell); margin: var(--gap) auto 0; }
 
