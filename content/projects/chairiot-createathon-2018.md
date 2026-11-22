@@ -1,5 +1,5 @@
 ---
-title: "ChairIoT: CreateAThon 2018"
+title: "ChairIoT (CreateAThon 2018)"
 order: 60
 size: [6, 6]
 team: Team of 5
@@ -11,8 +11,5 @@ links:
   - { label: Code, icon: github, url: "https://github.com/yashparakh111/Self-Organizing-Chair" }
 ---
 
-* Prototype for a self-organizing chair platform
-    * Raspberry Pi used for processing pipeline and motor control
-    * Uses IMU to gather time-series acceleration data and gyroscope data
-    * Implemented Kalman filter to compute net displacement
-    * Power management components mounted below the platform
+A self-organizing chair platform using Rpi for control. Uses an IMU and Kalman filters
+to compute net displacement from time-series acceleration data.

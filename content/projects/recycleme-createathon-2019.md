@@ -1,5 +1,5 @@
 ---
-title: "RecycleMe: CreateAThon 2019"
+title: "RecycleMe (CreateAThon 2019)"
 order: 50
 size: [6, 6]
 team: Team of 5
@@ -13,7 +13,6 @@ links:
   - { label: Mobile App, icon: github, url: "https://github.com/yashparakh111/RecycleMe" }
 ---
 
-* Smart autonomous trash-sorter to sort Recyclable, Landfill, and Compostable materials
-    * Raspberry Pi controls movable compartment with camera to detect new objects
-    * A trained CNN runs on offsite server to process data in real-time
+* A smart autonomous trash-sorter to sort Recyclable, Landfill, and Compostable materials. 
+* RPi control and vision-based CNN offsite for real-time segregation.
 * Built a mobile app to crowd-source the gathering and labelling of real-world dataset

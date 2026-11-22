@@ -10,7 +10,4 @@ links:
   - { label: Reference Article, icon: document, url: "https://www.righto.com/2020/09/reverse-engineering-first-fpga-chip.html" }
 ---
 
-* Fully-synthesizable Verilog design of the XC2064 from 1985
-* Created tooling for demonstration
-    * Unit tests for LUT and CLB
-    * Web GUI for interconnect bitstream generation
+Fully-synthesizable Verilog design of the XC2064 (from 1985)

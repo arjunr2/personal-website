@@ -10,7 +10,4 @@ links:
   - { label: Code, icon: github, url: "https://github.com/yashparakh111/upmem-dpu" }
 ---
 
-* Surveyed the ability of PIM to accelerate sorting techniques
-    * Two base algorithms – *insertion/radix sort* + *merge* – showed similar results
-    * PIM performed slower than C/C++ quicksort
-    * Effect of PIM parameters (DPU-CPU tradeoffs, cache size) are analyzed
+Surveyed the PIM tradeoffs to accelerate sorting techniques (insertion and radix sort)

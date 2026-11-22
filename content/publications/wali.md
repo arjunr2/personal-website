@@ -10,7 +10,8 @@ links:
   - { label: Rust Target, icon: rust, url: "https://doc.rust-lang.org/nightly/rustc/platform-support/wasm32-wali-linux.html" }
 ---
 
-Webassembly (Wasm) adoption for new domains is often hindered by the lack of standard system interfaces.
-Kernel interface support in Wasm engines allow numerous languages and applications to target Wasm, including
-arbitrary high-level Wasm APIs (WASI), driving ISA portability and software safety down to even deeply embedded
-OS ecosystems
+Wasm adoption for new domains is often hindered by the lack of standard system interfaces.
+We show support for the **Linux** and **Zephyr** syscall interface in Wasm engines allowing numerous 
+languages and applications to target Wasm out-of-the-box while preserving ISA portability and safety. 
+Check out our ports of Bash, ncurses, openssh, and plenty of other cool software!
+

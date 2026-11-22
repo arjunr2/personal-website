@@ -9,5 +9,5 @@ links:
   - { label: Code, icon: github, url: "https://github.com/arjunramesh99/Enrich" }
 ---
 
-* Prototype for an interactive course organization and lecturing platform. Includes a
+Prototype for an interactive course organization and lecturing platform. Includes a
 messaging service, speech-to-text translation, and anonymous real-time feedback.

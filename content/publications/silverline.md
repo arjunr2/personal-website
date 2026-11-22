@@ -11,5 +11,5 @@ links:
 
 Real-time cyber-physical systems naturally lend themselves to distributed compute, but are often programmed monolithically to curb complexity
 and safety exploits.
-Our framework, Silverline, explores programmability and orchestration of distributed applications transparently
+With Silverline, we explore programmability and orchestration of distributed applications transparently
 across wide range of hardware using WebAssembly for lightweight virtualization.

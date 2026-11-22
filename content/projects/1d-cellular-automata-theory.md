@@ -8,4 +8,4 @@ links:
   - { label: Paper, icon: document, url: "https://drive.google.com/file/d/1P2Sxl4vDeoLRzdk5EeYzpcMRMJDdGRK9/view?usp=sharing" }
 ---
 
-* Brief survey of local pattern formation in 1D Cellular Automata Theory
+Brief survey of local pattern formation in 1D Cellular Automata Theory
