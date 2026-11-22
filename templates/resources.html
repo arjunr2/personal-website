@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+{% block main %}
+<div class="page">
+  {{ m.hero(page, entries(page.files, "title")) }}
+  <div class="board">
+  {% for f in page.files %}
+    <article class="tile res" id="{{ f.id }}">
+      <div class="res-top">
+        <span class="doc" aria-hidden="true"><i></i><i></i><i></i><b>PDF</b></span>
+        <div><p class="num">{{ "%02d" | format(loop.index) }}</p><h2>{{ f.title }}</h2></div>
+      </div>
+      <p class="res-actions">
+        <a class="btn btn-solid" href="{{ f.file }}" target="_blank" rel="noopener">{{ icon("external") }}<span>Open PDF</span></a>
+        <a class="btn" href="{{ f.file }}" download>{{ icon("download") }}<span>Download</span></a>
+        <button type="button" class="btn" data-js data-pdf="{{ f.file }}" data-title="{{ f.title }}" aria-expanded="false" aria-controls="pdf-{{ f.id }}">{{ icon("eye") }}<span>Preview</span></button>
+      </p>
+      <div class="pdf-view" id="pdf-{{ f.id }}" hidden></div>
+    </article>
+  {% endfor %}
+  </div>
+  {% if page.body.strip() %}<div class="board"><article class="tile prose doc-prose">{{ page.html }}</article></div>{% endif %}
+  {{ m.pager(pager) }}
+</div>
+{% endblock %}

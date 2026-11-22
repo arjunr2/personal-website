@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+{# News icons by `kind` (an item's own `icon:` wins). #}
+{% set kind_icons = {"career": "career", "education": "education", "release": "release", "milestone": "milestone",
+                     "media": "podcast", "paper": "paper", "talk": "talk"} %}
+
+{# A tile linking to a page, with a picture of what is there. #}
+{% macro preview(slug, count) %}
+{% set p = pages["/" ~ slug ~ "/"] %}
+<a class="tile link-tile pv pv-{{ slug }}" href="{{ p.url }}" data-accent="{{ p.accent | default('home') }}" data-preview>
+  <span class="tile-head"><span class="tile-title">{{ p.title }}</span>{% if count %}<span class="count">{{ count }}</span>{% endif %}{{ m.go() }}</span>
+  {{ caller() }}
+</a>
+{% endmacro %}
+
+{% block main %}
+{% set c = site.contact %}
+<div class="page board home">
+  <section class="tile t-bio" aria-labelledby="bio-h">
+    <h2 class="tile-title" id="bio-h">{{ page.heading }}</h2>
+    <div class="bio-text prose">{{ page.html }}</div>
+  </section>
+
+  <figure class="tile t-photo">{{ img(page.photo, eager=true) }}</figure>
+
+  <section class="tile t-contact" aria-labelledby="contact-h">
+    <header class="tile-head">
+      <h2 class="tile-title" id="contact-h">{{ c.heading }}</h2>
+      <button type="button" class="icon-btn copy" data-js data-copy="{{ c.email }}" aria-label="Copy email address" title="Copy email address">{{ icon("copy", "i-copy") }}{{ icon("check", "i-check") }}</button>
+    </header>
+    <p class="contact-label">{{ icon("office") }}<span>{{ c.address_label }}</span></p>
+    <address>{% for line in c.address %}<span>{{ line | inline }}</span>{% endfor %}</address>
+    <p class="mail"><a href="mailto:{{ c.email }}">{{ icon("email") }}<span>{{ c.email }}</span></a></p>
+  </section>
+
+  {% if "/publications/" in pages %}
+  {% set pubs = pages["/publications/"].entries %}
+  {# The first wide figure reads best in this tile. #}
+  {% set ns = namespace(fig=pubs[0].figure) %}
+  {% for x in pubs | reverse if x.figure | ratio > 3 %}{% set ns.fig = x.figure %}{% endfor %}
+  {% call preview("publications", pubs | length) %}<span class="pv-body plate pv-figure">{{ img(ns.fig, decorative=true) }}</span>{% endcall %}
+  {% endif %}
+
+  {% if "/experience/" in pages %}
+  {% set roles = pages["/experience/"].entries %}
+  {% call preview("experience", roles | length) %}<span class="pv-body logos">{% for j in roles[:5] %}<span class="plate">{{ img(j.logo, decorative=true) }}</span>{% endfor %}</span>{% endcall %}
+  {% endif %}
+
+  {% if "/projects/" in pages %}
+  {% set projects = pages["/projects/"].entries %}
+  {% call preview("projects", projects | length) %}<span class="pv-body mosaic">
+    {% for id in page.mosaic %}{% for x in projects if x.id == id %}<span{% if x.zoom %} style="--zoom:{{ x.zoom }}"{% endif %}>{{ img(x.image, decorative=true) }}</span>{% endfor %}{% endfor %}
+  </span>{% endcall %}
+  {% endif %}
+
+  {% if "/hobbies/" in pages %}
+  {% set hobbies = pages["/hobbies/"].entries %}
+  {% call preview("hobbies", hobbies | length) %}<span class="pv-body cube">{% for s in hobbies if s.image %}{% if loop.first %}<span class="plate">{{ img(s.image, decorative=true) }}</span>{% endif %}{% endfor %}</span>{% endcall %}
+  {% endif %}
+
+  {% if "/resources/" in pages %}
+  {% set files = pages["/resources/"].files %}
+  {% call preview("resources", files | length) %}<span class="pv-body docs">{% for f in files %}<span class="doc"><i></i><i></i><i></i><b>PDF</b></span>{% endfor %}</span>{% endcall %}
+  {% endif %}
+
+  <section class="tile t-news" aria-labelledby="news-h">
+    <header class="tile-head"><h2 class="tile-title" id="news-h">{{ page.news_heading }}</h2><span class="count">{{ news | length }}</span></header>
+    <div class="news-scroll">
+      <ol class="news">
+      {% for n in news %}
+        {% if loop.changed(n.year) %}<li class="news-year" aria-hidden="true"><span>{{ n.year }}</span></li>{% endif %}
+        <li class="news-item">
+          <span class="news-ico">{{ icon(n.icon or kind_icons.get(n.kind, "news")) }}</span>
+          <div><time datetime="{{ n.iso }}">{{ n.date }}</time><p>{{ n.text | inline }}{% if n.extra %} <span class="news-extra">{% for x in n.extra %}{{ icon_or_text(x) }}{% endfor %}</span>{% endif %}</p></div>
+        </li>
+      {% endfor %}
+      </ol>
+    </div>
+  </section>
+
+  <ul class="t-social">
+  {% for s in site.social %}
+    <li><a class="tile link-tile social" href="{{ s.url }}">{% if s.icon %}{{ icon(s.icon) }}{% endif %}<span>{{ s.label }}</span></a></li>
+  {% endfor %}
+  </ul>
+</div>
+{% endblock %}

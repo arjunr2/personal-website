@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+{% block main %}
+{% set items = page.entries %}
+<div class="page">
+  {{ m.hero(page, entries(items, "title")) }}
+  <div class="board">
+  {% for x in items %}
+    <article class="tile pub {{ 'pub-wide' if x.figure | ratio > 2 else 'pub-split' }}" id="{{ x.id }}">
+      <div class="pub-text">
+        <p class="pub-meta"><span class="num">{{ "%02d" | format(loop.index) }}</span>{% if x.links %}{{ m.link(x.links[0], "chip chip-accent") }}{% endif %}</p>
+        <h2>{{ x.title }}</h2>
+        <p class="authors">{% for a in x.authors %}{% if a == site.name %}<b class="me">{{ a }}</b>{% else %}<span>{{ a }}</span>{% endif %}{{ ", " if not loop.last }}{% endfor %}</p>
+      </div>
+      <div class="pub-body">
+        <div class="abstract">{{ x.html }}</div>
+        {% if x.links | length > 1 %}<p class="links">{% for l in x.links[1:] %}{{ m.link(l, "chip") }}{% endfor %}</p>{% endif %}
+      </div>
+      {% if x.figure %}
+      <figure class="plate pub-fig">
+        <div class="pub-art">{{ img(x.figure) }}</div>
+        <figcaption><span class="num">Fig. {{ loop.index }}</span><button type="button" class="zoom" data-js aria-label="Enlarge figure {{ loop.index }}">{{ icon("fullscreen") }}<span>Enlarge</span></button></figcaption>
+      </figure>
+      {% endif %}
+    </article>
+  {% endfor %}
+  </div>
+  {{ m.pager(pager) }}
+</div>
+{% endblock %}
+
+{% block after %}
+<dialog class="lightbox" id="lightbox" aria-label="Figure">
+  <div class="lightbox-plate" id="lightbox-plate"></div>
+  <button type="button" class="icon-btn lightbox-close" id="lightbox-close" aria-label="Close">{{ icon("close") }}</button>
+</dialog>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+{% block main %}
+{% set roles = page.entries %}
+<div class="page">
+  {{ m.hero(page, entries(roles, "org") + entries(page.teaching, "title") + [("certificates", page.certificates_heading)]) }}
+
+  {{ m.label(page.industry_heading, "briefcase", roles | length) }}
+  <div class="board">
+  {% for j in roles %}
+    {% set size = j.size or [4, 3] %}
+    <article class="tile role" id="{{ j.id }}" style="--d:{{ size[0] }};--t:{{ size[1] }}">
+      <header class="role-head">
+        <span class="logo-plate">{{ img(j.logo) }}</span>
+        <div>
+          <h3>{{ j.org }}</h3>
+          <p class="role-meta"><span>{{ icon("role") }}<b>{{ j.role }}</b></span><span>{{ icon("location") }}<span>{{ j.location }}</span></span></p>
+        </div>
+      </header>
+      <div class="bullets">{{ j.html }}</div>
+      <ul class="stack">
+      {% for g in j.stack %}
+        <li>{{ icon(g.icon) }}<span class="tags">{% for s in g.tags %}<span class="tag">{{ s }}</span>{% endfor %}</span></li>
+      {% endfor %}
+      </ul>
+    </article>
+  {% endfor %}
+  </div>
+
+  <div class="board">
+    <section class="group group-academic">
+      {{ m.label(page.academic_heading, "school") }}
+      {% for a in page.teaching %}
+      <article class="tile teach" id="{{ a.id }}">
+        <header class="role-head"><span class="logo-plate">{{ img(a.logo) }}</span><h3>{{ a.title }}</h3></header>
+        <ul class="courses">
+        {% for c in a.courses %}
+          <li><span class="course">{{ c.course }}</span><span class="who">{{ icon("person") }}<span>{{ c.instructor }}</span></span><span class="school">{{ c.school }}</span><span class="term">{{ c.term }}</span></li>
+        {% endfor %}
+        </ul>
+      </article>
+      {% endfor %}
+    </section>
+    <section class="group group-certs" id="certificates">
+      {{ m.label(page.certificates_heading, "certificate", page.certificates | length) }}
+      <div class="tile certs">
+        <ul>
+        {% for c in page.certificates %}
+          <li><span class="cert-ico">{{ icon("certificate") }}</span><div><p class="cert-name">{{ c.name }}</p><p class="cert-by"><span>{{ c.by }}</span>{% if c.via %}<span class="tag">{{ c.via }}</span>{% endif %}</p></div></li>
+        {% endfor %}
+        </ul>
+      </div>
+    </section>
+  </div>
+  {{ m.pager(pager) }}
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+# Site-wide settings. Paths and URLs starting with "/" are site-root paths; the build turns
+# them into relative links so the site works both on www.arjunramesh.me and under a sub-folder.
+
+name: Arjun Ramesh
+copyright: "© Arjun Ramesh"
+favicon: /favicon.png
+
+# Top navigation, in order. Each url must match a page in content/ (see README).
+# The Previous/Next tiles at the bottom of each page follow this order too.
+nav:
+  - { label: Home, url: / }
+  - { label: Publications, url: /publications/ }
+  - { label: Professional Experience, url: /experience/ }
+  - { label: Projects, url: /projects/ }
+  - { label: Hobbies, url: /hobbies/ }
+  - { label: Resources, url: /resources/ }
+
+# Footer links, and the small tiles on the home page. `icon` is optional.
+social:
+  - { label: GitHub, icon: github, url: "https://github.com/arjunr2" }
+  - { label: LinkedIn, icon: linkedin, url: "https://www.linkedin.com/in/ajramesh" }
+  - { label: Youtube, icon: youtube, url: "https://www.youtube.com/channel/UCQLPzl1LHeF25W3SiKSAqGQ?view_as=subscriber" }
+  - { label: Email me!, icon: email, url: "mailto:arjunr2@andrew.cmu.edu" }
+
+# The Contact tile on the home page. Address lines accept inline Markdown.
+contact:
+  heading: Contact
+  address_label: Work Address
+  address:
+    - CIC **2313E** (2nd floor)
+    - 4720 Forbes Avenue, Pittsburgh, PA 15213
+  email: arjunr2@andrew.cmu.edu
+
+# Old addresses that keep working by forwarding to the new ones.
+redirects:
+  /pubs/: /publications/
