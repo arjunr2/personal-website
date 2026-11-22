@@ -1,5 +1,5 @@
 ---
-title: Projects
+title: Build Hub
 template: projects
 accent: projects
 icon: layers

@@ -11,7 +11,7 @@ nav:
   - { label: Home, url: / }
   - { label: Publications, url: /publications/ }
   - { label: Career, url: /career/ }
-  - { label: Projects, url: /projects/ }
+  - { label: Build Hub, url: /projects/ }
   - { label: Hobbies, url: /hobbies/ }
   - { label: Resources, url: /resources/ }
 

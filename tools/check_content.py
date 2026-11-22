@@ -32,6 +32,7 @@ DROPPED = {
     "Webassembly (Wasm) adoption for new domains is often hindered by the lack of standard system interfaces. Kernel interface support in Wasm engines allow numerous languages and applications to target Wasm, including arbitrary high-level Wasm APIs (WASI), driving ISA portability and software safety down to even deeply embedded OS ecosystems",
     "Real-time cyber-physical systems naturally lend themselves to distributed compute, but are often programmed monolithically to curb complexity and safety exploits. Our framework, Silverline, explores programmability and orchestration of distributed applications transparently across wide range of hardware using WebAssembly for lightweight virtualization.",
     "Professional Experience",  # page renamed "Career"
+    "Projects",  # page renamed "Build Hub"
     "Biography", "C/C++", "Python", "Ruby",  # languages dropped from the experience stacks
     "Contact", "Work Address", "CIC 2313E (2nd floor)", "CIC", "2313E", "(2nd floor)", "4720 Forbes Avenue, Pittsburgh, PA 15213", "arjunr2@andrew.cmu.edu"}
 SEP = "\x00"
