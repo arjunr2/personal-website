@@ -432,12 +432,8 @@ html.js .t-news.collapsed .tl-text { line-height: 1.55; }
   background: var(--accent); color: var(--on-accent); border-color: transparent;
   view-transition-name: hero;
 }
-.hero-row .hero-solo { --d: 12; min-height: 208px; gap: 28px; }
-.hero h1 { position: relative; font-size: var(--fs-hero); font-weight: 750; line-height: 0.94; letter-spacing: -0.055em; text-wrap: balance; }
-.hero-ico {
-  display: grid; place-items: center; width: 52px; height: 52px; border-radius: 18px;
-  background: color-mix(in srgb, var(--on-accent) 16%, transparent); font-size: 24px;
-}
+.hero-row .hero-solo { --d: 12; min-height: 0; justify-content: flex-end; padding-block: 44px 34px; }
+.hero h1 { position: relative; font-size: clamp(2.25rem, 1.3rem + 3.4vw, 4.25rem); font-weight: 750; line-height: 0.94; letter-spacing: -0.055em; text-wrap: balance; }
 .hero-ghost { position: absolute; right: -36px; top: -44px; font-size: 300px; line-height: 0; opacity: 0.12; transform: rotate(-14deg); pointer-events: none; }
 
 /* ───────────────────────── Publications ───────────────────────── */
@@ -717,7 +713,7 @@ html.js .t-news.collapsed .tl-text { line-height: 1.55; }
   .mosaic { min-height: 110px; }
   .chip { height: 42px; }
 
-  .hero { min-height: 200px; padding: 22px 22px 26px; gap: 28px; }
+  .hero-row .hero-solo { padding: 32px 22px 24px; }
   .hero-ghost { font-size: 220px; right: -30px; top: -30px; }
   .label { margin-top: 14px; }
 

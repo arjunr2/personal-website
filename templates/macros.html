@@ -17,7 +17,6 @@
 {% macro hero(page) %}
 <div class="board hero-row">
   <header class="tile hero hero-solo">
-    <span class="hero-ico" aria-hidden="true">{{ icon(page.icon | default("file")) }}</span>
     <span class="hero-ghost" aria-hidden="true">{{ icon(page.icon | default("file")) }}</span>
     <h1>{{ page.title }}</h1>
   </header>
