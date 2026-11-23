@@ -1,5 +1,5 @@
 ---
-title: Hobbies
+title: Gallery
 template: hobbies
 accent: hobbies
 icon: cube

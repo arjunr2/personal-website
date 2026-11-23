@@ -111,7 +111,7 @@ stack:
 * What I worked on
 ```
 
-Optional `size: [7, 6]` as for projects. Teaching and certificates are lists in `content/career/index.md`.
+Optional `size: [7, 6]` as for projects, and `current: true` for a "Present" badge. Teaching and certificates are lists in `content/career/index.md`.
 
 ## Add a page
 

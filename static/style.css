@@ -117,7 +117,7 @@ main:focus { outline: none; }
 
 em { font-style: normal; font-weight: 650; color: var(--ink); }
 strong { font-weight: 750; color: var(--ink); }
-.prose em {
+.prose em, .role .bullets em {
   padding: 0.08em 0.2em;
   margin: 0 -0.13em;
   border-radius: 0.4em;
@@ -125,14 +125,14 @@ strong { font-weight: 750; color: var(--ink); }
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
-.prose a, .tl-text a, .sport a {
+.prose a, .tl-text a, .sport a, .role .bullets a {
   text-decoration: underline;
   text-decoration-color: color-mix(in srgb, var(--accent-ink) 55%, transparent);
   text-decoration-thickness: 1.5px;
   text-underline-offset: 0.2em;
   transition: color 0.15s, text-decoration-color 0.15s;
 }
-.prose a:hover, .tl-text a:hover, .sport a:hover { color: var(--accent-ink); text-decoration-color: currentColor; }
+.prose a:hover, .tl-text a:hover, .sport a:hover, .role .bullets a:hover { color: var(--accent-ink); text-decoration-color: currentColor; }
 
 .skip {
   position: fixed; top: 12px; left: 12px; z-index: 100;
@@ -441,6 +441,7 @@ html.js .t-news.collapsed .tl-text { line-height: 1.55; }
 .pub { display: grid; gap: 28px 48px; padding: 34px 36px 36px; }
 .pub-split { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); grid-template-rows: auto 1fr; grid-template-areas: "text fig" "body fig"; }
 .pub-wide { grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); grid-template-areas: "text body" "fig fig"; }
+.pub-solo { grid-template-columns: minmax(0, 1fr); grid-template-areas: "text" "body"; }
 .pub-text { grid-area: text; }
 .pub-body { grid-area: body; display: grid; gap: 20px; align-content: start; }
 .pub-wide .pub-body { padding-top: 52px; }
@@ -448,6 +449,7 @@ html.js .t-news.collapsed .tl-text { line-height: 1.55; }
 .pub-fig { grid-area: fig; }
 .pub-meta { display: flex; align-items: center; gap: 14px; }
 .pub h2 { margin: 16px 0 14px; font-size: var(--fs-title); font-weight: 750; line-height: 1.08; letter-spacing: -0.04em; text-wrap: balance; }
+.pub-solo h2 { text-wrap: wrap; }
 .authors { font-size: var(--fs-15); line-height: 1.6; color: var(--ink-3); text-wrap: pretty; }
 .me { font-weight: 750; color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 0.22em; }
 .abstract { max-width: 68ch; color: var(--ink-2); line-height: 1.65; text-wrap: pretty; }
@@ -475,6 +477,18 @@ html.js .t-news.collapsed .tl-text { line-height: 1.55; }
 /* ───────────────────────── Experience ───────────────────────── */
 .role { display: flex; flex-direction: column; gap: 20px; }
 .role-head { display: flex; align-items: center; gap: 16px; }
+.now {
+  display: inline-flex; align-items: center; gap: 8px; flex: none; align-self: flex-start; margin-left: auto;
+  height: 30px; padding: 0 12px; border-radius: var(--r-pill);
+  background: var(--accent-soft); color: var(--accent-ink);
+  font-size: var(--fs-14); font-weight: 700; white-space: nowrap;
+}
+.now i { width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+@media (prefers-reduced-motion: no-preference) { .now i { animation: now 2s ease-out infinite; } }
+@keyframes now {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, currentColor 55%, transparent); }
+  100% { box-shadow: 0 0 0 7px transparent; }
+}
 .logo-plate {
   display: grid; place-items: center; flex: none; height: 68px; min-width: 68px; padding: 10px 12px;
   border: 1px solid var(--line); border-radius: 10px; background: var(--plate); isolation: isolate;
@@ -572,13 +586,17 @@ html.js .t-news.collapsed .tl-text { line-height: 1.55; }
 .sport:hover .sport-media img { transform: scale(1.04); }
 
 /* ───────────────────────── Resources ───────────────────────── */
-.res { --d: 6; --t: 3; display: flex; flex-direction: column; gap: 28px; }
+.res { --d: 4; --t: 3; display: flex; flex-direction: column; gap: 14px; padding: 16px; }
 .board:has(.res.is-open) .res { --d: 12; --t: 6; }
-.res-top { display: flex; align-items: center; gap: 24px; min-height: 150px; padding: 20px 24px; border-radius: var(--r-in); background: var(--accent-soft); }
+.res-top { display: flex; align-items: center; gap: 14px; padding: 12px 14px; border-radius: var(--r-in); background: var(--accent-soft); }
+.res .doc { width: 46px; height: 60px; padding: 10px 7px 0; gap: 4px; border-radius: 4px 11px 4px 4px; box-shadow: 0 8px 14px -8px rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(13, 14, 16, 0.08); }
+.res .doc i { height: 3px; }
+.res .doc b { left: 5px; bottom: 6px; padding: 1px 4px; border-radius: 4px; letter-spacing: 0.02em; }
 .res .doc { transform: rotate(-5deg); transition: transform 0.5s var(--ease); }
 .res:hover .doc { transform: rotate(3deg) translateY(-3px); }
-.res h2 { margin-top: 4px; font-size: var(--fs-title); font-weight: 750; letter-spacing: -0.04em; line-height: 1.08; text-wrap: balance; }
-.res-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.res h2 { font-size: var(--fs-18); font-weight: 750; letter-spacing: -0.02em; line-height: 1.2; text-wrap: balance; }
+.res-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+.res .btn { height: 34px; padding: 0 12px; gap: 6px; font-size: 0.8125rem; }
 .pdf-view iframe { display: block; width: 100%; height: min(82vh, 980px); border: 1px solid var(--line); border-radius: var(--r-in); background: #fff; }
 
 /* ───────────────────────── Generic Markdown page ───────────────────────── */
@@ -732,6 +750,10 @@ html.js .t-news.collapsed .tl-text { line-height: 1.55; }
   .pub { padding: 24px 20px 20px; gap: 20px; }
   .pub-art { padding: 18px 14px 10px; }
   .role-head { align-items: flex-start; }
+  /* Badge on its own line above the logo: the ::after is a full-width line break. */
+  .role-head:has(.now) { flex-wrap: wrap; row-gap: 14px; }
+  .role-head:has(.now)::after { content: ""; order: -1; flex-basis: 100%; }
+  .now { order: -1; margin-left: 0; }
   .logo-plate { height: 60px; min-width: 60px; }
   .logo-plate img { height: 38px; max-width: 92px; }
   .courses li { grid-template-columns: auto auto minmax(0, 1fr); gap: 2px 14px; padding: 8px 0; }
@@ -757,8 +779,6 @@ html.js .t-news.collapsed .tl-text { line-height: 1.55; }
   .sport h3 { margin-top: 16px; }
   .sport-ico { margin-bottom: 0; }
 
-  .res-top { gap: 18px; min-height: 130px; padding: 18px; }
-  .res .doc { width: 70px; height: 92px; }
 }
 
 /* ───────────────────────── View transitions ───────────────────────── */

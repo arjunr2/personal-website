@@ -9,6 +9,5 @@ stack:
   - { icon: tools, tags: [SystemVerilog, UVM] }
 ---
 
-* Improved speed and coverage of address generation test set for GPU memory hierarchy
-* Developed a library to allow reproducability of tests for targeted constraint testing
+* Improved speed and coverage of address generation for GPU memory hierarchy testing
 * Bringup of UVM testbenches for memory hierarchy

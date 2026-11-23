@@ -16,6 +16,7 @@
           <h3>{{ j.org }}</h3>
           <p class="role-meta"><span>{{ icon("role") }}<b>{{ j.role }}</b></span><span>{{ icon("location") }}<span>{{ j.location }}</span></span></p>
         </div>
+        {% if j.current %}<span class="now"><i aria-hidden="true"></i>Present</span>{% endif %}
       </header>
       <div class="bullets">{{ j.html }}</div>
       <ul class="stack">

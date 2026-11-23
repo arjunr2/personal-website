@@ -8,7 +8,7 @@ stack:
   - { icon: tools, tags: [ELK, Jenkins, Docker, Traefik] }
 ---
 
-* Created a real-time debugging tool to monitor chip performance using ELK stack
-* Tested and debugged AVX-512 instructions
+* Built a real-time debugging tool to monitor chip performance using ELK stack
+* Tested and debugged AVX-512 instructions on their latest chip
 * Improved pre-silicon test tools for register file verification
 * DevOps work: CI/CD, bugreport database management and front-end scripting

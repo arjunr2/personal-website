@@ -12,7 +12,7 @@ nav:
   - { label: Publications, url: /publications/ }
   - { label: Career, url: /career/ }
   - { label: Build Hub, url: /projects/ }
-  - { label: Hobbies, url: /hobbies/ }
+  - { label: Gallery, url: /hobbies/ }
   - { label: Resources, url: /resources/ }
 
 # Links under the biography on the home page, and in the footer of the other pages. `icon` is optional.
@@ -20,7 +20,7 @@ social:
   - { label: GitHub, icon: github, url: "https://github.com/arjunr2" }
   - { label: LinkedIn, icon: linkedin, url: "https://www.linkedin.com/in/ajramesh" }
   - { label: Youtube, icon: youtube, url: "https://www.youtube.com/channel/UCQLPzl1LHeF25W3SiKSAqGQ?view_as=subscriber" }
-  - { label: Email me!, icon: email, url: "mailto:arjunr2@andrew.cmu.edu" }
+  - { label: Email me!, icon: email, url: "mailto:arjun99ramesh@gmail.com" }
 
 # Tags on home-page news items (the `kind:` of each item in content/news.yml).
 #   icon:  any icon name in templates/icons.json
