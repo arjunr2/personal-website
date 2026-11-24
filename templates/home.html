@@ -17,6 +17,16 @@
   <section class="tile intro" aria-label="{{ page.heading }}">
     <div class="intro-text">
       <div class="bio-text prose">{{ page.html }}</div>
+      {% if page.credentials %}
+      <ul class="creds">
+      {% for c in page.credentials %}
+        <li class="cred">
+          {% if c.logo %}<span class="cred-mark plate">{{ img(c.logo) }}</span>{% else %}<span class="cred-mark" aria-hidden="true">{{ icon(c.icon) }}</span>{% endif %}
+          <div><p class="cred-label">{{ c.label }}</p><p class="cred-title">{{ c.title | inline }}</p><p class="cred-text">{{ c.text | inline }}</p></div>
+        </li>
+      {% endfor %}
+      </ul>
+      {% endif %}
       <ul class="intro-links">
       {% for s in site.social %}
         <li><a class="chip" href="{{ s.url }}">{% if s.icon %}{{ icon(s.icon) }}{% endif %}<span>{{ s.label }}</span></a></li>

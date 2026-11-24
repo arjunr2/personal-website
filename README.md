@@ -16,7 +16,7 @@ python3 build.py                    # just build into public/
 | What | Where |
 |---|---|
 | Name, nav bar order, social links (under the biography), news tags | `site.yml` |
-| Home: biography (the body) and photo | `content/index.md` |
+| Home: biography (the body: `## Headline` lines, each followed by a subline) and photo | `content/index.md` |
 | News | `content/news.yml` |
 | Publications | `content/publications/<paper>.md` |
 | Industry roles | `content/career/<company>.md`; teaching and certificates: `content/career/index.md` |
