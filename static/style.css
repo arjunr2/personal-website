@@ -532,10 +532,13 @@ html.js .t-news.collapsed .tl-text { line-height: 1.55; }
 /* ───────────────────────── Gallery ───────────────────────── */
 .gal { --d: 3; --t: 3; display: flex; flex-direction: column; padding: 10px; outline-offset: 3px; }
 .gal-frame { position: relative; aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--r-in); background: var(--tile-2); }
-.gal-frame > img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease); }
-.gal:hover .gal-frame > img { transform: scale(1.04); }
+.gal-frame > img, .gal-frame > video { width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease); }
+.gal:hover .gal-frame > img, .gal:hover .gal-frame > video { transform: scale(1.04); }
 .gal-videos { display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); gap: 10px; }
 .gal-videos .yt { aspect-ratio: 4 / 3; }
+.gal-photos { display: grid; gap: 10px; }
+.gal-photos-many { grid-template-columns: repeat(var(--cols), minmax(0, 1fr)); grid-auto-flow: dense; }
+.gal-photos-many > :first-child { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
 .gal-plate, .gal-icon { display: grid; place-items: center; background: var(--accent-soft); }
 .gal-plate .plate { width: 46%; padding: 10px; border-radius: 14px; transform: rotate(-6deg); box-shadow: 0 20px 34px -20px rgba(16, 17, 20, 0.45); transition: transform 0.7s var(--ease); }
 .gal-plate img { width: 100%; height: auto; }
@@ -676,6 +679,7 @@ html.js .t-news.collapsed .tl-text { line-height: 1.55; }
 /* ───────────────────────── Phone: 2 columns ───────────────────────── */
 @media (max-width: 699px) {
   .gal-videos { grid-template-columns: minmax(0, 1fr); }
+  .gal-photos-many { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   :root { --gap: 12px; --pad: 20px; --gutter: 14px; --r-tile: 12px; --r-in: 8px; }
   body { padding-bottom: 60px; }
   .nav ul { justify-content: flex-start; }

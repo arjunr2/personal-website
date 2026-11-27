@@ -6,8 +6,13 @@
   <div class="board gallery">
   {% for t in page.entries %}
     {% set n = (t.videos or []) | length %}
-    <article class="tile gal" id="{{ t.id }}"{% if t.text %} tabindex="0"{% endif %}{% if n > 1 %} style="--d:{{ 3 * n }};--t:6"{% endif %}>
-      {% if n %}<div class="gal-videos" style="--n:{{ n }}">{% for v in t.videos %}{{ ("[" ~ v.title ~ "](" ~ v.url ~ ")") | md }}{% endfor %}</div>
+    {% set k = (t.images or []) | length %}
+    {% set size = t.size or ([12, 6] if k > 3 else ([6, 6] if k else ([3 * n, 6] if n > 1 else none))) %}
+    <article class="tile gal{% if t.images %} gal-wide{% endif %}" id="{{ t.id }}"{% if t.text %} tabindex="0"{% endif %}{% if size %} style="--d:{{ size[0] }};--t:{{ size[1] }}"{% endif %}>
+      {% if k %}<div class="gal-photos{% if k > 1 %} gal-photos-many{% endif %}" style="--cols:{{ ((k - 1) / 2) | round(0, 'ceil') | int + 2 }}">{% for i in t.images %}<div class="gal-frame">
+        {%- if i.src.endswith(".mp4") %}<video src="{{ i.src }}" autoplay muted loop playsinline preload="metadata" aria-label="{{ i.alt }}"></video>{% else %}{{ img(i) }}{% endif -%}
+      </div>{% endfor %}</div>
+      {% elif n %}<div class="gal-videos" style="--n:{{ n }}">{% for v in t.videos %}{{ ("[" ~ v.title ~ "](" ~ v.url ~ ")") | md }}{% endfor %}</div>
       {% elif t.image and t.plate %}<div class="gal-frame gal-plate"><span class="plate">{{ img(t.image) }}</span></div>
       {% elif t.image %}<div class="gal-frame">{{ img(t.image) }}</div>
       {% else %}<div class="gal-frame gal-icon" aria-hidden="true">{{ icon(t.icon or "star") }}</div>

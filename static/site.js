@@ -4,6 +4,7 @@
   const root = document.documentElement;
   const $ = (sel) => document.querySelector(sel);
   const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+  if (reducedMotion.matches) document.querySelectorAll("video[autoplay]").forEach((v) => { v.removeAttribute("autoplay"); v.pause(); v.controls = true; });
 
   /* Same-page view transition; `kind` lets the CSS pick an animation. */
   let token = 0;

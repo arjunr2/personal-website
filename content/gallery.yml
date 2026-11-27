@@ -3,6 +3,8 @@
 #   caption: short line under the title
 #   image:   { src, alt }; plate: true for a small graphic, shown on a card instead of filling the tile
 #   icon:    for a tile without an image, from templates/icons.json
+#   images:  several pictures in one wider tile, [{ src, alt }, ...]; the first is shown large. An .mp4 plays as a silent loop
+#   size:    optional tile width [columns of 12 on desktop, columns of 6 on tablet]; default [3, 3]; with images: [6, 6], or a full row for 4 or more
 #   videos:  YouTube videos instead of an image, [{ title, url }]; several share one wider tile, side by side
 #   text:    shown over the picture on hover (below it on phones); Markdown
 
@@ -11,6 +13,17 @@ accent: hobbies
 icon: cube
 
 items:
+  - title: Atlantic -> Mediterrean across the French/Spanish Pyrenees
+    caption: "22 days, 1200 km distance, 23000 m elevation"
+    images:
+      - { src: /assets/hobbies/Pyrenees_Map.png, alt: "Map of the route across the Pyrenees, from the Atlantic to the Mediterranean" }
+      - { src: /assets/hobbies/Pyrenees_1.jpg, alt: "A green valley with a village, ringed by mountains" }
+      - { src: /assets/hobbies/Pyrenees_2.jpg, alt: "With my loaded bike beside giant bicycle sculptures on a grassy col below limestone peaks" }
+      - { src: /assets/hobbies/Pyrenees_Pail.jpg, alt: "A road winding down a grassy mountainside under a cloudy sky" }
+      - { src: /assets/hobbies/Pyrenees_3.jpg, alt: "Standing with my bike in front of a cyclist statue at a mountain pass" }
+      - { src: /assets/hobbies/Pyrenees_4.jpg, alt: "A road cut into the side of a sheer limestone gorge" }
+      - { src: /assets/hobbies/Pyrenees_5.jpg, alt: "The España border sign above a bay on the Mediterranean" }
+
   - title: Blind solves from a comp
     caption: "[Official profile](https://www.worldcubeassociation.org/persons/2014RAME04); never broke the 10s barrier on 3x3 :("
     image: { src: /assets/hobbies/Cubing_Comp.jpg, alt: A Rubik's cube mid-turn }
@@ -25,8 +38,5 @@ items:
     caption: 10 day hike (120 km) across Annapurna circuit
     image: { src: /assets/hobbies/Trek_Finish.jpg, alt: 'At a snow-covered high pass, beside a summit sign draped in prayer flags' }
 
-  - title: Surf in chennai
+  - title: Surf in Kovalam
     image: { src: /assets/hobbies/Surf_DP.jpg, alt: Standing beside a surfboard in front of a wave mural }
-    
-  - title: Tour De France
-    caption: "22 days with 1200 km distance + 23000 m elevation"
