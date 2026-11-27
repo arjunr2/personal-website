@@ -1,0 +1,192 @@
+// Behaviour only: every page is complete HTML without this file.
+(() => {
+  "use strict";
+  const root = document.documentElement;
+  const $ = (sel) => document.querySelector(sel);
+  const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+  if (reducedMotion.matches) document.querySelectorAll("video[autoplay]").forEach((v) => { v.removeAttribute("autoplay"); v.pause(); v.controls = true; });
+
+  /* Same-page view transition; `kind` lets the CSS pick an animation. */
+  let token = 0;
+  function transition(update, kind) {
+    if (!document.startViewTransition || reducedMotion.matches) return update();
+    const mine = ++token;
+    if (kind) root.dataset.vt = kind;
+    else delete root.dataset.vt;
+    const vt = document.startViewTransition(update);
+    vt.ready.catch(() => {});
+    vt.finished.finally(() => { if (mine === token) delete root.dataset.vt; });
+  }
+
+  /* ── Theme: stored choice, else the system's (set before paint by the script in <head>) ── */
+  const themeBtn = $("#theme");
+  const stored = () => { try { return localStorage.getItem("theme"); } catch (err) { return null; } };
+  const syncTheme = () => themeBtn.setAttribute("aria-label", root.dataset.theme === "dark" ? "Switch to light theme" : "Switch to dark theme");
+  const setTheme = (t) => { root.dataset.theme = t; syncTheme(); };
+  syncTheme();
+  themeBtn.addEventListener("click", () => {
+    const next = root.dataset.theme === "dark" ? "light" : "dark";
+    try { localStorage.setItem("theme", next); } catch (err) {}
+    const r = themeBtn.getBoundingClientRect();
+    root.style.setProperty("--tx", r.left + r.width / 2 + "px");
+    root.style.setProperty("--ty", r.top + r.height / 2 + "px");
+    transition(() => setTheme(next), "theme");
+  });
+  const systemDark = matchMedia("(prefers-color-scheme: dark)");
+  systemDark.addEventListener("change", (ev) => { if (!stored()) setTheme(ev.matches ? "dark" : "light"); });
+
+  /* ── Tile-to-page morph (cross-document view transition) ──
+   * A page's hero is always named "hero"; on the home page, the tile for the page being opened
+   * takes the name for the swap. The arriving side is handled in <head> (it must run before paint). */
+  const previews = [...document.querySelectorAll("[data-preview]")];
+  addEventListener("pageswap", (ev) => {
+    if (!ev.viewTransition || !ev.activation || !ev.activation.entry.url) return;
+    const path = new URL(ev.activation.entry.url).pathname;
+    const tile = previews.find((a) => new URL(a.href).pathname === path);
+    if (tile) tile.style.viewTransitionName = "hero";
+  });
+  addEventListener("pageshow", (ev) => {
+    if (!ev.persisted) return;
+    // Back from the cache: drop the name given at pageswap, and pick up a theme chosen elsewhere.
+    previews.forEach((a) => (a.style.viewTransitionName = ""));
+    const t = stored();
+    setTheme(t === "light" || t === "dark" ? t : systemDark.matches ? "dark" : "light");
+  });
+
+  /* ── Keep the active page visible in the scrolling nav (tablet / phone) ── */
+  const navList = $(".nav ul"), active = $('.nav a[aria-current="page"]');
+  if (active && navList.scrollWidth > navList.clientWidth)
+    navList.scrollLeft = active.offsetLeft - (navList.clientWidth - active.offsetWidth) / 2;
+
+  /* ── Show which way the nav can scroll: faded edge + chevron on that side ── */
+  const nav = $(".nav");
+  if (nav && navList) {
+    const edges = () => {
+      const max = navList.scrollWidth - navList.clientWidth;
+      nav.classList.toggle("more-left", navList.scrollLeft > 2);
+      nav.classList.toggle("more-right", navList.scrollLeft < max - 2);
+    };
+    navList.addEventListener("scroll", edges, { passive: true });
+    addEventListener("resize", edges);
+    edges();
+    nav.addEventListener("click", (ev) => {
+      const b = ev.target.closest(".nav-more");
+      if (b) navList.scrollBy({ left: (b.classList.contains("nav-more-next") ? 1 : -1) * navList.clientWidth * 0.6, behavior: "smooth" });
+    });
+  }
+
+  /* ── Highlight the tile a #link points at ── */
+  const target = () => {
+    let id = location.hash.slice(1);
+    try { id = decodeURIComponent(id); } catch (err) {}
+    const el = id && document.getElementById(id);
+    return el && el.matches(".tile, .group") ? el : null;
+  };
+  let flashTimer = 0;
+  function flash() {
+    const el = target();
+    if (!el) return;
+    document.querySelectorAll(".is-target").forEach((n) => n.classList.remove("is-target"));
+    void el.offsetWidth; // restart the animation
+    el.classList.add("is-target");
+    clearTimeout(flashTimer);
+    flashTimer = setTimeout(() => el.classList.remove("is-target"), 2200);
+  }
+  addEventListener("hashchange", flash);
+  flash();
+  // Web fonts and images can move a deep-linked tile after the first scroll: settle on it again.
+  if (target()) {
+    let moved = false;
+    for (const ev of ["wheel", "touchstart", "keydown"]) addEventListener(ev, () => (moved = true), { once: true, passive: true });
+    const settle = () => { const el = target(); if (el && !moved) el.scrollIntoView({ behavior: "instant" }); };
+    if (document.fonts) document.fonts.ready.then(settle);
+    addEventListener("load", settle);
+  }
+
+  /* ── News: filter the timeline by kind (every row is in the HTML) ── */
+  const filters = $(".filters");
+  if (filters) filters.addEventListener("click", (ev) => {
+    const b = ev.target.closest(".filter");
+    if (!b || b.getAttribute("aria-pressed") === "true") return;
+    const k = b.dataset.filter;
+    filters.querySelectorAll(".filter").forEach((f) => f.setAttribute("aria-pressed", String(f === b)));
+    const years = new Set();
+    document.querySelectorAll(".tl-item").forEach((li) => {
+      li.hidden = !!k && li.dataset.kind !== k;
+      if (!li.hidden) years.add(li.dataset.year);
+    });
+    document.querySelectorAll(".tl-year").forEach((li) => (li.hidden = !years.has(li.dataset.year)));
+  });
+
+  /* ── News: collapsed to the latest few as a horizontal row; "See all" expands the timeline ── */
+  const toggle = $(".news-toggle");
+  if (toggle) toggle.addEventListener("click", () => {
+    const news = toggle.closest(".t-news");
+    const open = news.classList.toggle("collapsed") === false;
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.textContent = open ? toggle.dataset.less : toggle.dataset.more;
+    if (!open) {
+      filters?.querySelector('.filter[data-filter=""]')?.click();
+      if (news.getBoundingClientRect().top < 0) news.scrollIntoView({ block: "start" });
+    }
+  });
+
+  /* ── Clicks: email reveal, figure lightbox, PDF preview, videos ── */
+  const lightbox = $("#lightbox");
+  const pdfbox = $("#pdfbox");
+  if (pdfbox) pdfbox.addEventListener("close", () => { $("#pdfbox-frame").src = "about:blank"; });
+  document.addEventListener("click", (ev) => {
+    const t = ev.target;
+
+    // The address is stored reversed in two parts, so it never appears whole in the HTML.
+    const mail = t.closest("button[data-u]");
+    if (mail) {
+      const rev = (x) => [...x].reverse().join("");
+      const shown = document.createElement("span");
+      shown.className = "chip chip-email";
+      shown.innerHTML = mail.querySelector(".icon").outerHTML;
+      shown.append(Object.assign(document.createElement("span"), { textContent: rev(mail.dataset.u) + "@" + rev(mail.dataset.d) }));
+      mail.replaceWith(shown);
+      return;
+    }
+
+    const fig = lightbox && t.closest(".pub-art, .zoom") && t.closest(".pub-fig");
+    if (fig) {
+      const img = fig.querySelector("img").cloneNode();
+      img.removeAttribute("loading");
+      $("#lightbox-plate").replaceChildren(img);
+      lightbox.showModal();
+      return;
+    }
+    if (lightbox && (t === lightbox || t.closest("#lightbox-close"))) lightbox.close();
+
+    // PDF buttons open a preview; on phones (poor embedded PDF support) the link opens the file instead.
+    const pdf = pdfbox && t.closest("a[data-pdf]");
+    if (pdf && !matchMedia("(max-width: 699px)").matches) {
+      ev.preventDefault();
+      $("#pdfbox-frame").src = pdf.href;
+      $("#pdfbox-open").href = pdf.href;
+      pdfbox.showModal();
+      return;
+    }
+    if (pdfbox && (t === pdfbox || t.closest("#pdfbox-close"))) pdfbox.close();
+
+
+    const yt = t.closest("a[data-yt]");
+    if (yt) {
+      ev.preventDefault();
+      const f = document.createElement("iframe");
+      f.className = "yt";
+      f.src = "https://www.youtube-nocookie.com/embed/" + yt.dataset.yt + "?autoplay=1";
+      f.title = yt.dataset.title;
+      f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      f.allowFullscreen = true;
+      yt.replaceWith(f);
+      return;
+    }
+
+    // Re-clicking the link to the current #target still highlights it.
+    const a = t.closest('a[href^="#"]');
+    if (a && a.hash && a.hash === location.hash) flash();
+  });
+})();

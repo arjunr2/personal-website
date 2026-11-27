@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Publications - Arjun Ramesh</title>
+<link rel="icon" href="../favicon.png">
+<script>
+  // Before first paint: the stored theme, else the system one (no flash of the wrong theme).
+  (function () {
+    var d = document.documentElement, t = null;
+    d.classList.add("js");
+    try { t = localStorage.getItem("theme"); } catch (e) {}
+    if (t !== "light" && t !== "dark") t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    d.dataset.theme = t;
+    // Arriving from a page whose home tile this page has: morph that tile (see site.js).
+    addEventListener("pagereveal", function (e) {
+      var from = e.viewTransition && window.navigation && navigation.activation && navigation.activation.from;
+      if (!from || !from.url) return;
+      var path = new URL(from.url).pathname;
+      document.querySelectorAll("[data-preview]").forEach(function (a) {
+        if (new URL(a.href).pathname !== path) return;
+        a.style.viewTransitionName = "hero";
+        e.viewTransition.finished.finally(function () { a.style.viewTransitionName = ""; });
+      });
+    });
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Inter:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body data-accent="publications">
+<a class="skip" href="#main">Skip to content</a>
+<div class="top">
+  <header class="head">
+    <a class="brand" href="../">
+      <span class="brand-mark" aria-hidden="true">AR</span>
+<span class="brand-name">Arjun Ramesh</span>    </a>
+    <button type="button" class="icon-btn theme" id="theme" aria-label="Switch theme" data-js><svg class="icon i-sun" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg><svg class="icon i-moon" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg></button>
+  </header>
+  <nav class="nav" aria-label="Pages">
+    <ul>
+      <li><a href="../" data-accent="home">Home</a></li>
+      <li><a href="../publications/" data-accent="publications" aria-current="page">Publications</a></li>
+      <li><a href="../career/" data-accent="experience">Career</a></li>
+      <li><a href="../projects/" data-accent="projects">Build Hub</a></li>
+      <li><a href="../gallery/" data-accent="hobbies">Gallery</a></li>
+    </ul>
+    <button type="button" class="nav-more nav-more-prev" data-js tabindex="-1" aria-label="Scroll pages left"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="M15.41 16.58 10.83 12l4.58-4.59L14 6l-6 6 6 6z"/></svg></button>
+    <button type="button" class="nav-more nav-more-next" data-js tabindex="-1" aria-label="Scroll pages right"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8.59 16.58 13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></button>
+  </nav>
+</div>
+<main id="main" tabindex="-1">
+<div class="page">
+  <div class="board hero-row">
+  <header class="tile hero hero-solo">
+    <span class="hero-ghost" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="m23.5 17-5 5-3.5-3.5 1.5-1.5 2 2 3.5-3.5zM6 2c-1.11 0-2 .89-2 2v16c0 1.11.89 2 2 2h7.81c-.53-.91-.81-1.95-.81-3 0-.33.03-.67.08-1H6v-2h7.81c.46-.8 1.1-1.5 1.87-2H6v-2h12v1.08c.33-.05.67-.08 1-.08.34 0 .67.03 1 .08V8l-6-6m-1 1.5L18.5 9H13Z"/></svg></span>
+    <h1>Publications</h1>
+  </header>
+</div>
+
+  <div class="board">
+    <article class="tile pub pub-solo" id="thesis">
+      <div class="pub-text">
+        <p class="pub-meta"><a class="chip chip-accent" href="../assets/pubs/pdfs/Thesis.pdf"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2m-9.5 8.5c0 .8-.7 1.5-1.5 1.5H7v2H5.5V9H8c.8 0 1.5.7 1.5 1.5zm5 2c0 .8-.7 1.5-1.5 1.5h-2.5V9H13c.8 0 1.5.7 1.5 1.5zm4-3H17v1h1.5V13H17v2h-1.5V9h3zm-6.5 0h1v3h-1zm-5 0h1v1H7z"/></svg><span>PhD Dissertation (2026)</span>
+</a></p>
+        <h2>Unlocking Safety and Observability for Edge Cyber-Physical Systems with Low-Level Bytecode Virtualization</h2>
+        <p class="authors"><b class="me">Arjun Ramesh</b></p>
+      </div>
+    </article>
+    <article class="tile pub pub-split" id="wali">
+      <div class="pub-text">
+        <p class="pub-meta"><a target="_blank" rel="noopener" class="chip chip-accent" href="https://dl.acm.org/doi/epdf/10.1145/3689031.3717470"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.435 12.25a.43.43 0 0 0-.202.135.4.4 0 0 0-.07.245q-.002.225.12.308.115.083.352.082.13 0 .264-.06a.8.8 0 0 0 .245-.165v-.66q-.252.023-.405.045-.158.016-.305.07zM12 0 0 12l12 12 12-12zm0 19.357A7.36 7.36 0 0 1 4.643 12 7.36 7.36 0 0 1 12 4.642 7.36 7.36 0 0 1 19.357 12 7.36 7.36 0 0 1 12 19.357m0-13.98v.002c-3.654 0-6.62 2.966-6.62 6.62s2.966 6.62 6.62 6.62 6.62-2.966 6.62-6.62A6.625 6.625 0 0 0 12 5.376zm-2.862 8.246h-.995v-.336l-.182.154a1.4 1.4 0 0 1-.477.233c-.082.02-.202.035-.352.035a.94.94 0 0 1-.698-.285.97.97 0 0 1-.277-.716q0-.355.14-.574c.1-.15.24-.27.405-.348q.31-.136.646-.18.374-.05.803-.078v-.017q0-.264-.196-.363-.194-.104-.58-.102-.176 0-.41.063c-.158.044-.308.1-.458.164H6.42v-.77q.145-.044.48-.1.325-.06.663-.06.825 0 1.2.276.375.274.375.837v2.168zm3.22-.167q-.103.041-.2.086-.11.046-.23.08a5 5 0 0 1-.27.06 2 2 0 0 1-.336.022q-.396 0-.723-.1a1.5 1.5 0 0 1-.57-.307 1.4 1.4 0 0 1-.373-.52 1.9 1.9 0 0 1-.135-.738c-.008-.27.042-.535.146-.78.09-.204.224-.384.392-.53.165-.134.355-.233.56-.29q.332-.098.675-.096c.37 0 .732.087 1.06.255v.854h-.127a3 3 0 0 0-.147-.124 1.3 1.3 0 0 0-.188-.126 1.07 1.07 0 0 0-.55-.14q-.38-.001-.59.263-.209.265-.21.714 0 .481.225.715a.78.78 0 0 0 .592.235q.166 0 .33-.042a1.1 1.1 0 0 0 .415-.225c.048-.04.088-.082.123-.11h.13v.843zm4.333.173v-1.597q.002-.236-.007-.397a.8.8 0 0 0-.052-.263.26.26 0 0 0-.13-.15.62.62 0 0 0-.478.002q-.13.06-.244.14v2.263h-.993v-1.595q0-.232-.01-.396a.9.9 0 0 0-.05-.264.3.3 0 0 0-.136-.15.5.5 0 0 0-.25-.048.56.56 0 0 0-.24.056q-.115.06-.228.136v2.262h-.995V10.44h.993v.356q.215-.188.46-.323c.148-.08.314-.12.484-.12a.94.94 0 0 1 .514.14c.153.1.27.244.34.414q.285-.266.54-.41a1.03 1.03 0 0 1 .911-.07c.115.044.22.116.3.21.09.106.16.23.2.364q.067.214.066.553v2.076h-.995z"/></svg><span>EuroSys 2025</span>
+</a></p>
+        <h2>Empowering WebAssembly with Thin Kernel Interfaces</h2>
+        <p class="authors"><b class="me">Arjun Ramesh</b>, <span>Tianshu Huang</span>, <span>Ben L. Titzer</span>, <span>Anthony Rowe</span></p>
+      </div>
+      <div class="pub-body">
+<div class="abstract"><p>Wasm adoption for new domains is often hindered by the lack of standard system interfaces.
+We show support for the <strong>Linux</strong> and <strong>Zephyr</strong> syscall interface in Wasm engines allowing numerous 
+languages and applications to target Wasm out-of-the-box while preserving ISA portability and safety. 
+Check out our ports of Bash, ncurses, openssh, and plenty of other cool software!</p></div><p class="links"><a target="_blank" rel="noopener" class="chip" href="https://arxiv.org/abs/2312.03858"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="M3.842 0a1 1 0 0 0-.922.608c-.153.369-.044.627.294 1.111l6.919 8.36-1.023 1.106a1.04 1.04 0 0 0 .003 1.423l1.23 1.313-5.44 6.444c-.28.3-.453.823-.297 1.199a1.025 1.025 0 0 0 .959.635.91.91 0 0 0 .689-.34l5.783-6.126 7.49 8.005a.85.85 0 0 0 .684.26.96.96 0 0 0 .877-.615c.158-.377-.017-.75-.306-1.14L13.73 13.9l1.064-1.13a.963.963 0 0 0 .009-1.316L4.633.464S4.26.01 3.867 0zm0 .272h.017c.218.005.487.272.564.364l.005.006.005.005 10.17 10.99a.69.69 0 0 1-.008.946l-1.066 1.133-1.498-1.772-8.6-10.39c-.328-.472-.352-.619-.26-.841a.73.73 0 0 1 .671-.44Zm14.341 1.57a.88.88 0 0 0-.655.242l-5.696 6.158 1.694 1.832 5.309-6.514c.325-.433.479-.66.325-1.029a1.12 1.12 0 0 0-.977-.689zm-7.655 12.282 1.318 1.414-5.786 6.13a.65.65 0 0 1-.496.26.75.75 0 0 1-.706-.467c-.112-.269.036-.687.244-.909l.005-.005.005-.006z"/></svg><span>Pre-Print</span>
+</a><a target="_blank" rel="noopener" class="chip" href="https://github.com/arjunr2/WALI"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg><span>WALI</span>
+</a><a target="_blank" rel="noopener" class="chip" href="https://doc.rust-lang.org/nightly/rustc/platform-support/wasm32-wali-linux.html"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="m21.9 11.7-.9-.5V11l.7-.7c.1-.1.1-.3 0-.4l-.1-.1-.9-.3c0-.1 0-.2-.1-.2l.6-.8c.1-.1.1-.3-.1-.4 0 0-.1 0-.1-.1l-1-.2c0-.1-.1-.1-.1-.2l.4-.9v-.3c-.1-.1-.2-.1-.3-.1h-1s0-.1-.1-.1l.2-1c0-.2-.1-.3-.2-.3h-.1l-1 .2c0-.1-.1-.1-.2-.2v-1q0-.3-.3-.3h-.1l-.9.4h-.1L16 3c0-.2-.2-.3-.3-.2h-.1l-.8.6c-.1 0-.2 0-.2-.1l-.3-.9c-.1-.1-.2-.2-.4-.2 0 0-.1 0-.1.1L13 3h-.2l-.5-.8c-.1-.2-.3-.2-.5-.2l-.1.1-.5.9H11l-.7-.7c-.1-.1-.3-.1-.4 0l-.1.1-.3.9c-.1 0-.2 0-.2.1l-.8-.6c-.2-.1-.4-.1-.5.1V3l-.2 1s-.1 0-.2.1l-.9-.4c-.1-.1-.3 0-.4.1v1.1c0 .1-.1.1-.1.2l-1-.2c-.2-.1-.3 0-.3.2v.1l.2 1c-.1 0-.1.1-.2.1h-1q-.3 0-.3.3v.1l.4.9v.2L3 8c-.2 0-.3.2-.3.3v.1l.6.8c0 .1 0 .2-.1.2l-.8.4c-.1.1-.2.2-.2.4 0 0 0 .1.1.1l.7.7v.2l-.8.5c-.2.1-.2.3-.2.4l.1.1.9.6v.2l-.7.7c-.1.1-.1.3 0 .4l.1.1.9.3c0 .1 0 .2.1.2l-.6.8c-.1.1-.1.3.1.4 0 0 .1 0 .1.1l1 .2c0 .1.1.1.1.2l-.4.9c-.1.1 0 .3.1.4h1.1c.1 0 .1.1.2.1l-.2 1c0 .2.1.3.2.3h.1l1-.2c0 .1.1.1.2.2v1q0 .3.3.3h.1l.9-.4h.1l.2 1c0 .2.2.3.3.2h.1l.8-.6c.1 0 .2 0 .2.1l.3.9c.1.1.2.2.4.2 0 0 .1 0 .1-.1l.8-.7h.2l.5.8c.1.1.3.2.4.1l.1-.1.5-.8h.2l.7.7c.1.1.3.1.4 0l.1-.1.3-.9c.1 0 .2 0 .2-.1l.8.6c.1.1.3.1.4-.1 0 0 0-.1.1-.1l.2-1c.1 0 .1-.1.2-.1l.9.4c.1.1.3 0 .4-.1v-1.1l.2-.2 1 .2c.2 0 .3-.1.3-.2v-.1l-.2-1 .2-.2h1q.3 0 .3-.3v-.1l-.4-.9c0-.1.1-.1.1-.2l1-.2c.2 0 .3-.2.2-.3v-.1l-.6-.8.1-.2.9-.3c.1-.1.2-.2.2-.4 0 0 0-.1-.1-.1L21 13v-.2l.8-.5c.2-.1.2-.3.1-.6q0 .15 0 0m-5.7 7c-.3-.1-.5-.4-.5-.7.1-.3.4-.5.7-.5.3.1.5.4.5.7 0 .4-.3.6-.7.5m-.2-1.9c-.3-.1-.6.1-.6.4l-.4 1.4q-1.35.6-3 .6c-1.1 0-2.1-.2-3.1-.7l-.3-1.4c-.1-.3-.3-.5-.6-.4l-1.2.3c-.2-.2-.4-.5-.6-.7h6c.1 0 .1 0 .1-.1v-2.1c0-.1 0-.1-.1-.1h-1.7v-1.3h1.9c.2 0 .9 0 1.2 1 .1.3.2 1.3.4 1.6.1.3.6 1 1.1 1h3.1c-.2.3-.4.5-.7.8zm-8.3 1.9c-.3.1-.6-.1-.7-.5-.1-.3.1-.6.5-.7s.6.1.7.5c0 .3-.2.6-.5.7M5.4 9.5c.1.3 0 .7-.3.8s-.7 0-.8-.3 0-.7.3-.8c.4-.1.7 0 .8.3m-.7 1.6 1.3-.5c.3-.1.4-.4.3-.7L6 9.3h1V14H5c-.3-1-.4-1.9-.3-2.9m5.6-.4V9.3h2.5c.1 0 .9.1.9.7 0 .5-.6.7-1.1.7zm9 1.2v.5h-.8c-.1 0-.1 0-.1.1v.3c0 .8-.5 1-.9 1s-.8-.2-.9-.4c-.2-1.3-.6-1.5-1.2-2 .7-.5 1.5-1.2 1.5-2.1 0-1-.7-1.6-1.1-1.9-.7-.4-1.4-.5-1.6-.5H6.6c1.1-1.2 2.5-2 4.1-2.3l.9 1c.2.2.5.2.8 0l1-1c2.1.4 3.9 1.7 5 3.6l-.7 1.6c-.1.3 0 .6.3.7l1.3.6zm-7.7-8c.2-.2.6-.2.8 0s.2.6 0 .8q-.45.45-.9 0c-.2-.2-.1-.5.1-.8m6.9 5.6c.1-.3.5-.4.8-.3s.4.5.3.8-.5.4-.8.3-.4-.5-.3-.8"/></svg><span>Rust Target</span>
+</a></p>      </div>
+      <figure class="plate pub-fig">
+        <div class="pub-art"><img src="../assets/pubs/WALI.svg" alt="Diagram comparing the Native, WALI, and WASI software stacks" width="792" height="544" decoding="async" loading="lazy"></div>
+        <figcaption><button type="button" class="zoom" data-js aria-label="Enlarge figure 2"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="M5 5h5v2H7v3H5zm9 0h5v5h-2V7h-3zm3 9h2v5h-5v-2h3zm-7 3v2H5v-5h2v3z"/></svg><span>Enlarge</span></button></figcaption>
+      </figure>
+    </article>
+    <article class="tile pub pub-wide" id="beanstalk">
+      <div class="pub-text">
+        <p class="pub-meta"><a target="_blank" rel="noopener" class="chip chip-accent" href="https://dl.acm.org/doi/epdf/10.1145/3720428"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.435 12.25a.43.43 0 0 0-.202.135.4.4 0 0 0-.07.245q-.002.225.12.308.115.083.352.082.13 0 .264-.06a.8.8 0 0 0 .245-.165v-.66q-.252.023-.405.045-.158.016-.305.07zM12 0 0 12l12 12 12-12zm0 19.357A7.36 7.36 0 0 1 4.643 12 7.36 7.36 0 0 1 12 4.642 7.36 7.36 0 0 1 19.357 12 7.36 7.36 0 0 1 12 19.357m0-13.98v.002c-3.654 0-6.62 2.966-6.62 6.62s2.966 6.62 6.62 6.62 6.62-2.966 6.62-6.62A6.625 6.625 0 0 0 12 5.376zm-2.862 8.246h-.995v-.336l-.182.154a1.4 1.4 0 0 1-.477.233c-.082.02-.202.035-.352.035a.94.94 0 0 1-.698-.285.97.97 0 0 1-.277-.716q0-.355.14-.574c.1-.15.24-.27.405-.348q.31-.136.646-.18.374-.05.803-.078v-.017q0-.264-.196-.363-.194-.104-.58-.102-.176 0-.41.063c-.158.044-.308.1-.458.164H6.42v-.77q.145-.044.48-.1.325-.06.663-.06.825 0 1.2.276.375.274.375.837v2.168zm3.22-.167q-.103.041-.2.086-.11.046-.23.08a5 5 0 0 1-.27.06 2 2 0 0 1-.336.022q-.396 0-.723-.1a1.5 1.5 0 0 1-.57-.307 1.4 1.4 0 0 1-.373-.52 1.9 1.9 0 0 1-.135-.738c-.008-.27.042-.535.146-.78.09-.204.224-.384.392-.53.165-.134.355-.233.56-.29q.332-.098.675-.096c.37 0 .732.087 1.06.255v.854h-.127a3 3 0 0 0-.147-.124 1.3 1.3 0 0 0-.188-.126 1.07 1.07 0 0 0-.55-.14q-.38-.001-.59.263-.209.265-.21.714 0 .481.225.715a.78.78 0 0 0 .592.235q.166 0 .33-.042a1.1 1.1 0 0 0 .415-.225c.048-.04.088-.082.123-.11h.13v.843zm4.333.173v-1.597q.002-.236-.007-.397a.8.8 0 0 0-.052-.263.26.26 0 0 0-.13-.15.62.62 0 0 0-.478.002q-.13.06-.244.14v2.263h-.993v-1.595q0-.232-.01-.396a.9.9 0 0 0-.05-.264.3.3 0 0 0-.136-.15.5.5 0 0 0-.25-.048.56.56 0 0 0-.24.056q-.115.06-.228.136v2.262h-.995V10.44h.993v.356q.215-.188.46-.323c.148-.08.314-.12.484-.12a.94.94 0 0 1 .514.14c.153.1.27.244.34.414q.285-.266.54-.41a1.03 1.03 0 0 1 .911-.07c.115.044.22.116.3.21.09.106.16.23.2.364q.067.214.066.553v2.076h-.995z"/></svg><span>OOPSLA 2025</span>
+</a></p>
+        <h2>Unveiling Heisenbugs with Diversified Execution</h2>
+        <p class="authors"><b class="me">Arjun Ramesh</b>, <span>Tianshu Huang</span>, <span>Jaspreet Riar</span>, <span>Ben L. Titzer</span>, <span>Anthony Rowe</span></p>
+<p class="links"><a target="_blank" rel="noopener" class="chip" href="https://doi.org/10.5281/zenodo.14933663"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg><span>Data Artifact</span>
+</a></p>      </div>
+      <div class="pub-body">
+<div class="abstract"><p>The detection of quirky Heisenbugs are influenced by numerous factors including (but not limited to) hardware platforms
+and, strangely, the extent of instrumentation used by debuggers themselves.
+We propose a debugging methodology that harnesses diversity across platforms
+and the debugger's instrumentation to enable low-overhead debugging at scale.
+Skim our paper for a characterization of over 100 numerous funky bug behaviors!</p></div>      </div>
+      <figure class="plate pub-fig">
+        <div class="pub-art"><img src="../assets/pubs/Beanstalk.svg" alt="Heatmaps of bug detection probability across different devices and amounts of debugging instrumentation, for ordinary bugs versus Heisenbugs" width="960" height="307" decoding="async" loading="lazy"></div>
+        <figcaption><button type="button" class="zoom" data-js aria-label="Enlarge figure 3"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="M5 5h5v2H7v3H5zm9 0h5v5h-2V7h-3zm3 9h2v5h-5v-2h3zm-7 3v2H5v-5h2v3z"/></svg><span>Enlarge</span></button></figcaption>
+      </figure>
+    </article>
+    <article class="tile pub pub-wide" id="silverline">
+      <div class="pub-text">
+        <p class="pub-meta"><a target="_blank" rel="noopener" class="chip chip-accent" href="https://users.ece.cmu.edu/~agr/resources/publications/Silverline_RTAS_25.pdf"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="M4.74 14.973h-.05v-.064h.04c.022 0 .051.002.051.03s-.015.034-.04.034zm.101-.03c0-.06-.04-.079-.109-.079h-.099v.265h.057v-.111h.027l.061.111h.068l-.069-.116c.036-.003.064-.02.064-.07m-.11.243c-.098 0-.176-.076-.176-.19 0-.113.078-.188.176-.188.095 0 .177.075.177.188 0 .114-.082.19-.177.19m-.247-.19c0 .156.116.247.247.247.13 0 .247-.09.247-.247a.24.24 0 0 0-.247-.246.24.24 0 0 0-.247.246M3.35 12.61c-.02.374-.025.72-.052 1.096.148.013.315.026.473.003l-.047-1.046-.009-.05c-.12.005-.234.01-.365-.003m-.926-1.051c-.182.091-.45.23-.421.48.04.136.187.224.304.28.647.286 1.506.295 2.19.083.168-.065.395-.16.426-.366-.002-.171-.183-.279-.313-.344v-.008a.6.6 0 0 1 .144-.039v-.004c-.228-.041-.45-.101-.671-.16.043.097.073.2.109.301q.1-.033.207-.047c.117.045.284.11.3.256.014.137-.136.204-.23.26-.501.181-1.065.2-1.588.06-.144-.045-.353-.103-.37-.287.102-.242.367-.292.588-.351-.114-.073-.23-.138-.34-.22-.119.007-.227.059-.335.106m1.107-1.46-.064.208-.326.932c.082.008.183 0 .263.008v.008l-.048 1.054.008.01c.104.01.234.016.34-.002V12.3l-.042-1.022.006-.035.286-.004a47 47 0 0 1-.414-1.14zm-.15-.469c.239-.163.453.065.639.195.717.578 1.393 1.238 1.909 1.984.065.096.094.246.036.355-.134.223-.314.426-.485.633v.011c-.426.454-.876.92-1.363 1.305-.237.144-.455.46-.761.264a11 11 0 0 1-1.927-1.82c-.096-.149-.246-.271-.312-.44-.093-.23.112-.394.229-.566.576-.71 1.291-1.407 2.034-1.92zm.6-.678-.266-.376c-.032-.02-.073-.052-.108-.062-.079-.034-.163.007-.227.056l-.48.624c-.769.953-1.68 1.843-2.673 2.525-.079.061-.195.121-.22.222-.026.091.022.166.078.223a13 13 0 0 1 2.234 1.94c.12.127.217.252.335.37.198.265.43.53.613.813.057.06.066.158.156.187.07.024.156.04.223 0l.066-.067a13.3 13.3 0 0 1 3.034-3.06c.117-.103.34-.142.343-.336a.3.3 0 0 0-.137-.226l-.02-.003c-.6-.408-1.159-.87-1.686-1.394l-.582-.609a17 17 0 0 1-.684-.827zm.039.672c.206.157.42.336.61.518l.034.02a10 10 0 0 1 1.405 1.592c.065.1.122.212.086.343-.133.332-.403.597-.639.887-.51.55-1.05 1.081-1.652 1.506-.122.086-.287.166-.433.097-.444-.232-.818-.613-1.207-.96-.45-.417-.902-.904-1.244-1.413a.4.4 0 0 1-.064-.253c.044-.176.165-.32.279-.469.403-.514.897-1.002 1.397-1.447.011-.012.032-.036.05-.047.215-.186.428-.35.652-.511.234-.182.529-.031.726.137m15.942-.197H24v1.028h-2.569v1.094h2.364v1.028H21.43V13.7H24v1.028h-4.038zm-4.859 0h4.037v1.028h-2.57v1.094h2.363v1.028H16.57V13.7h2.569v1.028h-4.037zm-4.86 0h4.037v1.028h-2.57v1.094h2.365v1.028H11.71V13.7h2.57v1.028h-4.038zm-2.24 0h1.469v5.301H8.004Z"/></svg><span>RTAS 2025</span>
+</a></p>
+        <h2>Silverline: Lightweight Virtualization and Orchestration of Distributed Systems</h2>
+        <p class="authors"><b class="me">Arjun Ramesh</b>, <span>Tianshu Huang</span>, <span>Emily Ruppel</span>, <span>Dakshina Dasari</span>, <span>Behnaz Pourmohseni</span>, <span>Fedor Smirnov</span>, <span>Marco Giani</span>, <span>Paolo Pazzaglia</span>, <span>Charles Shelton</span>, <span>Nuno Pereira</span>, <span>Arne Hamann</span>, <span>Dirk Ziegenbein</span>, <span>Anthony Rowe</span></p>
+<p class="links"><a target="_blank" rel="noopener" class="chip" href="https://github.com/SilverLineFramework"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg><span>Silverline Org</span>
+</a></p>      </div>
+      <div class="pub-body">
+<div class="abstract"><p>Real-time cyber-physical systems naturally lend themselves to distributed compute, but are often programmed monolithically to curb complexity
+and safety exploits.
+With Silverline, we explore programmability and orchestration of distributed applications transparently
+across wide range of hardware using WebAssembly for lightweight virtualization.</p></div>      </div>
+      <figure class="plate pub-fig">
+        <div class="pub-art"><img src="../assets/pubs/Silverline.svg" alt="Silverline architecture: application, host and platform manifests feed an orchestrator that deploys WebAssembly modules to edge platforms over a pub/sub bus" width="774" height="261" decoding="async" loading="lazy"></div>
+        <figcaption><button type="button" class="zoom" data-js aria-label="Enlarge figure 4"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="M5 5h5v2H7v3H5zm9 0h5v5h-2V7h-3zm3 9h2v5h-5v-2h3zm-7 3v2H5v-5h2v3z"/></svg><span>Enlarge</span></button></figcaption>
+      </figure>
+    </article>
+    <article class="tile pub pub-wide" id="pitot">
+      <div class="pub-text">
+        <p class="pub-meta"><a target="_blank" rel="noopener" class="chip chip-accent" href="https://proceedings.mlsys.org/paper_files/paper/2025/hash/40b8fb4f90004405e14b1ede6ab42373-Abstract-Conference.html"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.435 12.25a.43.43 0 0 0-.202.135.4.4 0 0 0-.07.245q-.002.225.12.308.115.083.352.082.13 0 .264-.06a.8.8 0 0 0 .245-.165v-.66q-.252.023-.405.045-.158.016-.305.07zM12 0 0 12l12 12 12-12zm0 19.357A7.36 7.36 0 0 1 4.643 12 7.36 7.36 0 0 1 12 4.642 7.36 7.36 0 0 1 19.357 12 7.36 7.36 0 0 1 12 19.357m0-13.98v.002c-3.654 0-6.62 2.966-6.62 6.62s2.966 6.62 6.62 6.62 6.62-2.966 6.62-6.62A6.625 6.625 0 0 0 12 5.376zm-2.862 8.246h-.995v-.336l-.182.154a1.4 1.4 0 0 1-.477.233c-.082.02-.202.035-.352.035a.94.94 0 0 1-.698-.285.97.97 0 0 1-.277-.716q0-.355.14-.574c.1-.15.24-.27.405-.348q.31-.136.646-.18.374-.05.803-.078v-.017q0-.264-.196-.363-.194-.104-.58-.102-.176 0-.41.063c-.158.044-.308.1-.458.164H6.42v-.77q.145-.044.48-.1.325-.06.663-.06.825 0 1.2.276.375.274.375.837v2.168zm3.22-.167q-.103.041-.2.086-.11.046-.23.08a5 5 0 0 1-.27.06 2 2 0 0 1-.336.022q-.396 0-.723-.1a1.5 1.5 0 0 1-.57-.307 1.4 1.4 0 0 1-.373-.52 1.9 1.9 0 0 1-.135-.738c-.008-.27.042-.535.146-.78.09-.204.224-.384.392-.53.165-.134.355-.233.56-.29q.332-.098.675-.096c.37 0 .732.087 1.06.255v.854h-.127a3 3 0 0 0-.147-.124 1.3 1.3 0 0 0-.188-.126 1.07 1.07 0 0 0-.55-.14q-.38-.001-.59.263-.209.265-.21.714 0 .481.225.715a.78.78 0 0 0 .592.235q.166 0 .33-.042a1.1 1.1 0 0 0 .415-.225c.048-.04.088-.082.123-.11h.13v.843zm4.333.173v-1.597q.002-.236-.007-.397a.8.8 0 0 0-.052-.263.26.26 0 0 0-.13-.15.62.62 0 0 0-.478.002q-.13.06-.244.14v2.263h-.993v-1.595q0-.232-.01-.396a.9.9 0 0 0-.05-.264.3.3 0 0 0-.136-.15.5.5 0 0 0-.25-.048.56.56 0 0 0-.24.056q-.115.06-.228.136v2.262h-.995V10.44h.993v.356q.215-.188.46-.323c.148-.08.314-.12.484-.12a.94.94 0 0 1 .514.14c.153.1.27.244.34.414q.285-.266.54-.41a1.03 1.03 0 0 1 .911-.07c.115.044.22.116.3.21.09.106.16.23.2.364q.067.214.066.553v2.076h-.995z"/></svg><span>MLSys 2025</span>
+</a></p>
+        <h2>Interference-aware Edge Runtime Prediction with Conformal Matrix Completion</h2>
+        <p class="authors"><span>Tianshu Huang</span>, <b class="me">Arjun Ramesh</b>, <span>Emily Ruppel</span>, <span>Nuno Pereira</span>, <span>Anthony Rowe</span>, <span>Carlee Joe-Wong</span></p>
+<p class="links"><a target="_blank" rel="noopener" class="chip" href="https://zenodo.org/records/14977004"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg><span>Data Artifact</span>
+</a></p>      </div>
+      <div class="pub-body">
+<div class="abstract"><p>Performance prediction in heterogeneous edge computing systems is critical for effective resource allocation and cost optimization.
+We formulate this problem as matrix completion, which can be extended to handle complex, edge-specific concerns
+such as interference and uncertainty quantification accurately.</p></div>      </div>
+      <figure class="plate pub-fig">
+        <div class="pub-art"><img src="../assets/pubs/Pitot.svg" alt="Model overview: workload and platform features feed MLPs that complete a runtime matrix, with extra terms for interfering workloads" width="924" height="242" decoding="async" loading="lazy"></div>
+        <figcaption><button type="button" class="zoom" data-js aria-label="Enlarge figure 5"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="M5 5h5v2H7v3H5zm9 0h5v5h-2V7h-3zm3 9h2v5h-5v-2h3zm-7 3v2H5v-5h2v3z"/></svg><span>Enlarge</span></button></figcaption>
+      </figure>
+    </article>
+  </div>
+</div>
+</main>
+<footer class="foot">
+  <p class="foot-note"><span>© Arjun Ramesh</span><span class="foot-sep" aria-hidden="true"></span><span>Updated: 27 Nov, 2026</span></p>
+</footer>
+<dialog class="lightbox" id="lightbox" aria-label="Figure">
+  <div class="lightbox-plate" id="lightbox-plate"></div>
+  <button type="button" class="icon-btn lightbox-close" id="lightbox-close" aria-label="Close"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></button>
+</dialog>
+<script src="../site.js" defer></script>
+</body>
+</html>
