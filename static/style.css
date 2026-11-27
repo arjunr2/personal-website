@@ -1,4 +1,4 @@
-/* Bento: the site as a board of rounded tiles. */
+/* Trail: the site as a board of tiles on sand paper, with contour lines and Fraunces headlines. */
 
 @media (prefers-reduced-motion: no-preference) {
   @view-transition { navigation: auto; }
@@ -6,7 +6,7 @@
 
 /* ───────────────────────── Tokens ───────────────────────── */
 :root {
-  --font: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
   /* type scale */
   --fs-12: 0.75rem;
@@ -25,59 +25,62 @@
   --pad: 28px;
   --gutter: 24px;
   --shell: 1440px;
-  --r-tile: 14px;
-  --r-in: 9px;
-  --r-sm: 10px;
-  --r-pill: 999px;
+  --r-tile: 6px;
+  --r-in: 4px;
+  --r-sm: 4px;
+  --r-pill: 6px;
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   /* light theme */
   color-scheme: light;
-  --ground-base: #efefeb;
-  --tile: #ffffff;
-  --tile-2: #f3f3f0;
-  --ink: #0d0e10;
-  --ink-2: #43464d;
-  --ink-3: #646871;
-  --line: rgba(13, 14, 16, 0.07);
-  --line-2: rgba(13, 14, 16, 0.14);
+  --ground-base: #ece5d6;
+  --tile: #f8f4eb;
+  --tile-2: #ede6d7;
+  --ink: #23201a;
+  --ink-2: #514a3e;
+  --ink-3: #7c7364;
+  --line: #d6cbb5;
+  --line-2: #b9ab90;
   --plate: #ffffff;
   --plate-inset: #f4f4f1;
-  --shadow: 0 1px 1px rgba(16, 17, 20, 0.03), 0 14px 32px -20px rgba(16, 17, 20, 0.16);
-  --shadow-up: 0 2px 4px rgba(16, 17, 20, 0.04), 0 26px 44px -22px rgba(16, 17, 20, 0.28);
+  --shadow: none;
+  --shadow-up: 0 18px 30px -22px rgba(60, 45, 20, 0.45);
 
   /* one hue per page: fill, text on tiles, text on the fill */
-  --home: #1f5eea;          --home-ink: #1f5eea;          --home-on: #ffffff;
-  --publications: #d5352a;  --publications-ink: #c92f25;  --publications-on: #ffffff;
-  --experience: #0f7b4d;    --experience-ink: #0f7b4d;    --experience-on: #ffffff;
-  --projects: #f4a611;      --projects-ink: #96590a;      --projects-on: #1c1300;
-  --hobbies: #7c3aed;       --hobbies-ink: #7437e3;       --hobbies-on: #ffffff;
-  --resources: #0b7285;     --resources-ink: #0b7285;     --resources-on: #ffffff;
+  --home: #2f5d50;          --home-ink: #2f5d50;          --home-on: #ffffff;
+  --publications: #a4472f;  --publications-ink: #a4472f;  --publications-on: #ffffff;
+  --experience: #4f6b2f;    --experience-ink: #4f6b2f;    --experience-on: #ffffff;
+  --projects: #c08a2e;      --projects-ink: #8a5f16;      --projects-on: #23201a;
+  --hobbies: #5c5a8a;       --hobbies-ink: #5c5a8a;       --hobbies-on: #ffffff;
+  --resources: #2d6170;     --resources-ink: #2d6170;     --resources-on: #ffffff;
   --talk: #d6336c;          --talk-ink: #c2255c;  /* news kind only */
+  --serif: "Fraunces", Georgia, serif;
+  --topo: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' fill='none' stroke='%23000' stroke-opacity='.06' stroke-width='1.2'%3E%3Cpath d='M-20 80c90-40 160 30 250 0s170-70 260-20 120 30 140 10'/%3E%3Cpath d='M-20 120c100-40 170 40 260 6s160-60 250-14 110 28 140 8'/%3E%3Cpath d='M-20 165c110-35 180 45 270 10s150-50 240-10 100 25 140 6'/%3E%3Cpath d='M-20 215c120-30 190 50 280 14s140-40 230-6 90 22 140 4'/%3E%3Cpath d='M-20 270c130-25 200 55 290 18s130-30 220-2 80 18 140 2'/%3E%3Cpath d='M-20 330c140-20 210 60 300 22s120-20 210 2 70 15 140 0'/%3E%3Cellipse cx='420' cy='120' rx='40' ry='18'/%3E%3Cellipse cx='420' cy='120' rx='18' ry='7'/%3E%3C/svg%3E");
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --ground-base: #09090a;
-  --tile: #161618;
-  --tile-2: #202023;
-  --ink: #f4f4f1;
-  --ink-2: #bcbec4;
-  --ink-3: #92959d;
-  --line: rgba(255, 255, 255, 0.075);
-  --line-2: rgba(255, 255, 255, 0.16);
+  --ground-base: #151813;
+  --tile: #1c201a;
+  --tile-2: #252a22;
+  --ink: #ece6d8;
+  --ink-2: #bdb5a4;
+  --ink-3: #8e8777;
+  --line: #30362b;
+  --line-2: #4a5242;
   --plate: #f1f1ed;
   --plate-inset: #f1f1ed;
   --shadow: none;
   --shadow-up: 0 24px 48px -24px rgba(0, 0, 0, 0.9);
 
-  --home: #7aa7ff;          --home-ink: #7aa7ff;          --home-on: #0a0a0b;
-  --publications: #ff8577;  --publications-ink: #ff8577;  --publications-on: #0a0a0b;
-  --experience: #5fd39a;    --experience-ink: #5fd39a;    --experience-on: #0a0a0b;
-  --projects: #ffbe4d;      --projects-ink: #ffbe4d;      --projects-on: #0a0a0b;
-  --hobbies: #b79bff;       --hobbies-ink: #b79bff;       --hobbies-on: #0a0a0b;
+  --home: #8cc2a8;          --home-ink: #8cc2a8;          --home-on: #151813;
+  --publications: #e59a7d;  --publications-ink: #e59a7d;  --publications-on: #151813;
+  --experience: #a9c97c;    --experience-ink: #a9c97c;    --experience-on: #151813;
+  --projects: #e6b860;      --projects-ink: #e6b860;      --projects-on: #0a0a0b;
+  --hobbies: #aeabe0;       --hobbies-ink: #aeabe0;       --hobbies-on: #151813;
   --resources: #5ccbdd;     --resources-ink: #5ccbdd;     --resources-on: #0a0a0b;
   --talk: #f783ac;          --talk-ink: #f783ac;
+  --topo: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' fill='none' stroke='%23fff' stroke-opacity='.05' stroke-width='1.2'%3E%3Cpath d='M-20 80c90-40 160 30 250 0s170-70 260-20 120 30 140 10'/%3E%3Cpath d='M-20 120c100-40 170 40 260 6s160-60 250-14 110 28 140 8'/%3E%3Cpath d='M-20 165c110-35 180 45 270 10s150-50 240-10 100 25 140 6'/%3E%3Cpath d='M-20 215c120-30 190 50 280 14s140-40 230-6 90 22 140 4'/%3E%3Cpath d='M-20 270c130-25 200 55 290 18s130-30 220-2 80 18 140 2'/%3E%3Cpath d='M-20 330c140-20 210 60 300 22s120-20 210 2 70 15 140 0'/%3E%3Cellipse cx='420' cy='120' rx='40' ry='18'/%3E%3Cellipse cx='420' cy='120' rx='18' ry='7'/%3E%3C/svg%3E");
 }
 
 :root, [data-accent="home"] { --accent: var(--home); --accent-ink: var(--home-ink); --on-accent: var(--home-on); }
@@ -781,3 +784,33 @@ html.js .t-news.collapsed .tl-text { line-height: 1.55; }
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
   ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
 }
+
+/* ───────────────────────── Trail look (headline serif, contour lines) ───────────────────────── */
+body { background: var(--topo) 0 0 / 600px 400px, var(--ground-base); }
+.brand-name, .cert-name, .cred-title, .hero h1, .news-title, .proj h2, .pub h2, .role h3, .teach h3, .tile-title, .label, .bio-text h1, .bio-text h2, .gal-cap b, .doc-prose h2 {
+  font-family: var(--serif); font-weight: 500; letter-spacing: -0.015em; font-variation-settings: "SOFT" 100, "WONK" 0;
+}
+/* Title sizes: a touch above the base design, since the serif reads smaller. */
+.pub h2 { font-size: clamp(1.45rem, 1.15rem + 0.8vw, 1.95rem); line-height: 1.15; }
+.role h3, .teach h3, .proj h2, .label { font-size: 1.6rem; line-height: 1.15; }
+.tile-title { font-size: 1.35rem; line-height: 1.2; }
+.cert-name, .gal-cap b { font-size: 1.25rem; line-height: 1.2; }
+.bio-text h1, .bio-text h2 { font-size: clamp(1.5rem, 1rem + 1.2vw, 2.15rem); }
+.tile { border: 1px solid var(--line); box-shadow: none; }
+.link-tile:hover { transform: translateY(-2px); }
+.top { border-color: var(--line); box-shadow: none; background: color-mix(in srgb, var(--tile) 88%, transparent); }
+.brand-mark { background: var(--accent); color: var(--on-accent); }
+.brand-name { font-size: 1.35rem; }
+.nav a { font-weight: 500; }
+.hero { background: var(--accent); }
+.hero h1 { font-style: italic; font-size: clamp(3rem, 2rem + 4vw, 5.75rem); line-height: 1; }
+.hero-ghost { opacity: 0.1; }
+.hero::after { content: ""; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' fill='none' stroke='%23fff' stroke-opacity='.16' stroke-width='1.2'%3E%3Cpath d='M-20 80c90-40 160 30 250 0s170-70 260-20 120 30 140 10'/%3E%3Cpath d='M-20 120c100-40 170 40 260 6s160-60 250-14 110 28 140 8'/%3E%3Cpath d='M-20 165c110-35 180 45 270 10s150-50 240-10 100 25 140 6'/%3E%3Cpath d='M-20 215c120-30 190 50 280 14s140-40 230-6 90 22 140 4'/%3E%3Cpath d='M-20 270c130-25 200 55 290 18s130-30 220-2 80 18 140 2'/%3E%3Cpath d='M-20 330c140-20 210 60 300 22s120-20 210 2 70 15 140 0'/%3E%3Cellipse cx='420' cy='120' rx='40' ry='18'/%3E%3Cellipse cx='420' cy='120' rx='18' ry='7'/%3E%3C/svg%3E") 0 0 / 600px 400px; pointer-events: none;
+  -webkit-mask-image: linear-gradient(to right, transparent 0 30%, #000 70%); mask-image: linear-gradient(to right, transparent 0 30%, #000 70%); }
+.hero > :not(.hero-ghost) { position: relative; z-index: 1; }
+.chip, .btn, .tag, .filter { background: var(--tile-2); }
+.cred { background: var(--tile-2); }
+.prose em, .role .bullets em { background: none; padding: 0; margin: 0; font-style: italic; font-weight: 600; color: var(--accent-ink); }
+:is(.bullets, .gal-more) li::before { border-radius: 50%; width: 5px; height: 5px; }
+.gal-frame { border-radius: 3px; }
+.gal-cap span { color: var(--ink-3); }
