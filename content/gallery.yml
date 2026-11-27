@@ -14,7 +14,7 @@ icon: cube
 
 items:
   - title: Atlantic -> Mediterrean across the French/Spanish Pyrenees
-    caption: "22 days, 1200 km distance, 23000 m elevation"
+    caption: "22 days, 1200+ km distance, 23000+ m total elevation and 19+ mountain passes"
     images:
       - { src: /assets/hobbies/Pyrenees_Map.png, alt: "Map of the route across the Pyrenees, from the Atlantic to the Mediterranean" }
       - { src: /assets/hobbies/Pyrenees_1.jpg, alt: "A green valley with a village, ringed by mountains" }
