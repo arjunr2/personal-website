@@ -130,10 +130,24 @@
     }
   });
 
-  /* ── Clicks: figure lightbox, videos, PDF previews ── */
+  /* ── Clicks: email reveal, figure lightbox, PDF preview, videos ── */
   const lightbox = $("#lightbox");
+  const pdfbox = $("#pdfbox");
+  if (pdfbox) pdfbox.addEventListener("close", () => { $("#pdfbox-frame").src = "about:blank"; });
   document.addEventListener("click", (ev) => {
     const t = ev.target;
+
+    // The address is stored reversed in two parts, so it never appears whole in the HTML.
+    const mail = t.closest("button[data-u]");
+    if (mail) {
+      const rev = (x) => [...x].reverse().join("");
+      const shown = document.createElement("span");
+      shown.className = "chip chip-email";
+      shown.innerHTML = mail.querySelector(".icon").outerHTML;
+      shown.append(Object.assign(document.createElement("span"), { textContent: rev(mail.dataset.u) + "@" + rev(mail.dataset.d) }));
+      mail.replaceWith(shown);
+      return;
+    }
 
     const fig = lightbox && t.closest(".pub-art, .zoom") && t.closest(".pub-fig");
     if (fig) {
@@ -144,6 +158,17 @@
       return;
     }
     if (lightbox && (t === lightbox || t.closest("#lightbox-close"))) lightbox.close();
+
+    // PDF buttons open a preview; on phones (poor embedded PDF support) the link opens the file instead.
+    const pdf = pdfbox && t.closest("a[data-pdf]");
+    if (pdf && !matchMedia("(max-width: 699px)").matches) {
+      ev.preventDefault();
+      $("#pdfbox-frame").src = pdf.href;
+      $("#pdfbox-open").href = pdf.href;
+      pdfbox.showModal();
+      return;
+    }
+    if (pdfbox && (t === pdfbox || t.closest("#pdfbox-close"))) pdfbox.close();
 
 
     const yt = t.closest("a[data-yt]");
@@ -156,25 +181,6 @@
       f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
       f.allowFullscreen = true;
       yt.replaceWith(f);
-      return;
-    }
-
-    const pdf = t.closest("button[data-pdf]");
-    if (pdf) {
-      const view = document.getElementById(pdf.getAttribute("aria-controls"));
-      const open = pdf.getAttribute("aria-expanded") !== "true";
-      transition(() => {
-        pdf.setAttribute("aria-expanded", String(open));
-        pdf.querySelector("span").textContent = open ? "Hide preview" : "Preview";
-        pdf.closest(".res").classList.toggle("is-open", open);
-        view.hidden = !open;
-        if (open && !view.firstChild) {
-          const f = document.createElement("iframe");
-          f.src = pdf.dataset.pdf; // loaded only once opened
-          f.title = pdf.dataset.title;
-          view.append(f);
-        }
-      });
       return;
     }
 

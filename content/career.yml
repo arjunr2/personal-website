@@ -1,0 +1,98 @@
+# Career page. Industry roles are listed in the order below.
+#   id:      the anchor (/career/#<id>)
+#   current: true shows a "Present" badge
+#   size:    optional tile width [columns of 12 on desktop, columns of 6 on tablet], default [4, 3]
+#   stack:   rows of tags, each with an icon from templates/icons.json
+#   text:    the bullet list (Markdown)
+# Teaching and certificates are the lists above the roles.
+
+title: Career
+accent: experience
+icon: briefcase
+industry_heading: Industry
+academic_heading: Academic
+teaching:
+  - id: teaching
+    title: Teaching Assistant
+    logo: { src: /assets/experience/Teaching.png, alt: "" }
+    courses:
+      - { course: Virtual Machines and Managed Runtimes, instructor: Ben Titzer, school: CMU, term: Fall 2024 }
+      - { course: Distributed Embedded Systems, instructor: Anthony Rowe, school: CMU, term: Fall 2022 }
+      - { course: Computer Architecture, instructor: Yale Patt, school: UT Austin, term: Fall 2020 }
+      - { course: Introduction to Computing, instructor: Yale Patt, school: UT Austin, term: Fall 2019 }
+      - { course: Introduction to Embedded Systems, instructor: Jon Valvano, school: UT Austin, term: Spring 2019 }
+      - { course: Introduction to Computing, instructor: Ramesh Yerraballi, school: UT Austin, term: Fall 2018 }
+certificates_heading: Certificates
+certificates:
+  - { name: Machine Learning, by: Andrew Ng, via: Coursera }
+  - { name: Android App Development, by: CMS IT Services }
+
+items:
+  - id: vectorware
+    org: VectorWare
+    role: Software Engineer
+    location: Remote
+    current: true
+    logo: { src: /assets/experience/Vectorware.png, alt: VW logo }
+    size: [12, 6]
+    stack:
+      - { icon: domains, tags: [Rust, GPUs, Virtualization] }
+    text: '[*Stealth-ish startup*](https://www.vectorware.com/)&nbsp; Working on GPU-native system stack around the Rust programming model'
+
+  - id: bosch
+    org: Bosch Research
+    role: IoT Edge Integration Intern
+    location: Pittsburgh, PA
+    logo: { src: /assets/experience/Bosch.jpg, alt: Bosch logo }
+    size: [7, 6]
+    stack:
+      - { icon: domains, tags: [Linux, Virtualization, Embedded Systems] }
+    text: |
+      * Development of Silverline, a framework for management and orchestration of real-time 
+      distributed workload
+      * Deployed a distributed 2ms control-loop over the network (inverted pendulum control) on CtrlX
+
+  - id: apple
+    org: Apple Inc.
+    role: GPU Design Verification Intern
+    location: Austin, TX
+    logo: { src: /assets/experience/Apple.png, alt: Apple logo }
+    size: [5, 3]
+    stack:
+      - { icon: tools, tags: [SystemVerilog, UVM] }
+    text: |
+      * Improved speed and coverage of address generation for GPU memory hierarchy testing
+      * Bringup of UVM testbenches for memory hierarchy
+
+  - id: centaur
+    org: Centaur Technology Inc.
+    role: CPU Design Verification Intern
+    location: Austin, TX
+    logo: { src: /assets/experience/Centaur.jpeg, alt: Centaur Technology logo }
+    stack:
+      - { icon: tools, tags: [ELK, Jenkins, Docker, Traefik] }
+    text: |
+      * Built a real-time debugging tool to monitor chip performance using ELK stack
+      * Tested and debugged AVX-512 instructions on their latest chip
+      * Improved pre-silicon test tools for register file verification
+      * DevOps work: CI/CD, bugreport database management and front-end scripting
+
+  - id: qube
+    org: Qube Cinema Inc.
+    role: Software Engineering Intern
+    location: Chennai, India
+    logo: { src: /assets/experience/Qube.png, alt: Qube Cinema logo }
+    stack:
+      - { icon: tools, tags: [Tensorflow, Keras] }
+    text: |
+      * Reworked iCount (a seat occupancy detector in theaters) to use
+      transfer learning on ResNet50 and improved poorly lit image prediction.
+
+  - id: lucid
+    org: Lucid Imaging Pvt. Ltd.
+    role: Machine Learning Intern
+    location: Bangalore, India
+    logo: { src: /assets/experience/Lucid.jpeg, alt: Lucid Imaging logo }
+    stack:
+      - { icon: tools, tags: [Tensorflow, Keras] }
+    text: '* Transfer learning of VGG-16 to detect polypropylene in fast-flowing industrial cotton'

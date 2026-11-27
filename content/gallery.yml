@@ -1,0 +1,32 @@
+# Gallery page. Tiles are shown in the order below.
+#   title:   bold line under the tile (inline Markdown, e.g. a [link](https://...), works here and in caption)
+#   caption: short line under the title
+#   image:   { src, alt }; plate: true for a small graphic, shown on a card instead of filling the tile
+#   icon:    for a tile without an image, from templates/icons.json
+#   videos:  YouTube videos instead of an image, [{ title, url }]; several share one wider tile, side by side
+#   text:    shown over the picture on hover (below it on phones); Markdown
+
+title: Gallery
+accent: hobbies
+icon: cube
+
+items:
+  - title: Blind solves from a comp
+    caption: "[Official profile](https://www.worldcubeassociation.org/persons/2014RAME04); never broke the 10s barrier on 3x3 :("
+    image: { src: /assets/hobbies/Cubing_Comp.jpg, alt: A Rubik's cube mid-turn }
+
+  - title: Guitar covers
+    caption: "Rock, and a lot of oldie 70s prog all the way"
+    videos:
+      - { title: While My Guitar Gently Weeps - Eric Clapton, url: 'https://www.youtube.com/watch?v=0iHB1CvMoCA' }
+      - { title: 'After The Ordeal: Genesis - (Acoustic/Electric) Guitar Cover', url: 'https://www.youtube.com/watch?v=kCN0RsQ0cQo' }
+
+  - title: Thorung La Pass @ 5400 m
+    caption: 10 day hike (120 km) across Annapurna circuit
+    image: { src: /assets/hobbies/Trek_Finish.jpg, alt: 'At a snow-covered high pass, beside a summit sign draped in prayer flags' }
+
+  - title: Surf in chennai
+    image: { src: /assets/hobbies/Surf_DP.jpg, alt: Standing beside a surfboard in front of a wave mural }
+    
+  - title: Tour De France
+    caption: "22 days with 1200 km distance + 23000 m elevation"

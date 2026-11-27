@@ -18,7 +18,7 @@
   kind: education
   text: Completed my Thesis Prospectus!
 - date: Aug 2025
-  kind: media
+  kind: talk
   text: Tune in to this [**WebAssembly Unleashed episode**](https://www.youtube.com/watch?v=OhybI5aUy5M) where I discuss excitement around debugging with Wasm.
 - date: Mar 2025
   kind: career

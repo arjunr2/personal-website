@@ -29,7 +29,11 @@
       {% endif %}
       <ul class="intro-links">
       {% for s in site.social %}
+        {% if s.email %}
+        <li data-js><button type="button" class="chip" data-u="{{ s.email[0] | reverse }}" data-d="{{ s.email[1] | reverse }}">{% if s.icon %}{{ icon(s.icon) }}{% endif %}<span>{{ s.label }}</span></button></li>
+        {% else %}
         <li><a class="chip" href="{{ s.url }}">{% if s.icon %}{{ icon(s.icon) }}{% endif %}<span>{{ s.label }}</span></a></li>
+        {% endif %}
       {% endfor %}
       </ul>
     </div>
@@ -84,15 +88,32 @@
   </span>{% endcall %}
   {% endif %}
 
-  {% if "/hobbies/" in pages %}
-  {% set hobbies = pages["/hobbies/"].entries %}
-  {% call preview("hobbies", hobbies | length) %}<span class="pv-body cube">{% for s in hobbies if s.image %}{% if loop.first %}<span class="plate">{{ img(s.image, decorative=true) }}</span>{% endif %}{% endfor %}</span>{% endcall %}
+  {% if "/gallery/" in pages %}
+  {% set tiles = pages["/gallery/"].entries %}
+  {% set cover = tiles | selectattr("image") | first %}
+  {% call preview("gallery", tiles | length) %}<span class="pv-body cube">{% if cover %}<span class="plate">{{ img(cover.image, decorative=true) }}</span>{% endif %}</span>{% endcall %}
   {% endif %}
 
-  {% if "/resources/" in pages %}
-  {% set files = pages["/resources/"].files %}
-  {% call preview("resources", files | length) %}<span class="pv-body docs">{% for f in files %}<span class="doc"><i></i><i></i><i></i><b>PDF</b></span>{% endfor %}</span>{% endcall %}
-  {% endif %}
   </div>
+
+  {% if page.resources %}
+  <p class="home-docs" data-accent="resources">
+  {% for f in page.resources %}
+    <a class="chip chip-accent" id="{{ f.id }}" href="{{ f.file }}" target="_blank" rel="noopener" data-pdf>{{ icon("pdf") }}<span>{{ f.title }}</span></a>
+  {% endfor %}
+  </p>
+  {% endif %}
 </div>
+{% endblock %}
+
+{% block after %}
+{% if page.resources %}
+<dialog class="lightbox" id="pdfbox" aria-label="PDF preview">
+  <div class="pdf-plate"><iframe id="pdfbox-frame" title="PDF preview"></iframe></div>
+  <div class="pdf-actions">
+    <a class="chip" id="pdfbox-open" href="#" target="_blank" rel="noopener">{{ icon("external") }}<span>Open in new tab</span></a>
+    <button type="button" class="icon-btn" id="pdfbox-close" aria-label="Close">{{ icon("close") }}</button>
+  </div>
+</dialog>
+{% endif %}
 {% endblock %}

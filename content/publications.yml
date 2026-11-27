@@ -1,0 +1,71 @@
+# Publications page. Papers are listed in the order below.
+#   id:      the anchor (/publications/#<id>)
+#   authors: the one matching `name` in site.yml is highlighted
+#   figure:  optional { src, alt }
+#   links:   the first is shown as the venue; a link without `url` is a plain badge. `icon` from templates/icons.json
+#   text:    the abstract (Markdown); leave it out for none
+
+title: Publications
+accent: publications
+icon: paper
+
+items:
+  - id: thesis
+    title: Unlocking Safety and Observability for Edge Cyber-Physical Systems with Low-Level Bytecode Virtualization
+    authors: [Arjun Ramesh]
+    links:
+      - { label: PhD Dissertation (2026), icon: pdf, url: /assets/pubs/pdfs/Thesis.pdf }
+
+  - id: wali
+    title: Empowering WebAssembly with Thin Kernel Interfaces
+    authors: [Arjun Ramesh, Tianshu Huang, Ben L. Titzer, Anthony Rowe]
+    figure: { src: /assets/pubs/WALI.svg, alt: 'Diagram comparing the Native, WALI, and WASI software stacks' }
+    links:
+      - { label: EuroSys 2025, icon: acm, url: 'https://dl.acm.org/doi/epdf/10.1145/3689031.3717470' }
+      - { label: Pre-Print, icon: arxiv, url: 'https://arxiv.org/abs/2312.03858' }
+      - { label: WALI, icon: github, url: 'https://github.com/arjunr2/WALI' }
+      - { label: Rust Target, icon: rust, url: 'https://doc.rust-lang.org/nightly/rustc/platform-support/wasm32-wali-linux.html' }
+    text: |
+      Wasm adoption for new domains is often hindered by the lack of standard system interfaces.
+      We show support for the **Linux** and **Zephyr** syscall interface in Wasm engines allowing numerous 
+      languages and applications to target Wasm out-of-the-box while preserving ISA portability and safety. 
+      Check out our ports of Bash, ncurses, openssh, and plenty of other cool software!
+
+  - id: beanstalk
+    title: Unveiling Heisenbugs with Diversified Execution
+    authors: [Arjun Ramesh, Tianshu Huang, Jaspreet Riar, Ben L. Titzer, Anthony Rowe]
+    figure: { src: /assets/pubs/Beanstalk.svg, alt: 'Heatmaps of bug detection probability across different devices and amounts of debugging instrumentation, for ordinary bugs versus Heisenbugs' }
+    links:
+      - { label: OOPSLA 2025, icon: acm, url: 'https://dl.acm.org/doi/epdf/10.1145/3720428' }
+      - { label: Data Artifact, icon: github, url: 'https://doi.org/10.5281/zenodo.14933663' }
+    text: |
+      The detection of quirky Heisenbugs are influenced by numerous factors including (but not limited to) hardware platforms
+      and, strangely, the extent of instrumentation used by debuggers themselves.
+      We propose a debugging methodology that harnesses diversity across platforms
+      and the debugger's instrumentation to enable low-overhead debugging at scale.
+      Skim our paper for a characterization of over 100 numerous funky bug behaviors!
+
+  - id: silverline
+    title: 'Silverline: Lightweight Virtualization and Orchestration of Distributed Systems'
+    authors: [Arjun Ramesh, Tianshu Huang, Emily Ruppel, Dakshina Dasari, Behnaz Pourmohseni, Fedor Smirnov, Marco Giani, Paolo Pazzaglia, Charles Shelton, Nuno Pereira, Arne Hamann, Dirk Ziegenbein, Anthony Rowe]
+    figure: { src: /assets/pubs/Silverline.svg, alt: 'Silverline architecture: application, host and platform manifests feed an orchestrator that deploys WebAssembly modules to edge platforms over a pub/sub bus' }
+    links:
+      - { label: RTAS 2025, icon: ieee, url: 'https://users.ece.cmu.edu/~agr/resources/publications/Silverline_RTAS_25.pdf' }
+      - { label: Silverline Org, icon: github, url: 'https://github.com/SilverLineFramework' }
+    text: |
+      Real-time cyber-physical systems naturally lend themselves to distributed compute, but are often programmed monolithically to curb complexity
+      and safety exploits.
+      With Silverline, we explore programmability and orchestration of distributed applications transparently
+      across wide range of hardware using WebAssembly for lightweight virtualization.
+
+  - id: pitot
+    title: Interference-aware Edge Runtime Prediction with Conformal Matrix Completion
+    authors: [Tianshu Huang, Arjun Ramesh, Emily Ruppel, Nuno Pereira, Anthony Rowe, Carlee Joe-Wong]
+    figure: { src: /assets/pubs/Pitot.svg, alt: 'Model overview: workload and platform features feed MLPs that complete a runtime matrix, with extra terms for interfering workloads' }
+    links:
+      - { label: MLSys 2025, icon: acm, url: 'https://proceedings.mlsys.org/paper_files/paper/2025/hash/40b8fb4f90004405e14b1ede6ab42373-Abstract-Conference.html' }
+      - { label: Data Artifact, icon: github, url: 'https://zenodo.org/records/14977004' }
+    text: |
+      Performance prediction in heterogeneous edge computing systems is critical for effective resource allocation and cost optimization.
+      We formulate this problem as matrix completion, which can be extended to handle complex, edge-specific concerns
+      such as interference and uncertainty quantification accurately.

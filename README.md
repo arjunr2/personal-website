@@ -13,28 +13,42 @@ python3 build.py                    # just build into public/
 
 ## Where things live
 
+Every list-like page is one YAML file in `content/`: page settings at the top, then an `items:` list,
+one entry per paper, role, project or tile, shown in the order they appear in the file.
+Each file starts with a comment listing the fields it understands.
+
 | What | Where |
 |---|---|
 | Name, nav bar order, social links (under the biography), news tags | `site.yml` |
-| Home: biography (the body: `## Headline` lines, each followed by a subline) and photo | `content/index.md` |
+| Home: biography (the body: `## Headline` lines, each followed by a subline), photo, role/PhD cards, CV/resume PDFs (`resources:`) | `content/index.md` |
 | News | `content/news.yml` |
-| Publications | `content/publications/<paper>.md` |
-| Industry roles | `content/career/<company>.md`; teaching and certificates: `content/career/index.md` |
-| Projects | `content/projects/<project>.md` |
-| Hobbies | `content/hobbies/<section>.md` |
-| PDFs on the Resources page | `content/resources.md` |
+| Publications | `content/publications.yml` |
+| Career: industry roles, teaching, certificates | `content/career.yml` |
+| Projects (Build Hub) | `content/projects.yml` |
+| Gallery tiles | `content/gallery.yml` |
 | Images, PDFs, CNAME, favicon | `static/` (copied as-is: `static/assets/x.png` is served at `/assets/x.png`) |
-| Layout and look | `templates/*.html`, `static/style.css`, `static/site.js` |
+| CV and resume PDFs (kept in the repo, not published on the site) | `cv/` |
+| Layout and look | `templates/<page>.html` (named after the content file), `static/style.css`, `static/site.js` |
 
-Each content file starts with YAML front matter between `---` lines; the Markdown body below it
-is the prose. Paths and links that start with `/` are site paths (`/assets/...`, `/projects/#rtos-design`);
+**Text.** An item's `text:` is Markdown (its abstract, bullet list or hover text). For more than one line,
+write `text: |` and indent the lines under it:
+
+```yaml
+    text: |
+      * First bullet
+          * A sub-bullet
+
+      A second paragraph with a [link](https://example.com).
+```
+
+Paths and links that start with `/` are site paths (`/assets/...`, `/projects/#rtos-design`);
 the build makes them relative, so the site also works under a sub-folder (the CMU copy).
-Anything with `url:`/`text:` in YAML may use inline Markdown (`*em*`, `**bold**`, `[link](https://...)`).
-Quote a YAML value that starts with `*`, `[` or `{`, or contains `: `.
+Short fields such as captions, link labels and news text may use inline Markdown (`*em*`, `**bold**`, `[link](https://...)`).
+Quote a YAML value that starts with `*`, `[` or `{`, or contains `: ` or a comma inside `{ ... }`.
 
-**Order.** Items in a folder are sorted by their `order:` number (smallest first), then by file
-name. Leave gaps (10, 20, 30...) so a new item can slot in between, e.g. `order: 5` goes first.
-News is listed in file order, newest first.
+**Order.** Items appear in file order: move an entry up or down to reorder it. News is newest first.
+
+**Anchors.** An item's `id:` is its link (`/projects/#rtos-design`). Without one, it is made from the title.
 
 **Icons.** Wherever a file names an `icon:`, use a name from `templates/icons.json`
 (e.g. `github`, `acm`, `arxiv`, `video`, `document`, `paper`, `talk`). Icons are always optional.
@@ -51,42 +65,35 @@ Add an entry at the top of `content/news.yml`:
 
 ## Add a paper
 
-Create `content/publications/<short-name>.md`; the body is the abstract. The author matching
-`name` in `site.yml` is highlighted. The first link is shown as the venue; a link without `url`
-is a plain badge.
+Add an entry to `items:` in `content/publications.yml`, where you want it in the list:
 
-```markdown
----
-title: My New Paper
-order: 5
-authors: [Arjun Ramesh, Some Coauthor]
-figure: { src: /assets/pubs/MyPaper.svg, alt: What the figure shows }
-links:
-  - { label: ASPLOS 2027, icon: acm, url: "https://doi.org/..." }
-  - { label: Code, icon: github, url: "https://github.com/..." }
----
-
-One paragraph of abstract.
+```yaml
+  - id: mypaper
+    title: My New Paper
+    authors: [Arjun Ramesh, Some Coauthor]
+    figure: { src: /assets/pubs/MyPaper.svg, alt: What the figure shows }
+    links:
+      - { label: ASPLOS 2027, icon: acm, url: "https://doi.org/..." }
+      - { label: Code, icon: github, url: "https://github.com/..." }
+    text: |
+      One paragraph of abstract.
 ```
 
 ## Add a project
 
-Create `content/projects/<anchor-name>.md` (the file name is its link: `/projects/#<anchor-name>`);
-the body is the bullet list.
+Add an entry to `items:` in `content/projects.yml`:
 
-```markdown
----
-title: "My Project: Hackathon 2027"
-order: 110
-team: Team of 3          # or Solo
-image: { src: /assets/projects/MyProject.jpg, alt: The prototype }
-image_style: photo       # optional: photo fills its box; plate (default) shows a logo on white
-links:
-  - { label: Code, icon: github, url: "https://github.com/..." }
----
-
-* What it does
-    * A detail
+```yaml
+  - id: my-project
+    title: "My Project: Hackathon 2027"
+    team: Team of 3          # or Solo
+    image: { src: /assets/projects/MyProject.jpg, alt: The prototype }
+    image_style: photo       # optional: photo fills its box; plate (default) shows a logo on white
+    links:
+      - { label: Code, icon: github, url: "https://github.com/..." }
+    text: |
+      * What it does
+          * A detail
 ```
 
 Optional layout keys: `size: [7, 6]` (tile width in columns: of 12 on desktop, of 6 on tablet;
@@ -94,24 +101,38 @@ default `[4, 3]`), `image_beside: true` (image left of the text), `zoom: 1.1` (c
 
 ## Add a role
 
-Create `content/career/<company>.md`; the body is the bullet list.
+Add an entry to `items:` in `content/career.yml`:
 
-```markdown
----
-org: Vectorware
-order: 5
-role: Software Engineer
-location: Pittsburgh, PA
-logo: { src: /assets/experience/Vectorware.png, alt: Vectorware logo }
-stack:
-  - { icon: code, tags: [Rust, CUDA] }
-  - { icon: tools, tags: [LLVM] }
----
-
-* What I worked on
+```yaml
+  - id: vectorware
+    org: VectorWare
+    role: Software Engineer
+    location: Pittsburgh, PA
+    current: true            # optional: a "Present" badge
+    logo: { src: /assets/experience/Vectorware.png, alt: VectorWare logo }
+    stack:
+      - { icon: code, tags: [Rust, CUDA] }
+    text: |
+      * What I worked on
 ```
 
-Optional `size: [7, 6]` as for projects, and `current: true` for a "Present" badge. Teaching and certificates are lists in `content/career/index.md`.
+Optional `size: [7, 6]` as for projects. Teaching and certificates are the `teaching:` and `certificates:` lists in the same file.
+
+## Add a gallery tile
+
+Add an entry to `items:` in `content/gallery.yml`:
+
+```yaml
+  - title: Cycling
+    caption: Climbing absurd gradients
+    image: { src: /assets/hobbies/Cycling.jpg, alt: At the top of a climb }
+    text: |
+      The longer story, shown over the picture on hover.
+```
+
+Use `icon: bike` instead of `image:` for a tile without a photo, `plate: true` for a small graphic
+(shown on a card), or `videos: [{ title: ..., url: "https://www.youtube.com/watch?v=..." }]` for YouTube
+videos (several share one wider tile).
 
 ## Add a page
 
@@ -133,7 +154,7 @@ Optional `size: [7, 6]` as for projects, and `current: true` for a "Present" bad
 
 It gets a title tile and the body in a prose tile.
 A paragraph that is only a YouTube link becomes a click-to-play video.
-To give a page one of the special layouts instead, set `template:` to a file name in `templates/`.
+A page uses `templates/<name>.html` if one exists; set `template:` to pick another layout.
 
 ## Deploy
 

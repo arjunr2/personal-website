@@ -119,13 +119,7 @@ def interactions(base, fails):
         b.pump(0.5)
         expect(b, "!document.getElementById('lightbox').open", "lightbox closes")
 
-        b.goto(base + "/resources/", settle=1.0)
-        expect(b, "!document.querySelector('.pdf-view iframe')", "no PDF is loaded before Preview")
-        b.eval("document.querySelector('button[data-pdf]').click()")
-        b.pump(1.5)
-        expect(b, "(() => { const f = document.querySelector('.pdf-view iframe'); return f && f.src.endsWith('.pdf') && !f.closest('.pdf-view').hidden; })()", "Preview opens the PDF")
-
-        b.goto(base + "/hobbies/", settle=1.0)
+        b.goto(base + "/gallery/", settle=1.0)
         b.eval("document.querySelector('a[data-yt]').click()")
         b.pump(0.5)
         expect(b, "!!document.querySelector('iframe.yt[src*=\"youtube-nocookie.com/embed/\"]')", "a video plays in place")

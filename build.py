@@ -61,25 +61,6 @@ def md_inline(text):
     return Markup(re.sub(r"^<p>(.*)</p>$", r"\1", str(md(text)), flags=re.S))
 
 
-def md_blocks(text):
-    """One HTML fragment per paragraph-level block (blank-line separated)."""
-    return [md(b) for b in re.split(r"\n\s*\n", text.strip()) if b.strip()]
-
-
-_IMAGE = re.compile(r"!\[([^\]]*)\]\(([^)\s]+)\)")
-
-
-def md_cards(text):
-    """Split on '### Heading' lines: [{title, html, image}], the image pulled out of the text."""
-    cards = []
-    for part in re.split(r"^### ", text, flags=re.M)[1:]:
-        title, _, body = part.partition("\n")
-        m = _IMAGE.search(body)
-        image = {"src": m[2], "alt": m[1]} if m else None
-        cards.append({"title": title.strip(), "html": md(_IMAGE.sub("", body)), "image": image})
-    return cards
-
-
 # ── Icons and images ──────────────────────────────────────────────────────
 
 ICONS = {}
@@ -155,36 +136,46 @@ def read(path):
     return meta, body
 
 
-def load_items(folder):
-    """The .md files of a folder page (all but index.md), sorted by `order`, then file name."""
-    items = []
-    for path in sorted(folder.glob("*.md")):
-        if path.name != "index.md":
-            meta, body = read(path)
-            items.append({"id": path.stem, **meta, "body": body, "html": md(body)})
-    return sorted(items, key=lambda x: x.get("order", float("inf")))
+def load_yaml(path):
+    try:
+        return yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    except yaml.YAMLError as err:
+        raise BuildError(f"{path.relative_to(ROOT)}: {err}")
+
+
+def slugify(text):
+    text = re.sub(r"\]\([^)]*\)", "", str(text))  # a Markdown link keeps only its text
+    return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
 
 
 def load_pages():
-    """{url: page}. content/X.md and content/X/index.md are pages at /X/; content/index.md is /."""
+    """{url: page}. content/index.md is /; content/X.md (Markdown body) and content/X.yml are /X/.
+    In a .yml page, `items:` is its list of entries, each item's `text:` is Markdown."""
     pages = {}
-    for path in sorted(CONTENT.rglob("*.md")):
-        parts = path.relative_to(CONTENT).parts
-        if path.name == "index.md":
-            slug = "/".join(parts[:-1])
-        elif len(parts) == 1:
-            slug = path.stem
-        else:
-            continue  # an item of a folder page
-        meta, body = read(path)
+    for path in sorted(CONTENT.glob("*.md")) + sorted(CONTENT.glob("*.yml")):
+        if path.name == "news.yml":
+            continue
+        slug = "" if path.name == "index.md" else path.stem
         url = "/" + (slug + "/" if slug else "")
+        if url in pages:
+            raise BuildError(f"two pages for {url}: content/{slug}.md and content/{slug}.yml")
+        if path.suffix == ".md":
+            meta, body = read(path)
+            entries = []
+        else:
+            meta, body = load_yaml(path), ""
+            entries = meta.pop("items", None) or []
+            for x in entries:
+                x.setdefault("id", slugify(x.get("title") or x.get("org") or ""))
+                x["html"] = md(x.get("text"))
         pages[url] = {
             "title": slug.replace("-", " ").title(),
+            "template": slug if (TEMPLATES / f"{slug}.html").exists() else ("home" if not slug else "page"),
             **meta,
             "url": url,
             "body": body,
             "html": md(body),
-            "entries": load_items(path.parent) if path.name == "index.md" and slug else [],
+            "entries": entries,
         }
     return pages
 
@@ -232,7 +223,7 @@ def build():
         trim_blocks=True,
         lstrip_blocks=True,
     )
-    env.filters.update(md=md, inline=md_inline, blocks=md_blocks, cards=md_cards, ratio=ratio)
+    env.filters.update(md=md, inline=md_inline, ratio=ratio)
     now = datetime.datetime.now(datetime.timezone.utc)
     env.globals.update(
         site=site, pages=pages, news=load_news(), icon=icon, icon_or_text=icon_or_text, img=img,
@@ -244,7 +235,7 @@ def build():
     shutil.rmtree(tmp, ignore_errors=True)
     shutil.copytree(STATIC, tmp)
     for url, page in pages.items():
-        name = page.get("template") or ("home" if url == "/" else "page")
+        name = page["template"]
         nav_i = next((i for i, n in enumerate(site["nav"]) if n["url"] == url), None)
         try:
             html = env.get_template(name + ".html").render(page=page)

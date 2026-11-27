@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+{% block main %}
+<div class="page">
+  {{ m.hero(page) }}
+  <div class="board gallery">
+  {% for t in page.entries %}
+    {% set n = (t.videos or []) | length %}
+    <article class="tile gal" id="{{ t.id }}"{% if t.text %} tabindex="0"{% endif %}{% if n > 1 %} style="--d:{{ 3 * n }};--t:6"{% endif %}>
+      {% if n %}<div class="gal-videos" style="--n:{{ n }}">{% for v in t.videos %}{{ ("[" ~ v.title ~ "](" ~ v.url ~ ")") | md }}{% endfor %}</div>
+      {% elif t.image and t.plate %}<div class="gal-frame gal-plate"><span class="plate">{{ img(t.image) }}</span></div>
+      {% elif t.image %}<div class="gal-frame">{{ img(t.image) }}</div>
+      {% else %}<div class="gal-frame gal-icon" aria-hidden="true">{{ icon(t.icon or "star") }}</div>
+      {% endif %}
+      <p class="gal-cap"><b>{{ t.title | inline }}</b>{% if t.caption %}<span>{{ t.caption | inline }}</span>{% endif %}</p>
+      {% if t.text %}<div class="gal-more prose">{{ t.html }}</div>{% endif %}
+    </article>
+  {% endfor %}
+  </div>
+</div>
+{% endblock %}

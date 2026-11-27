@@ -1,0 +1,150 @@
+# Build Hub page. Projects are listed in the order below.
+#   id:           the anchor (/projects/#<id>); the home page's `mosaic` names projects by id
+#   team:         "Solo" or "Team of N"
+#   image:        optional { src, alt }; image_style: photo fills its box, plate (default) shows a logo on white
+#   size:         optional tile width [columns of 12 on desktop, columns of 6 on tablet], default [4, 3]
+#   image_beside: true puts the image left of the text; zoom: crops into a photo (e.g. 1.1)
+#   text:         the bullet list (Markdown)
+
+title: Build Hub
+accent: projects
+icon: layers
+
+items:
+  - id: extending-the-risc-v-isa
+    title: Extending the RISC-V ISA
+    team: Team of 2
+    image: { src: /assets/projects/RISCV_Logo.png, alt: RISC-V logo }
+    size: [6, 6]
+    image_beside: true
+    links:
+      - { label: Presentation, icon: video, url: 'https://vimeopro.com/utece/capstone2021spring/video/543700201' }
+      - { label: Design, icon: document, url: 'https://docs.google.com/document/d/1Ygt9UbJ5kYmJLXBvFtrCkNEAzlkYbvzGRgO9i6_9oP4/edit?usp=sharing' }
+      - { label: Code, icon: github, url: 'https://github.com/Patt-Senior-Design/core-design' }
+    text: |
+      * Custom synthesizable Verilog implementation of RV32-IM core and memory hierarchy
+      * Added ISA + Microarchitectural extensions to accelerate:
+          * Searching in Linear-Probed Hashsets (up to 10x speedup on high load-factors)
+          * Breadth-First Search (average 2x speedup)
+
+  - id: jasp-cellular-phone
+    title: 'JASP: Bare-Metal Embedded Cellular Phone'
+    team: Team of 4
+    image: { src: /assets/projects/JASP2.jpg, alt: The JASP cellular phone prototype }
+    size: [6, 6]
+    image_style: photo
+    image_beside: true
+    links:
+      - { label: Code, icon: github, url: 'https://github.com/JASP-EE445L-Fall19/Phone_4C123' }
+    text: |
+      * On TM4C123 microcontroller built with a total cost < $50
+          * Fully call+text capable
+          * Real-time clock + numpad
+          * LCD with [*LVGL*](https://lvgl.io/) UI
+      * Voted best project during class (EE 445L) project showcase
+      * Integrates a LCD, real-time clock, and numpad on a TM4C123 microcontroller
+
+  - id: rtos-design
+    title: Bare-Metal RTOS Design
+    team: Team of 2
+    image: { src: /assets/projects/RTOS2.png, alt: TM4C123 microcontroller board with an LCD showing a battleship grid }
+    size: [7, 6]
+    image_style: photo
+    image_beside: true
+    links:
+      - { label: Demo, icon: video, url: 'https://www.youtube.com/watch?v=N1q2bLxdYYM' }
+    text: |
+      * On a TM4C123 microcontroller with:
+          * Real-time priority scheduler + thread/process management
+          * FAT32 file system and memory management
+          * Supports remote-procedure calls (RPC) over wireless. 
+      * Built a two-player remote battleship application over this
+
+  - id: xc2064-fpga-design
+    title: XC2064 FPGA Design
+    team: Team of 3
+    image: { src: /assets/projects/FPGA.jpg, alt: Die photograph of the XC2064 FPGA }
+    size: [5, 6]
+    image_style: photo
+    image_beside: true
+    links:
+      - { label: Reference Article, icon: document, url: 'https://www.righto.com/2020/09/reverse-engineering-first-fpga-chip.html' }
+    text: Fully-synthesizable Verilog design of the XC2064 (from 1985)
+
+  - id: recycleme-createathon-2019
+    title: RecycleMe (CreateAThon 2019)
+    size: [6, 6]
+    team: Team of 5
+    image: { src: /assets/projects/TeamTrash.png, alt: The RecycleMe trash-sorter prototype }
+    image_style: photo
+    image_beside: true
+    zoom: 1.14
+    links:
+      - { label: Presentation, icon: document, url: 'https://docs.google.com/presentation/d/1hpvU2TW-b8DZ-9Plj63A9ec2fWhC68u3J7fawatYcz0/edit#slide=id.g6349289ee8_0_57' }
+      - { label: System Code, icon: github, url: 'https://github.com/yashparakh111/createathon2019' }
+      - { label: Mobile App, icon: github, url: 'https://github.com/yashparakh111/RecycleMe' }
+    text: |
+      * A smart autonomous trash-sorter to sort Recyclable, Landfill, and Compostable materials. 
+      * RPi control and vision-based CNN offsite for real-time segregation.
+      * Built a mobile app to crowd-source the gathering and labelling of real-world dataset
+
+  - id: chairiot-createathon-2018
+    title: ChairIoT (CreateAThon 2018)
+    size: [6, 6]
+    team: Team of 5
+    image: { src: /assets/projects/Chair1_crop.jpg, alt: The ChairIoT self-organizing chair platform }
+    image_style: photo
+    image_beside: true
+    links:
+      - { label: Proposal, icon: document, url: 'https://drive.google.com/file/d/1ro5dI3SfT6lGEWr6IyF8sTGZJdI4XTpq/view?usp=sharing' }
+      - { label: Code, icon: github, url: 'https://github.com/yashparakh111/Self-Organizing-Chair' }
+    text: |
+      A self-organizing chair platform using Rpi for control. Uses an IMU and Kalman filters
+      to compute net displacement from time-series acceleration data.
+
+  - id: home-unity-hackdfw-2019
+    title: 'Home-Unity: HackDFW 2019'
+    size: [4, 3]
+    team: Team of 5
+    image: { src: /assets/projects/HomeUnity.png, alt: Home-Unity logo }
+    links:
+      - { label: Devpost, icon: devpost, url: 'https://devpost.com/software/home-unity-fctb5s' }
+      - { label: Code, icon: github, url: 'https://github.com/yashparakh111/Home-Unity' }
+    text: |
+      * Mobile app for homeless users to receive notifications about provisions from the City of
+       Dallas
+      * Data-visualization web platform for City of Dallas to better understand the
+       urban geography of homelessness
+      * Awarded first place from City of Dallas and OmniSci under social good category
+
+  - id: enrich-pennapps-2019
+    title: 'Enrich: PennApps 2019'
+    size: [4, 3]
+    team: Team of 4
+    image: { src: /assets/projects/Enrich.png, alt: Enrich logo }
+    links:
+      - { label: Devpost, icon: devpost, url: 'https://devpost.com/software/enrich-an-education-platform-to-increase-collaboration' }
+      - { label: Code, icon: github, url: 'https://github.com/arjunramesh99/Enrich' }
+    text: |
+      Prototype for an interactive course organization and lecturing platform. Includes a
+      messaging service, speech-to-text translation, and anonymous real-time feedback.
+
+  - id: 1d-cellular-automata-theory
+    title: 1D Cellular Automata Theory
+    team: Solo
+    image: { src: /assets/projects/multi_choice.png, alt: Diagram of a cellular automaton state branching into two successor states }
+    size: [4, 6]
+    links:
+      - { label: Paper, icon: document, url: 'https://drive.google.com/file/d/1P2Sxl4vDeoLRzdk5EeYzpcMRMJDdGRK9/view?usp=sharing' }
+    text: Brief survey of local pattern formation in 1D Cellular Automata Theory
+
+  - id: processing-in-memory-sorting-algorithms
+    title: 'Processing-In-Memory: Sorting Algorithms'
+    team: Team of 5
+    image: { src: /assets/projects/PIM.jpg, alt: UPMEM logo }
+    size: [12, 6]
+    image_beside: true
+    links:
+      - { label: Presentation, icon: video, url: 'https://docs.google.com/presentation/d/1zqjP24BIFGV1ArI6x-K1hgJrn6dM-mcpVgXRz3by6Ms/edit#slide=id.p' }
+      - { label: Code, icon: github, url: 'https://github.com/yashparakh111/upmem-dpu' }
+    text: Surveyed the PIM tradeoffs to accelerate sorting techniques (insertion and radix sort)
